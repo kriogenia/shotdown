@@ -19,6 +19,24 @@
     <Filter Include="Archivos de origen\Layer">
       <UniqueIdentifier>{44fb0c48-a4a7-4160-8e3a-a8d9f016440d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Scenario">
+      <UniqueIdentifier>{586fc031-9a04-4a27-8784-e0cb2e68fdee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Scenario">
+      <UniqueIdentifier>{68c33409-6fd6-4518-8737-7e2d722ca940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Actor">
+      <UniqueIdentifier>{f5cd8c76-7958-4bfd-bb76-bb352060cc66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actor">
+      <UniqueIdentifier>{c377cf1a-0db8-4c30-87fa-8e036bb41719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Util">
+      <UniqueIdentifier>{06060572-fa2a-40ad-aded-210ead6f4eb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Util">
+      <UniqueIdentifier>{dbe258a4-0585-49fe-a295-46db73d4517b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -33,6 +51,21 @@
     <ClCompile Include="GameLayer.cpp">
       <Filter>Archivos de origen\Layer</Filter>
     </ClCompile>
+    <ClCompile Include="Scenario.cpp">
+      <Filter>Archivos de origen\Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Archivos de origen\Scenario</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Archivos de origen\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Archivos de origen\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Archivos de origen\Util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -43,6 +76,21 @@
     </ClInclude>
     <ClInclude Include="GameLayer.h">
       <Filter>Archivos de encabezado\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenario.h">
+      <Filter>Archivos de encabezado\Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Archivos de encabezado\Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Archivos de encabezado\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Archivos de encabezado\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Archivos de encabezado\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

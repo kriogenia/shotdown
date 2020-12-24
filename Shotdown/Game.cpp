@@ -15,6 +15,7 @@ Game::Game() {
 	/* Layer declaration */
 	gameLayer = new GameLayer(this);
 	layer = gameLayer;
+	layer->init();
 
 	loopActive = true; 
 	loop();
@@ -38,8 +39,8 @@ void Game::loop() {
 		/* FPS check */
 		endTick = SDL_GetTicks();
 		differenceTick = endTick - initTick;
-		if (differenceTick < (1000 / 30)) {
-			SDL_Delay((1000 / 30) - differenceTick);
+		if (differenceTick < (1000 / TARGET_FPS)) {
+			SDL_Delay((1000 / TARGET_FPS) - differenceTick);
 		}
 	}
 }
@@ -56,7 +57,7 @@ void Game::scale() {
 		if (scaleY < scaleX) {
 			scaleLower = scaleY;
 		}
-		SDL_SetWindowSize(window, WIDTH * scaleLower, HEIGHT * scaleLower);
+		SDL_SetWindowSize(window, static_cast<int>(WIDTH * scaleLower), static_cast<int>(HEIGHT * scaleLower));
 		SDL_RenderSetScale(renderer, scaleLower, scaleLower);
 	}
 	else {

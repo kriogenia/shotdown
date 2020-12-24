@@ -6,6 +6,7 @@
 #include <string>
 #include <list>
 #include <map>
+#include <queue>
 #include <vector>
 #include <SDL.h>
 #include <SDL_image.h>
@@ -16,9 +17,10 @@ class Layer;
 
 using namespace std;
 
-// Screen size
+/* Game properties */
 constexpr auto WIDTH = 720;
 constexpr auto HEIGHT = 480;
+constexpr auto TARGET_FPS = 60;
 
 class Game
 {
@@ -49,4 +51,10 @@ private:
 	map<string, SDL_Texture*> mapTextures;
 
 	bool scaledToMax;
+};
+
+/* Coordinates object */
+struct Point {
+	float x;
+	float y;
 };
