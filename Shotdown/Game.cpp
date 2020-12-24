@@ -1,17 +1,26 @@
 #include "Game.h"
+#include "GameLayer.h"
 
 Game::Game() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		cout << "Error SDL_Init" << SDL_GetError() << endl;
 	}
+	cout << "Start Shotdown" << SDL_GetError() << endl;
 	if (SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, 0, &window, &renderer) < 0) {
 		cout << "Error Window y Renderer" << SDL_GetError() << endl;
 	}
-	SDL_SetWindowTitle(window, "Juego de Naves");
+	SDL_SetWindowTitle(window, "Shotdown");
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
+
+	/* Layer declaration */
+	gameLayer = new GameLayer(this);
+	layer = gameLayer;
 
 	loopActive = true; 
 	loop();
+
+	SDL_QuitSubSystem(SDL_INIT_EVERYTHING);
+	SDL_Quit();
 }
 
 void Game::loop() {
@@ -20,17 +29,50 @@ void Game::loop() {
 	int differenceTick;
 	while (loopActive) {
 		initTick = SDL_GetTicks();
-
-		// control
-		// update
-		// draw
-
+		/* Game cycle */
+		layer->processControls();
+		layer->update();
+		layer->render();
+		/* Rendering */
+		SDL_RenderPresent(renderer);
+		/* FPS check */
 		endTick = SDL_GetTicks();
 		differenceTick = endTick - initTick;
-
 		if (differenceTick < (1000 / 30)) {
 			SDL_Delay((1000 / 30) - differenceTick);
 		}
 	}
+}
 
+void Game::scale() {
+	scaledToMax = !scaledToMax;
+
+	if (scaledToMax) {
+		SDL_DisplayMode PCdisplay;
+		SDL_GetCurrentDisplayMode(0, &PCdisplay);
+		float scaleX = (float)PCdisplay.w / (float)WIDTH;
+		float scaleY = (float)PCdisplay.h / (float)HEIGHT;
+		scaleLower = scaleX;
+		if (scaleY < scaleX) {
+			scaleLower = scaleY;
+		}
+		SDL_SetWindowSize(window, WIDTH * scaleLower, HEIGHT * scaleLower);
+		SDL_RenderSetScale(renderer, scaleLower, scaleLower);
+	}
+	else {
+		scaleLower = 1;
+		SDL_SetWindowSize(window, WIDTH, HEIGHT);
+		SDL_RenderSetScale(renderer, 1, 1);
+	}
+
+}
+
+/* Manages the texture map */
+SDL_Texture* Game::getTexture(string filename) {
+	if (mapTextures.find(filename) == mapTextures.end()) {
+		SDL_Surface* surface = IMG_Load(filename.c_str());
+		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+		mapTextures[filename] = texture;
+	}
+	return mapTextures[filename];
 }
