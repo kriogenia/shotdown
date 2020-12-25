@@ -16,12 +16,15 @@ void FallingPlayerState::update()
 {
 	if (player->position.y < HEIGHT)
 		cout << cpBodyGetVelocity(player->body).y << endl;
-	// Fall ended check
+	// Fall end check
 	if (cpBodyGetVelocity(player->body).y < 0.01) {
 		ticksGrounded++;
 		if (ticksGrounded >= TICKS_TO_SWAP) {
 			player->setState(ePlayerStates::IDLE);
 		}
+	}
+	else {
+		ticksGrounded = 0;
 	}
 }
 
@@ -35,12 +38,12 @@ void FallingPlayerState::jump()
 
 void FallingPlayerState::hitLeft()
 {
-	cout << "Wall slide!!!" << endl;
+	player->setState(ePlayerStates::SLIDING);
 }
 
 void FallingPlayerState::hitRight()
 {
-	cout << "Wall slide!!!" << endl;
+	player->setState(ePlayerStates::SLIDING);
 }
 
 void FallingPlayerState::hitGround()

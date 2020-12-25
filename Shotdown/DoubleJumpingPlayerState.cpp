@@ -22,10 +22,10 @@ void DoubleJumpingPlayerState::update()
 
 void DoubleJumpingPlayerState::hitLeft()
 {
-	cout << "Wall slide!!!" << endl;
+	player->setState(ePlayerStates::SLIDING);
 }
 
 void DoubleJumpingPlayerState::hitRight()
 {
-	cout << "Wall slide!!!" << endl;
+	player->setState(ePlayerStates::SLIDING);
 }

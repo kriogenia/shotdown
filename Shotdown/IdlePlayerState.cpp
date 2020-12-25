@@ -9,13 +9,21 @@ IdlePlayerState::IdlePlayerState(Player* actor) :
 void IdlePlayerState::enter()
 {
 	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now IDLE " << endl;
+	ticksFalling = 0;
+	cpBodySetVelocity(player->body, cpv(cpBodyGetVelocity(player->body).x, 0));
 }
 
 void IdlePlayerState::update()
 {
 	// Falling check
 	if (cpBodyGetVelocity(player->body).y > 0.01) {
-		player->setState(ePlayerStates::FALLING);
+		ticksFalling++;
+		if (ticksFalling >= TICKS_TO_SWAP) {
+			player->setState(ePlayerStates::FALLING);
+		}
+	}
+	else {
+		ticksFalling = 0;
 	}
 }
 

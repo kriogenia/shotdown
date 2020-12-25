@@ -35,7 +35,7 @@ void GameLayer::processControls()
 void GameLayer::update()
 {
 	// Physics update
-	cpSpaceStep(currentScenario->chipSpace, .5);
+	cpSpaceStep(currentScenario->chipSpace, 1);
 	// Players update
 	player1->update();
 }

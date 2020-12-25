@@ -15,4 +15,7 @@ public:
     void move(int direction) override;
     void jump() override;
 
+private:
+    int ticksFalling = 0;
+
 };

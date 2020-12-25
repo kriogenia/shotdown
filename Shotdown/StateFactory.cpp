@@ -5,6 +5,7 @@
 #include "IdlePlayerState.h"
 #include "JumpingPlayerState.h"
 #include "MovingPlayerState.h"
+#include "SlidingPlayerState.h"
 
 StateFactory* StateFactory::instance = 0;
 
@@ -28,6 +29,8 @@ PlayerState* StateFactory::getState(ePlayerStates stateId, Player* player) {
         return new DoubleJumpingPlayerState(player);
     case ePlayerStates::FALLING:
         return new FallingPlayerState(player);
+    case ePlayerStates::SLIDING:
+        return new SlidingPlayerState(player);
     default: 
         return nullptr;
     }

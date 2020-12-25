@@ -13,7 +13,7 @@ constexpr auto PLAYER_DOUBLE_JUMP_HEIGHT = 24;
 /* Physics */
 constexpr auto PLAYER_BODY_WEIGHT = 3;
 constexpr auto PLAYER_SHAPE_FRICTION = 0.8;
-constexpr auto PLAYER_MAX_FALL_SPEED = 15;
+constexpr auto PLAYER_MAX_FALL_SPEED = 8;
 
 enum class PlayerTag {
     P1,
@@ -25,7 +25,8 @@ enum class ePlayerStates {
     MOVING,
     JUMPING,
     DOUBLE_JUMPING,
-    FALLING
+    FALLING,
+    SLIDING
 };
 
 class Player :

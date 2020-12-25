@@ -20,11 +20,11 @@ void Player::update()
 	if (cpBodyGetVelocity(body).y > PLAYER_MAX_FALL_SPEED) {
 		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
 	}
+	// Update state
+	state->update();
 	// Set calculated position
 	position.x = static_cast<float>(cpBodyGetPosition(body).x);
 	position.y = static_cast<float>(cpBodyGetPosition(body).y);
-	// Update state
-	state->update();
 }
 
 /* Init the player to start a new scenario */
@@ -34,7 +34,6 @@ void Player::init()
 	initStates();
 	prevState = states[ePlayerStates::IDLE];
 	state = states[ePlayerStates::IDLE];
-	state->enter();
 }
 
 /* Create the physics of the object */
@@ -104,4 +103,5 @@ void Player::initStates()
 	states.insert_or_assign(ePlayerStates::JUMPING, factory->getState(ePlayerStates::JUMPING, this));
 	states.insert_or_assign(ePlayerStates::DOUBLE_JUMPING, factory->getState(ePlayerStates::DOUBLE_JUMPING, this));
 	states.insert_or_assign(ePlayerStates::FALLING, factory->getState(ePlayerStates::FALLING, this));
+	states.insert_or_assign(ePlayerStates::SLIDING, factory->getState(ePlayerStates::SLIDING, this));
 }

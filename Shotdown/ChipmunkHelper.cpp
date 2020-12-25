@@ -25,6 +25,6 @@ void ChipmunkHelper::setHandlers(cpSpace* chipSpace)
 			chipSpace,
 			static_cast<int>(ActorType::PLAYER),
 			static_cast<int>(ActorType::TILE));
-	handler->preSolveFunc = cpCollisionPreSolveFunc(collisionPlayerTile);
+	handler->postSolveFunc = cpCollisionPostSolveFunc(collisionPlayerTile);
 
 }
