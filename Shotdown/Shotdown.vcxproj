@@ -188,6 +188,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLayer.cpp" />
     <ClCompile Include="IdlePlayerState.cpp" />
+    <ClCompile Include="JumpingPlayerState.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -208,6 +209,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameLayer.h" />
     <ClInclude Include="IdlePlayerState.h" />
+    <ClInclude Include="JumpingPlayerState.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MovingPlayerState.h" />

@@ -16,9 +16,11 @@ Player::~Player()
 
 void Player::update()
 {
-	// Gets the calculated position
+	// Set calculated position
 	position.x = static_cast<float>(cpBodyGetPosition(body).x);
 	position.y = static_cast<float>(cpBodyGetPosition(body).y);
+	// Update state
+	state->update();
 }
 
 /* Init the player to start a new scenario */
@@ -52,6 +54,12 @@ void Player::move(int direction)
 	state->move(direction);
 }
 
+/* Manage the jump input */
+void Player::jump()
+{
+	state->jump();
+}
+
 /* Changes the player state */
 void Player::setState(ePlayerStates id)
 {
@@ -67,4 +75,5 @@ void Player::initStates()
 	StateFactory* factory = StateFactory::getInstance();
 	states.insert_or_assign(ePlayerStates::IDLE, factory->getState(ePlayerStates::IDLE, this));
 	states.insert_or_assign(ePlayerStates::MOVING, factory->getState(ePlayerStates::MOVING, this));
+	states.insert_or_assign(ePlayerStates::JUMPING, factory->getState(ePlayerStates::JUMPING, this));
 }

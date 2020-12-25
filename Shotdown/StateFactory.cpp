@@ -1,6 +1,7 @@
 #include "StateFactory.h"
 
 #include "IdlePlayerState.h"
+#include "JumpingPlayerState.h"
 #include "MovingPlayerState.h"
 
 StateFactory* StateFactory::instance = 0;
@@ -19,5 +20,9 @@ PlayerState* StateFactory::getState(ePlayerStates stateId, Player* player) {
         return new IdlePlayerState(player);
     case ePlayerStates::MOVING:
         return new MovingPlayerState(player);
+    case ePlayerStates::JUMPING:
+        return new JumpingPlayerState(player);
+    default: 
+        return nullptr;
     }
 }

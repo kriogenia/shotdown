@@ -11,5 +11,6 @@ public:
     void enter() override;
     /* PlayerState */
     void move(int direction) override;
+    void jump() override;
 
 };

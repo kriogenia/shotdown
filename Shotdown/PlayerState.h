@@ -14,6 +14,7 @@ public:
 	virtual void update() {};
 	/* Player control */
 	virtual void move(int direction) = 0;
+	virtual void jump() = 0;
 
 protected:
 	Player* player;

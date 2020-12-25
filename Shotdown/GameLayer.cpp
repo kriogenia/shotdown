@@ -63,10 +63,10 @@ void GameLayer::keysToControl(SDL_Event event) {
 		case SDLK_a:	// Left
 			controlMoveLeft_P1 = -1;
 			break;
-			/*
-		case SDLK_w: // arriba
-			controlMoveY1 = -1;
+		case SDLK_w:	// Up
+			player1->jump();
 			break;
+			/*
 		case SDLK_s: // abajo
 			controlMoveY1 = 1;
 			break;

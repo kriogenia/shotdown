@@ -17,3 +17,9 @@ void IdlePlayerState::move(int direction)
 		player->move(direction);
 	}
 }
+
+void IdlePlayerState::jump()
+{
+	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_HEIGHT), cpv(0, 0));
+	player->setState(ePlayerStates::JUMPING);
+}

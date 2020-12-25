@@ -8,6 +8,7 @@ class PlayerState;
 /* Attributes */
 constexpr auto PLAYER_SIZE = 24;
 constexpr auto PLAYER_SPEED = 3;
+constexpr auto PLAYER_JUMP_HEIGHT = 32;
 /* Physics */
 constexpr auto PLAYER_BODY_WEIGHT = 3;
 constexpr auto PLAYER_SHAPE_FRICTION = 0.8;
@@ -19,7 +20,8 @@ enum class PlayerTag {
 
 enum class ePlayerStates {
     IDLE,
-    MOVING
+    MOVING,
+    JUMPING
 };
 
 class Player :
@@ -35,6 +37,7 @@ public:
     void configureChipmunkSpace(cpSpace* chipSpace) override;
     /* Controls */
     void move(int direction);
+    void jump();
     /* State */
     void setState(ePlayerStates id);
     /* Tag */
