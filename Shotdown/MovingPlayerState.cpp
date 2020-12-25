@@ -24,16 +24,11 @@ void MovingPlayerState::move(int direction)
 	if (direction == 0) {
 		player->setState(ePlayerStates::IDLE);
 	}
-	if (direction > 0 && cpBodyGetVelocity(player->body).x < PLAYER_SPEED) {
-		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
-	}
-	if (direction < 0 && cpBodyGetVelocity(player->body).x > -PLAYER_SPEED) {
-		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(-PLAYER_SPEED, 0), cpv(0, 0));
-	}
+	PlayerState::move(direction);
 }
 
 void MovingPlayerState::jump()
 {
-	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_HEIGHT), cpv(0, 0));
+	PlayerState::jump();
 	player->setState(ePlayerStates::JUMPING);
 }

@@ -16,6 +16,10 @@ Player::~Player()
 
 void Player::update()
 {
+	// Limit player velocity
+	if (cpBodyGetVelocity(body).y > PLAYER_MAX_FALL_SPEED) {
+		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
+	}
 	// Set calculated position
 	position.x = static_cast<float>(cpBodyGetPosition(body).x);
 	position.y = static_cast<float>(cpBodyGetPosition(body).y);
@@ -26,8 +30,9 @@ void Player::update()
 /* Init the player to start a new scenario */
 void Player::init()
 {
-	// Set the state
+	// Set the states
 	initStates();
+	prevState = states[ePlayerStates::IDLE];
 	state = states[ePlayerStates::IDLE];
 	state->enter();
 }
@@ -40,7 +45,7 @@ void Player::configureChipmunkSpace(cpSpace* chipSpace)
 	cpBodySetPosition(body, cpv(position.x, position.y));
 	cpSpaceAddBody(chipSpace, body);
 	// Create the shape
-	shape = cpBoxShapeNew(body, width, height, 0.0);
+	shape = cpBoxShapeNew(body, 8, height, 0.0);
 	cpShapeSetCollisionType(shape, static_cast<int>(type));
 	cpShapeSetElasticity(shape, 0);
 	cpShapeSetFriction(shape, PLAYER_SHAPE_FRICTION);
@@ -65,6 +70,7 @@ void Player::jump()
 void Player::setState(ePlayerStates id)
 {
 	state->exit();
+	prevState = state;
 	state = states[id];
 	state->enter();
 }
@@ -96,5 +102,6 @@ void Player::initStates()
 	states.insert_or_assign(ePlayerStates::IDLE, factory->getState(ePlayerStates::IDLE, this));
 	states.insert_or_assign(ePlayerStates::MOVING, factory->getState(ePlayerStates::MOVING, this));
 	states.insert_or_assign(ePlayerStates::JUMPING, factory->getState(ePlayerStates::JUMPING, this));
+	states.insert_or_assign(ePlayerStates::DOUBLE_JUMPING, factory->getState(ePlayerStates::DOUBLE_JUMPING, this));
 	states.insert_or_assign(ePlayerStates::FALLING, factory->getState(ePlayerStates::FALLING, this));
 }

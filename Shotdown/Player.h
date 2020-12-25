@@ -9,9 +9,11 @@ class PlayerState;
 constexpr auto PLAYER_SIZE = 24;
 constexpr auto PLAYER_SPEED = 3;
 constexpr auto PLAYER_JUMP_HEIGHT = 32;
+constexpr auto PLAYER_DOUBLE_JUMP_HEIGHT = 24;
 /* Physics */
 constexpr auto PLAYER_BODY_WEIGHT = 3;
 constexpr auto PLAYER_SHAPE_FRICTION = 0.8;
+constexpr auto PLAYER_MAX_FALL_SPEED = 15;
 
 enum class PlayerTag {
     P1,
@@ -22,6 +24,7 @@ enum class ePlayerStates {
     IDLE,
     MOVING,
     JUMPING,
+    DOUBLE_JUMPING,
     FALLING
 };
 
@@ -40,6 +43,7 @@ public:
     void move(int direction);
     void jump();
     /* State */
+    PlayerState* prevState = nullptr;
     void setState(ePlayerStates id);
     /* Interaction */
     void collisioned(Point collisionedPosition);

@@ -16,8 +16,8 @@ public:
 	/* Game cycle */
 	virtual void update() {};
 	/* Player control */
-	virtual void move(int direction) = 0;
-	virtual void jump() = 0;
+	virtual void move(int direction);
+	virtual void jump();
 	/* Player interaction */
 	virtual void hitTop() {};
 	virtual void hitLeft() {};

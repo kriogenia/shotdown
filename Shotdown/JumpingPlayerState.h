@@ -2,6 +2,8 @@
 
 #include "PlayerState.h"
 
+constexpr auto DOUBLE_JUMP_CAP = 5;
+
 class JumpingPlayerState :
     public PlayerState
 {
@@ -12,13 +14,11 @@ public:
     void update() override;
     /* Player control */
     // Control
-    void move(int direction);
     void jump() override;
     // Interaction
-    void hitTop() override;
     void hitLeft() override;
     void hitRight() override;
+    /* Extra */
+    bool doubleJump = true;
 
-private:
-    int ticksFalling = 0;
 };

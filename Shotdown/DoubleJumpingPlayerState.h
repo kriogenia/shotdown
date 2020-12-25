@@ -2,23 +2,22 @@
 
 #include "PlayerState.h"
 
-class FallingPlayerState :
+class DoubleJumpingPlayerState :
     public PlayerState
 {
 public:
-    FallingPlayerState(Player* actor);
+    DoubleJumpingPlayerState(Player* actor);
     /* State */
     void enter() override;
     void update() override;
     /* Player control */
     // Control
-    void jump() override;
+    inline void jump() override {};
     // Interaction
     void hitLeft() override;
     void hitRight() override;
-    void hitGround() override;
+    /* Extra */
+    bool doubleJump = true;
 
-private:
-    int ticksGrounded = 0;
 };
 
