@@ -7,5 +7,9 @@ class IdlePlayerState :
 {
 public:
     IdlePlayerState(Player* actor);
+    /* State */
+    void enter() override;
+    /* PlayerState */
+    void move(int direction) override;
 
 };

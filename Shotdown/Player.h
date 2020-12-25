@@ -34,7 +34,7 @@ public:
     void init();
     void configureChipmunkSpace(cpSpace* chipSpace) override;
     /* Controls */
-    void moveX(int axis);
+    void move(int direction);
     /* State */
     void setState(ePlayerStates id);
     /* Tag */

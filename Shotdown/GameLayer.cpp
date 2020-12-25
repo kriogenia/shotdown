@@ -27,7 +27,7 @@ void GameLayer::init()
 void GameLayer::processControls()
 {
 	Layer::processControls();
-	player1->moveX(controlMoveLeft_P1 + controlMoveRight_P1);
+	player1->move(controlMoveLeft_P1 + controlMoveRight_P1);
 }
 
 void GameLayer::update()

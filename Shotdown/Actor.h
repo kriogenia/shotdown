@@ -21,6 +21,8 @@ public:
 	/* Destruction */
 	virtual void destroy();
 	/* Physics */
+	cpBody* body = nullptr;
+	cpShape* shape = nullptr;
 	virtual void configureChipmunkSpace(cpSpace* chipSpace) {};
 	/* Position */
 	Point position = { 0, 0 };
@@ -28,9 +30,6 @@ public:
 protected:
 	/* Game instance */
 	Game* game;
-	/* Physics */
-	cpBody* body = nullptr;
-	cpShape* shape = nullptr;
 	/* Texture */
 	SDL_Texture* texture;
 	/* Properties */

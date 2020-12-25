@@ -12,9 +12,10 @@ public:
     PlayerState(Player* actor);
 	/* Game cycle */
 	virtual void update() {};
-	/* Game controls */
+	/* Player control */
+	virtual void move(int direction) = 0;
 
-private:
+protected:
 	Player* player;
 };
 

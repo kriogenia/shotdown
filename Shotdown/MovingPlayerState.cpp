@@ -4,3 +4,21 @@ MovingPlayerState::MovingPlayerState(Player* actor) :
 	PlayerState(actor)
 {
 }
+
+void MovingPlayerState::enter()
+{
+	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now MOVING " << endl;
+}
+
+void MovingPlayerState::move(int direction)
+{
+	if (direction == 0) {
+		player->setState(ePlayerStates::IDLE);
+	}
+	if (direction > 0 && cpBodyGetVelocity(player->body).x < PLAYER_SPEED) {
+		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
+	}
+	if (direction < 0 && cpBodyGetVelocity(player->body).x > -PLAYER_SPEED) {
+		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(-PLAYER_SPEED, 0), cpv(0, 0));
+	}
+}

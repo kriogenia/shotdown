@@ -47,14 +47,9 @@ void Player::configureChipmunkSpace(cpSpace* chipSpace)
 }
 
 /* Manage the horizontal movement input */
-void Player::moveX(int axis) 
+void Player::move(int direction)
 {
-	if (axis > 0 && cpBodyGetVelocity(body).x < PLAYER_SPEED) {
-		cpBodyApplyImpulseAtLocalPoint(body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
-	}
-	if (axis< 0 && cpBodyGetVelocity(body).x > -PLAYER_SPEED) {
-		cpBodyApplyImpulseAtLocalPoint(body, cpv(-PLAYER_SPEED, 0), cpv(0, 0));
-	}
+	state->move(direction);
 }
 
 /* Changes the player state */
