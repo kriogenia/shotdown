@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="ChipmunkHelper.cpp" />
     <ClCompile Include="chipmunk\chipmunk.c" />
     <ClCompile Include="chipmunk\cpArbiter.c" />
     <ClCompile Include="chipmunk\cpArray.c" />
@@ -206,6 +207,7 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="ChipmunkHelper.h" />
     <ClInclude Include="chipmunk\prime.h" />
     <ClInclude Include="FallingPlayerState.h" />
     <ClInclude Include="Game.h" />

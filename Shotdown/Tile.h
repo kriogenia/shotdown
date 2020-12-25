@@ -2,7 +2,7 @@
 
 #include "Actor.h"
 
-constexpr auto TILE_SIZE = 16.0;
+constexpr auto TILE_SIZE = 16;
 constexpr auto TILES_PER_LINE_ON_FILE = 24;
 constexpr auto TILE_SHAPE_FRICTION = 0.8;
 

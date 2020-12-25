@@ -64,8 +64,8 @@ void Scenario::loadScenario(string filename)
 					posCharacter = line.find(delimiterLine);
 					tileNum = line.substr(0, posCharacter);
 					// Tile position
-					float x = TILE_SIZE / 2 + j * TILE_SIZE;
-					float y = TILE_SIZE / 2 + i * TILE_SIZE;
+					float x = static_cast<float>(TILE_SIZE / 2 + j * TILE_SIZE);
+					float y = static_cast<float>(TILE_SIZE / 2 + i * TILE_SIZE);
 
 					if (tileNum != "" && tileNum != "0") {
 						scenario_map->loadTMXTile(stoi(tileNum), x, y, physic);

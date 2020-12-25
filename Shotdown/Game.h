@@ -22,6 +22,12 @@ constexpr auto WIDTH = 720;
 constexpr auto HEIGHT = 480;
 constexpr auto TARGET_FPS = 60;
 
+enum class ActorType {
+	BACKGROUND,
+	PLAYER,
+	TILE
+};
+
 class Game
 {
 public:

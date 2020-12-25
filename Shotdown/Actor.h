@@ -4,12 +4,6 @@
 
 #include "Game.h"
 
-enum class ActorType {
-	BACKGROUND,
-	PLAYER,
-	TILE
-};
-
 class Actor
 {
 public:

@@ -10,7 +10,8 @@ public:
     /* State */
     void enter() override;
     void update() override;
-    /* Player control */
+    /* PlayerState */
+    // Control
     void move(int direction) override;
     void jump() override;
 

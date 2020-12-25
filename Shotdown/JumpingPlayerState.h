@@ -11,8 +11,13 @@ public:
     void enter() override;
     void update() override;
     /* Player control */
+    // Control
     void move(int direction);
     void jump() override;
+    // Interaction
+    void hitTop() override;
+    void hitLeft() override;
+    void hitRight() override;
 
 private:
     int ticksFalling = 0;

@@ -41,6 +41,8 @@ public:
     void jump();
     /* State */
     void setState(ePlayerStates id);
+    /* Interaction */
+    void collisioned(Point collisionedPosition);
     /* Tag */
     PlayerTag tag;
 

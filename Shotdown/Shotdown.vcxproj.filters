@@ -216,6 +216,9 @@
     <ClCompile Include="FallingPlayerState.cpp">
       <Filter>Archivos de origen\State\Player</Filter>
     </ClCompile>
+    <ClCompile Include="ChipmunkHelper.cpp">
+      <Filter>Archivos de origen\Util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -274,6 +277,9 @@
     </ClInclude>
     <ClInclude Include="FallingPlayerState.h">
       <Filter>Archivos de encabezado\State\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ChipmunkHelper.h">
+      <Filter>Archivos de encabezado\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

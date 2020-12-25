@@ -37,3 +37,18 @@ void JumpingPlayerState::jump()
 {
 
 }
+
+void JumpingPlayerState::hitTop()
+{
+	player->setState(ePlayerStates::FALLING);
+}
+
+void JumpingPlayerState::hitLeft()
+{
+	cout << "Wall slide!!!" << endl;
+}
+
+void JumpingPlayerState::hitRight()
+{
+	cout << "Wall slide!!!" << endl;
+}

@@ -41,6 +41,7 @@ void Player::configureChipmunkSpace(cpSpace* chipSpace)
 	cpSpaceAddBody(chipSpace, body);
 	// Create the shape
 	shape = cpBoxShapeNew(body, width, height, 0.0);
+	cpShapeSetCollisionType(shape, static_cast<int>(type));
 	cpShapeSetElasticity(shape, 0);
 	cpShapeSetFriction(shape, PLAYER_SHAPE_FRICTION);
 	cpSpaceAddShape(chipSpace, shape);
@@ -66,6 +67,25 @@ void Player::setState(ePlayerStates id)
 	state->exit();
 	state = states[id];
 	state->enter();
+}
+
+/* Manage the collision with a Tile */
+void Player::collisioned(Point collisionedPosition)
+{
+	int orientationX = collisionedPosition.x - position.x;
+	int orientationY = collisionedPosition.y - position.y;
+	if (abs(orientationX) >= abs(orientationY)) {
+		if (orientationX > 0)
+			state->hitRight();
+		else
+			state->hitLeft();
+	}
+	else {
+		if (orientationY > 0)
+			state->hitGround();
+		else
+			state->hitTop();
+	}
 }
 
 /* Init the player states */

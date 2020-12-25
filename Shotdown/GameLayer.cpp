@@ -1,5 +1,7 @@
 #include "GameLayer.h"
 
+#include "ChipmunkHelper.h"
+
 GameLayer::GameLayer(Game* game) :
 	Layer(game)
 {
@@ -129,5 +131,8 @@ void GameLayer::playNextScenario()
 	//player2->position = spawnPoints[0];
 	//player2->configureChipmunkSpace(currentScenario->chipSpace);
 	// place Spawners
+	/* Create the collision handlers */
+	ChipmunkHelper::setHandlers(currentScenario->chipSpace);
+
 }
 

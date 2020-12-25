@@ -11,8 +11,13 @@ public:
     void enter() override;
     void update() override;
     /* Player control */
+    // Control
     void move(int direction) override;
-    inline void jump() override {};
+    void jump() override;
+    // Interaction
+    void hitLeft() override;
+    void hitRight() override;
+    void hitGround() override;
 
 private:
     int ticksGrounded = 0;

@@ -18,8 +18,8 @@ void Tile::render(float scrollX) {
 	source.h = TILE_SIZE;
 	// Destination to draw
 	SDL_Rect destination;
-	destination.x = position.x - TILE_SIZE / 2 - scrollX;
-	destination.y = position.y - TILE_SIZE / 2;
+	destination.x = static_cast<int>(position.x - TILE_SIZE / 2 - scrollX);
+	destination.y = static_cast<int>(position.y - TILE_SIZE / 2);
 	destination.w = TILE_SIZE;
 	destination.h = TILE_SIZE;
 	// Render invocation
@@ -33,6 +33,7 @@ void Tile::configureChipmunkSpace(cpSpace* chipSpace) {
 	cpBodySetPosition(body, cpv(position.x, position.y));
 	// Create the shape
 	shape = cpBoxShapeNew(body, width, height, 0.0);
+	cpShapeSetCollisionType(shape, static_cast<int>(type));
 	cpShapeSetElasticity(shape, 0);
 	cpShapeSetFriction(shape, TILE_SHAPE_FRICTION);
 	cpSpaceAddShape(chipSpace, shape);

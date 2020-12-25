@@ -18,6 +18,11 @@ public:
 	/* Player control */
 	virtual void move(int direction) = 0;
 	virtual void jump() = 0;
+	/* Player interaction */
+	virtual void hitTop() {};
+	virtual void hitLeft() {};
+	virtual void hitRight() {};
+	virtual void hitGround() {};
 	/* Tag */
 	ePlayerStates tag;
 
