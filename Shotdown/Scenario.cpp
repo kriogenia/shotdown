@@ -4,7 +4,12 @@
 Scenario::Scenario(int code, Game* game) :
 	code(code)
 {
-	scenario_map = new Map(game);
+	// Create the physics engine of the scenario
+	chipSpace = cpSpaceNew();
+	cpSpaceSetGravity(chipSpace, cpv(0, GRAVITY));
+	// Create the map
+	scenario_map = new Map(chipSpace, game);
+	// Load scenario info
 	loadScenario("res/scenarios/scenario" + to_string(code) + ".tmx");
 }
 

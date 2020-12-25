@@ -6,13 +6,15 @@
 class Map
 {
 public:
-	Map(Game* game);
+	Map(cpSpace* chipSpace, Game* game);
 	~Map();
 	/* Game cycle */
 	void render();
 	/* Tile generation */
 	void loadTMXTile(int tileNum, float x, float y, bool physic);
 private:
+	/* Physics */
+	cpSpace* chipSpace;
 	/* Tile list */
 	vector<Tile*> tiles;
 	/* Game instance */

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <chipmunk/chipmunk.h>
+
 #include "Game.h"
 
 enum class ActorType {
@@ -18,12 +20,17 @@ public:
 	virtual void render(float scrollX = 0);
 	/* Destruction */
 	virtual void destroy();
+	/* Physics */
+	virtual void configureChipmunkSpace(cpSpace* chipSpace) {};
 	/* Position */
 	Point position = { 0, 0 };
 	
 protected:
 	/* Game instance */
 	Game* game;
+	/* Physics */
+	cpBody* body = nullptr;
+	cpShape* shape = nullptr;
 	/* Texture */
 	SDL_Texture* texture;
 	/* Properties */

@@ -5,6 +5,8 @@ GameLayer::GameLayer(Game* game) :
 {
 	background = new Background(game);
 	currentScenario = nullptr;
+	player1 = nullptr;
+	player2 = nullptr;
 }
 
 GameLayer::~GameLayer()
@@ -20,6 +22,14 @@ void GameLayer::init()
 	generateScenarios();
 	// Load the first scenario
 	playNextScenario();
+}
+
+void GameLayer::update()
+{
+	// Physics update
+	cpSpaceStep(currentScenario->chipSpace, 1);
+	// Players update
+	player1->update();
 }
 
 void GameLayer::render()
@@ -41,23 +51,33 @@ void GameLayer::generateScenarios()
 	}
 }
 
-/* Finish the current scenario and starts a new one */
-void GameLayer::playNextScenario()
+/* Clean previous state */
+void GameLayer::reset()
 {
-	/* Clean previous state */
+	// Clear the scenario
 	delete currentScenario;
+	// Clear the entities
 	player1->clear();
 	player2->clear();
 	// projectiles.clear();
 	// spawners.clear();
+}
+
+/* Finish the current scenario and starts a new one */
+void GameLayer::playNextScenario()
+{
+	/* Clean state from previous scenario */
+	reset();
 	/* Load new scenario */
 	currentScenario = scenarios.front();
 	scenarios.pop();
 	cout << "New match on scenario " << currentScenario->code << endl;
-	/* Place the player and weapon spawners */
+	/* Place the players and weapon spawners */
 	auto spawnPoints = currentScenario->playerSpawns;
 	player1->position = spawnPoints[0];
-	// place Player2
+	player1->configureChipmunkSpace(currentScenario->chipSpace);
+	//player2->position = spawnPoints[0];
+	//player2->configureChipmunkSpace(currentScenario->chipSpace);
 	// place Spawners
 }
 

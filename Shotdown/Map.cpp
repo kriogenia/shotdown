@@ -1,6 +1,7 @@
 #include "Map.h"
 
-Map::Map(Game* game) :
+Map::Map(cpSpace* chipSpace, Game* game) :
+	chipSpace(chipSpace),
 	game(game)
 {
 	tiles.clear();
@@ -24,7 +25,7 @@ void Map::loadTMXTile(int tileNum, float x, float y, bool physic) {
 	tiles.push_back(tile);
 	// Statics
 	if (physic) {
-		//space->addStaticActor(tile);
+		tile->configureChipmunkSpace(chipSpace);
 	}
 
 }

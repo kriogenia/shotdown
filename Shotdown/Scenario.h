@@ -3,6 +3,8 @@
 #include "Game.h"
 #include "Map.h"
 
+constexpr auto GRAVITY = 0.6;
+
 class Scenario
 {
 public:
@@ -10,11 +12,14 @@ public:
 	~Scenario();
 	/* Game cycle */
 	void render();
+	/* Physics */
+	cpSpace* chipSpace;
 	/* Spawn points */
 	vector<Point> playerSpawns;
 	/* Properties */
 	int code;
 private:
+	/* Initialization */
 	void loadScenario(string filename);
 	/* Scenario map */
 	Map* scenario_map;

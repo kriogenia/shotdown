@@ -153,6 +153,38 @@
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="chipmunk\chipmunk.c" />
+    <ClCompile Include="chipmunk\cpArbiter.c" />
+    <ClCompile Include="chipmunk\cpArray.c" />
+    <ClCompile Include="chipmunk\cpBBTree.c" />
+    <ClCompile Include="chipmunk\cpBody.c" />
+    <ClCompile Include="chipmunk\cpCollision.c" />
+    <ClCompile Include="chipmunk\cpConstraint.c" />
+    <ClCompile Include="chipmunk\cpDampedRotarySpring.c" />
+    <ClCompile Include="chipmunk\cpDampedSpring.c" />
+    <ClCompile Include="chipmunk\cpGearJoint.c" />
+    <ClCompile Include="chipmunk\cpGrooveJoint.c" />
+    <ClCompile Include="chipmunk\cpHashSet.c" />
+    <ClCompile Include="chipmunk\cpHastySpace.c" />
+    <ClCompile Include="chipmunk\cpMarch.c" />
+    <ClCompile Include="chipmunk\cpPinJoint.c" />
+    <ClCompile Include="chipmunk\cpPivotJoint.c" />
+    <ClCompile Include="chipmunk\cpPolyline.c" />
+    <ClCompile Include="chipmunk\cpPolyShape.c" />
+    <ClCompile Include="chipmunk\cpRatchetJoint.c" />
+    <ClCompile Include="chipmunk\cpRobust.c" />
+    <ClCompile Include="chipmunk\cpRotaryLimitJoint.c" />
+    <ClCompile Include="chipmunk\cpShape.c" />
+    <ClCompile Include="chipmunk\cpSimpleMotor.c" />
+    <ClCompile Include="chipmunk\cpSlideJoint.c" />
+    <ClCompile Include="chipmunk\cpSpace.c" />
+    <ClCompile Include="chipmunk\cpSpaceComponent.c" />
+    <ClCompile Include="chipmunk\cpSpaceDebug.c" />
+    <ClCompile Include="chipmunk\cpSpaceHash.c" />
+    <ClCompile Include="chipmunk\cpSpaceQuery.c" />
+    <ClCompile Include="chipmunk\cpSpaceStep.c" />
+    <ClCompile Include="chipmunk\cpSpatialIndex.c" />
+    <ClCompile Include="chipmunk\cpSweep1D.c" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLayer.cpp" />
     <ClCompile Include="Layer.cpp" />
@@ -167,6 +199,7 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="chipmunk\prime.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameLayer.h" />
     <ClInclude Include="Layer.h" />

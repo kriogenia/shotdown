@@ -1,5 +1,7 @@
 #pragma once
 
+#include <chipmunk/chipmunk.h>
+
 #include "Background.h"
 #include "Layer.h"
 #include "Player.h"
@@ -14,7 +16,7 @@ public:
 	/* Game cycle */
 	void init() override;
 	//void processControls() override;
-	void update() override {};
+	void update() override;
 	void render() override;
 	/* Input control */
 	void keysToControl(SDL_Event event) override {};
@@ -27,6 +29,7 @@ private:
 	queue<Scenario*> scenarios;
 	/* Showmatch loading */
 	void generateScenarios();
+	void reset();
 	void playNextScenario();
 	/* Current scenario */
 	Scenario* currentScenario;

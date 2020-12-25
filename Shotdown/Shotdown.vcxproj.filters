@@ -43,6 +43,12 @@
     <Filter Include="Archivos de origen\Actor\Map">
       <UniqueIdentifier>{60a9522b-85da-407b-a14e-bd9f26fd1db0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Util\Chipmunk">
+      <UniqueIdentifier>{0ebd7796-a2f5-4866-a54a-11d6552f6560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Util\Chipmunk">
+      <UniqueIdentifier>{c868ad0b-82a5-4772-8b34-ffef86a97c8e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -81,6 +87,102 @@
     <ClCompile Include="Player.cpp">
       <Filter>Archivos de origen\Actor</Filter>
     </ClCompile>
+    <ClCompile Include="chipmunk\chipmunk.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpArbiter.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpArray.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpBBTree.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpBody.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpCollision.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpConstraint.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpDampedRotarySpring.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpDampedSpring.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpGearJoint.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpGrooveJoint.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpHashSet.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpHastySpace.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpMarch.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpPinJoint.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpPivotJoint.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpPolyline.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpPolyShape.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpRatchetJoint.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpRobust.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpRotaryLimitJoint.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpShape.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSimpleMotor.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSlideJoint.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSpace.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSpaceComponent.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSpaceDebug.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSpaceHash.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSpaceQuery.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSpaceStep.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSpatialIndex.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="chipmunk\cpSweep1D.c">
+      <Filter>Archivos de origen\Util\Chipmunk</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -115,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Archivos de encabezado\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="chipmunk\prime.h">
+      <Filter>Archivos de encabezado\Util\Chipmunk</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -26,3 +26,16 @@ void Tile::render(float scrollX) {
 	SDL_RenderCopyEx(game->renderer,
 		texture, &source, &destination, 0, NULL, SDL_FLIP_NONE);
 }
+
+void Tile::configureChipmunkSpace(cpSpace* chipSpace) {
+	// Create the body
+	body = cpBodyNewStatic(); 
+	cpBodySetPosition(body, cpv(position.x, position.y));
+	// Create the shape
+	shape = cpBoxShapeNew(body, width, height, 0.0);
+	cpShapeSetElasticity(shape, 0);
+	cpShapeSetFriction(shape, TILE_SHAPE_FRICTION);
+	cpSpaceAddShape(chipSpace, shape);
+	// Reference to the Actor into the Shape
+	cpShapeSetUserData(shape, cpDataPointer(this));
+}
