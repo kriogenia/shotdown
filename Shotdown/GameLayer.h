@@ -2,6 +2,7 @@
 
 #include "Background.h"
 #include "Layer.h"
+#include "Player.h"
 #include "Scenario.h"
 
 class GameLayer :
@@ -20,8 +21,8 @@ public:
 	void padToControl(SDL_Event event) override {};
 private:
 	/* Showmatch */
-	// Player player1
-	// Player player2
+	Player* player1;
+	Player* player2;
 	Background* background;
 	queue<Scenario*> scenarios;
 	/* Showmatch loading */

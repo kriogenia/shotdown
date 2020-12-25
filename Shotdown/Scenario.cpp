@@ -72,7 +72,7 @@ void Scenario::loadScenario(string filename)
 		}
 
 		// Player spawns
-		if (name == "players") {
+		if (name == "Player") {
 			tinyxml2::XMLNode* n;
 			for (n = c->FirstChild(); n != NULL; n = n->NextSibling()) {
 				string objectX = n->ToElement()->Attribute("x");

@@ -14,11 +14,11 @@ GameLayer::~GameLayer()
 void GameLayer::init()
 {
 	// Generate the Players
-	// player1 = new Player
-	// player2 = new Player
-	// Generates the scenarios
+	player1 = new Player(PlayerTag::P1, game);
+	//player2 = new Player(PlayerTag::P2, game);
+	// Generate the scenarios
 	generateScenarios();
-	// Loads the first scenario
+	// Load the first scenario
 	playNextScenario();
 }
 
@@ -26,6 +26,8 @@ void GameLayer::render()
 {
 	background->render();
 	currentScenario->render();
+	player1->render();
+	//player2->render();
 }
 
 /* Generates a random pool of scenarios */
@@ -44,15 +46,17 @@ void GameLayer::playNextScenario()
 {
 	/* Clean previous state */
 	delete currentScenario;
-	// player1.clear();
-	// player2.clear();
+	player1->clear();
+	player2->clear();
 	// projectiles.clear();
 	// spawners.clear();
 	/* Load new scenario */
 	currentScenario = scenarios.front();
 	scenarios.pop();
 	cout << "New match on scenario " << currentScenario->code << endl;
-	// place Player1
+	/* Place the player and weapon spawners */
+	auto spawnPoints = currentScenario->playerSpawns;
+	player1->position = spawnPoints[0];
 	// place Player2
 	// place Spawners
 }

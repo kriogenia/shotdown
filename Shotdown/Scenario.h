@@ -10,13 +10,13 @@ public:
 	~Scenario();
 	/* Game cycle */
 	void render();
+	/* Spawn points */
+	vector<Point> playerSpawns;
 	/* Properties */
 	int code;
 private:
 	void loadScenario(string filename);
 	/* Scenario map */
 	Map* scenario_map;
-	/* Spawn points */
-	vector<Point> playerSpawns;
 	// weapon spawns
 };

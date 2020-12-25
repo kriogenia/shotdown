@@ -14,15 +14,8 @@ Actor::Actor(ActorType type, string filename, float x, float y,
 }
 
 Actor::Actor(ActorType type, string filename, float x, float y, int width, int height, Game* game) :
-	type(type),
-	game(game),
-	position({x, y}),
-	width(width),
-	height(height),
-	fileWidth(width),
-	fileHeight(height)
+	Actor(type, filename, x, y, width, height, width, height, game)
 {
-	texture = game->getTexture(filename);
 }
 
 Actor::~Actor()

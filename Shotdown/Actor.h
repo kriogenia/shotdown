@@ -4,6 +4,7 @@
 
 enum class ActorType {
 	BACKGROUND,
+	PLAYER,
 	TILE
 };
 
@@ -17,6 +18,8 @@ public:
 	virtual void render(float scrollX = 0);
 	/* Destruction */
 	virtual void destroy();
+	/* Position */
+	Point position = { 0, 0 };
 	
 protected:
 	/* Game instance */
@@ -26,8 +29,6 @@ protected:
 	/* Properties */
 	ActorType type;
 	bool pendingDestruction = false;
-	/* Position */
-	Point position = { 0, 0 };
 	/* Velocity */
 	float vx = 0;
 	float vy = 0;

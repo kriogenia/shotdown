@@ -78,6 +78,9 @@
     <ClCompile Include="Background.cpp">
       <Filter>Archivos de origen\Scenario</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Archivos de origen\Actor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -109,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="Background.h">
       <Filter>Archivos de encabezado\Scenario</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Archivos de encabezado\Actor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
