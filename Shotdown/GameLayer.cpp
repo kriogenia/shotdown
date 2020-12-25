@@ -3,6 +3,7 @@
 GameLayer::GameLayer(Game* game) :
 	Layer(game)
 {
+	background = new Background(game);
 	currentScenario = nullptr;
 }
 
@@ -23,6 +24,7 @@ void GameLayer::init()
 
 void GameLayer::render()
 {
+	background->render();
 	currentScenario->render();
 }
 

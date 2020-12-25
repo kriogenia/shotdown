@@ -37,6 +37,12 @@
     <Filter Include="Archivos de encabezado\Util">
       <UniqueIdentifier>{dbe258a4-0585-49fe-a295-46db73d4517b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Actor\Map">
+      <UniqueIdentifier>{06507570-696b-436a-9a6d-9817a03758ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actor\Map">
+      <UniqueIdentifier>{60a9522b-85da-407b-a14e-bd9f26fd1db0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -60,11 +66,17 @@
     <ClCompile Include="Actor.cpp">
       <Filter>Archivos de origen\Actor</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
-      <Filter>Archivos de origen\Actor</Filter>
-    </ClCompile>
     <ClCompile Include="tinyxml2.cpp">
       <Filter>Archivos de origen\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Archivos de origen\Actor\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Parallax.cpp">
+      <Filter>Archivos de origen\Actor\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Archivos de origen\Scenario</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,14 +95,20 @@
     <ClInclude Include="Map.h">
       <Filter>Archivos de encabezado\Scenario</Filter>
     </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Archivos de encabezado\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Archivos de encabezado\Actor\Map</Filter>
+    </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>Archivos de encabezado\Actor</Filter>
     </ClInclude>
-    <ClInclude Include="Tile.h">
-      <Filter>Archivos de encabezado\Actor</Filter>
+    <ClInclude Include="Parallax.h">
+      <Filter>Archivos de encabezado\Actor\Map</Filter>
     </ClInclude>
-    <ClInclude Include="tinyxml2.h">
-      <Filter>Archivos de encabezado\Util</Filter>
+    <ClInclude Include="Background.h">
+      <Filter>Archivos de encabezado\Scenario</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

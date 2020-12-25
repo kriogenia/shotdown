@@ -3,6 +3,7 @@
 #include "Game.h"
 
 enum class ActorType {
+	BACKGROUND,
 	TILE
 };
 

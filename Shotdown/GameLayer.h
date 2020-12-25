@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Background.h"
 #include "Layer.h"
 #include "Scenario.h"
 
@@ -21,6 +22,7 @@ private:
 	/* Showmatch */
 	// Player player1
 	// Player player2
+	Background* background;
 	queue<Scenario*> scenarios;
 	/* Showmatch loading */
 	void generateScenarios();
