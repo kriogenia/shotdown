@@ -1,13 +1,17 @@
 #include "Player.h"
 
+#include "StateFactory.h"
+
 Player::Player(PlayerTag tag, Game* game)
 	:Actor(ActorType::PLAYER, "res/players/p1.png", 0, 0, PLAYER_SIZE, PLAYER_SIZE, game)
 {
 	this->tag = tag;
+	init();
 }
 
 Player::~Player()
 {
+	states.clear();
 }
 
 void Player::update()
@@ -17,12 +21,16 @@ void Player::update()
 	position.y = static_cast<float>(cpBodyGetPosition(body).y);
 }
 
-/* Resets the player to starts a new scenario */
-void Player::clear()
+/* Init the player to start a new scenario */
+void Player::init()
 {
+	// Set the state
+	initStates();
+	state = states[ePlayerStates::IDLE];
+	state->enter();
 }
 
-/* Creates the physics of the object */
+/* Create the physics of the object */
 void Player::configureChipmunkSpace(cpSpace* chipSpace)
 {
 	// Create the body
@@ -36,4 +44,32 @@ void Player::configureChipmunkSpace(cpSpace* chipSpace)
 	cpSpaceAddShape(chipSpace, shape);
 	// Reference to the Actor into the Shape
 	cpShapeSetUserData(shape, cpDataPointer(this));
+}
+
+/* Manage the horizontal movement input */
+void Player::moveX(int axis) 
+{
+	if (axis > 0 && cpBodyGetVelocity(body).x < PLAYER_SPEED) {
+		cpBodyApplyImpulseAtLocalPoint(body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
+	}
+	if (axis< 0 && cpBodyGetVelocity(body).x > -PLAYER_SPEED) {
+		cpBodyApplyImpulseAtLocalPoint(body, cpv(-PLAYER_SPEED, 0), cpv(0, 0));
+	}
+}
+
+/* Changes the player state */
+void Player::setState(ePlayerStates id)
+{
+	state->exit();
+	state = states[id];
+	state->enter();
+}
+
+/* Init the player states */
+void Player::initStates()
+{
+	states.clear();
+	StateFactory* factory = StateFactory::getInstance();
+	states.insert_or_assign(ePlayerStates::IDLE, factory->getState(ePlayerStates::IDLE, this));
+	states.insert_or_assign(ePlayerStates::MOVING, factory->getState(ePlayerStates::MOVING, this));
 }

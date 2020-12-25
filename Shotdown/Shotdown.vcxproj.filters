@@ -49,6 +49,18 @@
     <Filter Include="Archivos de origen\Util\Chipmunk">
       <UniqueIdentifier>{c868ad0b-82a5-4772-8b34-ffef86a97c8e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\State">
+      <UniqueIdentifier>{53d6af94-489a-4f8c-a36b-bc4bace1145b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\State">
+      <UniqueIdentifier>{3edeffff-28ff-4f5f-959f-1e96583f10be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\State\Player">
+      <UniqueIdentifier>{4a775da0-85b5-4ab9-a3e0-b80c8365398d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\State\Player">
+      <UniqueIdentifier>{d2662232-5882-4332-9528-ad0f5080121c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -183,6 +195,21 @@
     <ClCompile Include="chipmunk\cpSweep1D.c">
       <Filter>Archivos de origen\Util\Chipmunk</Filter>
     </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Archivos de origen\State</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>Archivos de origen\State\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="IdlePlayerState.cpp">
+      <Filter>Archivos de origen\State\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingPlayerState.cpp">
+      <Filter>Archivos de origen\State\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="StateFactory.cpp">
+      <Filter>Archivos de origen\State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -220,6 +247,21 @@
     </ClInclude>
     <ClInclude Include="chipmunk\prime.h">
       <Filter>Archivos de encabezado\Util\Chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Archivos de encabezado\State</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
+      <Filter>Archivos de encabezado\State\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="IdlePlayerState.h">
+      <Filter>Archivos de encabezado\State\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingPlayerState.h">
+      <Filter>Archivos de encabezado\State\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="StateFactory.h">
+      <Filter>Archivos de encabezado\State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

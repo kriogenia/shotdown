@@ -15,11 +15,11 @@ public:
 	~GameLayer();
 	/* Game cycle */
 	void init() override;
-	//void processControls() override;
+	void processControls() override;
 	void update() override;
 	void render() override;
 	/* Input control */
-	void keysToControl(SDL_Event event) override {};
+	void keysToControl(SDL_Event event) override;
 	void padToControl(SDL_Event event) override {};
 private:
 	/* Showmatch */
@@ -33,6 +33,11 @@ private:
 	void playNextScenario();
 	/* Current scenario */
 	Scenario* currentScenario;
+	/* Player1 Movement */
+	int controlMoveLeft_P1 = 0;
+	int controlMoveRight_P1 = 0;
+	int controlMoveLeft_P2 = 0;
+	int controlMoveRight_P2 = 0;
 	// vector<Projectile> projectiles;
 	// vector<Spawner> spawners
 

@@ -24,6 +24,12 @@ void GameLayer::init()
 	playNextScenario();
 }
 
+void GameLayer::processControls()
+{
+	Layer::processControls();
+	player1->moveX(controlMoveLeft_P1 + controlMoveRight_P1);
+}
+
 void GameLayer::update()
 {
 	// Physics update
@@ -38,6 +44,50 @@ void GameLayer::render()
 	currentScenario->render();
 	player1->render();
 	//player2->render();
+}
+
+void GameLayer::keysToControl(SDL_Event event) {
+	/* Press */
+	if (event.type == SDL_KEYDOWN) {
+		int code = event.key.keysym.sym;
+		switch (code) {
+		case SDLK_ESCAPE:
+			game->loopActive = false;
+			break;
+		case SDLK_1:
+			game->scale();
+			break;
+		case SDLK_d:	// Right
+			controlMoveRight_P1 = 1;
+			break;
+		case SDLK_a:	// Left
+			controlMoveLeft_P1 = -1;
+			break;
+			/*
+		case SDLK_w: // arriba
+			controlMoveY1 = -1;
+			break;
+		case SDLK_s: // abajo
+			controlMoveY1 = 1;
+			break;
+		case SDLK_SPACE: // dispara
+			controlShoot1 = true;
+			break;
+			*/
+		}
+	}
+	/* Release */
+	if (event.type == SDL_KEYUP) {
+		int code = event.key.keysym.sym;
+		switch (code) {
+		case SDLK_d:	// Right
+			controlMoveRight_P1 = 0;
+			break;
+		case SDLK_a:	// Left
+			controlMoveLeft_P1 = 0;
+			break;
+		}
+	}
 }
 
 /* Generates a random pool of scenarios */
@@ -57,8 +107,8 @@ void GameLayer::reset()
 	// Clear the scenario
 	delete currentScenario;
 	// Clear the entities
-	player1->clear();
-	player2->clear();
+	player1->init();
+	//player2->init();
 	// projectiles.clear();
 	// spawners.clear();
 }

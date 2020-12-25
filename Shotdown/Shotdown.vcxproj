@@ -187,12 +187,17 @@
     <ClCompile Include="chipmunk\cpSweep1D.c" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLayer.cpp" />
+    <ClCompile Include="IdlePlayerState.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MovingPlayerState.cpp" />
     <ClCompile Include="Parallax.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="Scenario.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateFactory.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
@@ -202,11 +207,16 @@
     <ClInclude Include="chipmunk\prime.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameLayer.h" />
+    <ClInclude Include="IdlePlayerState.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MovingPlayerState.h" />
     <ClInclude Include="Parallax.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerState.h" />
     <ClInclude Include="Scenario.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateFactory.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="tinyxml2.h" />
   </ItemGroup>

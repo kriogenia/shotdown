@@ -2,13 +2,24 @@
 
 #include "Actor.h"
 
+#include "PlayerState.h"
+class PlayerState;
+
+/* Attributes */
 constexpr auto PLAYER_SIZE = 24;
+constexpr auto PLAYER_SPEED = 3;
+/* Physics */
 constexpr auto PLAYER_BODY_WEIGHT = 3;
 constexpr auto PLAYER_SHAPE_FRICTION = 0.8;
 
 enum class PlayerTag {
     P1,
     P2
+};
+
+enum class ePlayerStates {
+    IDLE,
+    MOVING
 };
 
 class Player :
@@ -19,14 +30,22 @@ public:
     ~Player();
     /* Game cycle */
     void update();
-    /* Physics */
+    /* Configuration */
+    void init();
     void configureChipmunkSpace(cpSpace* chipSpace) override;
-    /* Player reset */
-    void clear();
+    /* Controls */
+    void moveX(int axis);
+    /* State */
+    void setState(ePlayerStates id);
     /* Tag */
     PlayerTag tag;
 
 private:
-
+    /* State */
+    PlayerState* state = nullptr;
+    map<ePlayerStates, PlayerState*> states;
+    void initStates();
+    /* Movement */
+    int controlX = 0;
 };
 
