@@ -213,6 +213,9 @@
     <ClCompile Include="JumpingPlayerState.cpp">
       <Filter>Archivos de origen\State\Player</Filter>
     </ClCompile>
+    <ClCompile Include="FallingPlayerState.cpp">
+      <Filter>Archivos de origen\State\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -267,6 +270,9 @@
       <Filter>Archivos de encabezado\State</Filter>
     </ClInclude>
     <ClInclude Include="JumpingPlayerState.h">
+      <Filter>Archivos de encabezado\State\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="FallingPlayerState.h">
       <Filter>Archivos de encabezado\State\Player</Filter>
     </ClInclude>
   </ItemGroup>

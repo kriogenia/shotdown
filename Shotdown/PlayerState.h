@@ -3,7 +3,10 @@
 #include "State.h"
 
 #include "Player.h"
+enum class ePlayerStates;
 class Player;
+
+constexpr auto TICKS_TO_SWAP = 3;
 
 class PlayerState :
     public State
@@ -15,6 +18,8 @@ public:
 	/* Player control */
 	virtual void move(int direction) = 0;
 	virtual void jump() = 0;
+	/* Tag */
+	ePlayerStates tag;
 
 protected:
 	Player* player;

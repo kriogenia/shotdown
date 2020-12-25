@@ -21,7 +21,8 @@ enum class PlayerTag {
 enum class ePlayerStates {
     IDLE,
     MOVING,
-    JUMPING
+    JUMPING,
+    FALLING
 };
 
 class Player :

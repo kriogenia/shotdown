@@ -3,28 +3,24 @@
 JumpingPlayerState::JumpingPlayerState(Player* actor) :
 	PlayerState(actor)
 {
+	tag = ePlayerStates::JUMPING;
 }
 
 void JumpingPlayerState::enter()
 {
 	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now JUMPING " << endl;
-	stopCounter = 0;
+	ticksFalling = 0;
 }
 
 void JumpingPlayerState::update()
 {
-	if (cpBodyGetVelocity(player->body).y< 0.01 && 
-		cpBodyGetVelocity(player->body).y> -0.01) {
-		stopCounter++;
-		if (stopCounter >= TICKS_TO_STOP) {
-			player->setState(ePlayerStates::IDLE);
+	// Stop ascension check
+	if (cpBodyGetVelocity(player->body).y < 0.01) {
+		ticksFalling++;
+		if (ticksFalling >= TICKS_TO_SWAP) {
+			player->setState(ePlayerStates::FALLING);
 		}
 	}
-}
-
-void JumpingPlayerState::exit()
-{
-	stopCounter = 0;
 }
 
 void JumpingPlayerState::move(int direction)

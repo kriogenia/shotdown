@@ -2,8 +2,6 @@
 
 #include "PlayerState.h"
 
-constexpr auto TICKS_TO_STOP = 3;
-
 class JumpingPlayerState :
     public PlayerState
 {
@@ -12,11 +10,10 @@ public:
     /* State */
     void enter() override;
     void update() override;
-    void exit() override;
     /* Player control */
-    void move(int direction) override;
+    void move(int direction);
     void jump() override;
 
 private:
-    int stopCounter = TICKS_TO_STOP;
+    int ticksFalling = 0;
 };

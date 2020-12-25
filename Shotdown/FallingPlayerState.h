@@ -2,16 +2,19 @@
 
 #include "PlayerState.h"
 
-class IdlePlayerState :
+class FallingPlayerState :
     public PlayerState
 {
 public:
-    IdlePlayerState(Player* actor);
+    FallingPlayerState(Player* actor);
     /* State */
     void enter() override;
     void update() override;
-    /* PlayerState */
+    /* Player control */
     void move(int direction) override;
-    void jump() override;
+    inline void jump() override {};
 
+private:
+    int ticksGrounded = 0;
 };
+
