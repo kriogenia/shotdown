@@ -16,6 +16,7 @@ public:
     void pressTrigger() override;
     void releaseTrigger() override;
     /* Prototype */
+    Weapon* clone() override;
     Weapon* clone(Player* owner) override;
 
 private:

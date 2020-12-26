@@ -10,15 +10,19 @@
 
 StateFactory* StateFactory::instance = 0;
 
-StateFactory* StateFactory::getInstance() {
+StateFactory* StateFactory::getInstance() 
+{
     if (instance == 0)
         instance = new StateFactory;
     return instance;
 }
 
-StateFactory::StateFactory() {}
+StateFactory::StateFactory() 
+{
+}
 
-PlayerState* StateFactory::getState(ePlayerStates stateId, Player* player) {
+PlayerState* StateFactory::getState(ePlayerStates stateId, Player* player) 
+{
     switch (stateId) {
     case ePlayerStates::IDLE:
         return new IdlePlayerState(player);

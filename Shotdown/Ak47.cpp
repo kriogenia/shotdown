@@ -38,6 +38,7 @@ void Ak47::pressTrigger()
 void Ak47::releaseTrigger()
 {
 	shooting = false;
+	rarity = COMMON;
 }
 
 Weapon* Ak47::clone(Player* owner)
