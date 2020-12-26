@@ -8,12 +8,27 @@ DashingPlayerState::DashingPlayerState(Player* player) :
 
 void DashingPlayerState::enter()
 {
-	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now MOVING " << endl;
+	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now DASHING " << endl;
+	remainingDuration = PLAYER_DASH_DURATION;
 }
 
 void DashingPlayerState::update()
 {
-	cout << cpBodyGetVelocity(player->body).x << " " << cpBodyGetVelocity(player->body).y << endl;
+	// Dash out
+	remainingDuration--;
+	if (remainingDuration <= 0) {
+		if (cpBodyGetVelocity(player->body).y > 0) {
+			player->setState(ePlayerStates::FALLING);
+		}
+		else {
+			player->setState(ePlayerStates::IDLE);
+		}
+	}
+}
+
+void DashingPlayerState::exit()
+{
+	player->dashCd = DASH_CD;
 }
 
 void DashingPlayerState::hitLeft()

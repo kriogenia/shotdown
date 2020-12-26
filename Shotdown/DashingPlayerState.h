@@ -10,6 +10,7 @@ public:
     /* State */
     void enter() override;
     void update() override;
+    void exit() override;
     /* Player state */
     // Controls
     inline void move(int direction) override {};
@@ -18,5 +19,7 @@ public:
     void hitLeft() override;
     void hitRight() override;
 
+private:
+    int remainingDuration = PLAYER_DASH_DURATION;
 };
 

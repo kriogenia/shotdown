@@ -21,7 +21,18 @@ void PlayerState::move(int direction)
 
 void PlayerState::jump()
 {
-	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_IMPULSE), cpv(0, 0));
+	//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_IMPULSE), cpv(0, 0));
+	cpBodySetVelocity(player->body, cpv(cpBodyGetVelocity(player->body).x, -PLAYER_JUMP));
+}
+
+void PlayerState::dash()
+{
+	if (player->dashCd <= 0) {
+		auto direction = (player->orientation == PlayerOrientation::RIGHT) ? 1.0 : -1.0;
+		auto impulse = direction * PLAYER_DASH_IMPULSE;
+		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(impulse, 0), cpv(0, 0));
+		player->setState(ePlayerStates::DASHING);
+	}
 }
 
 void PlayerState::setOrientation(int direction)

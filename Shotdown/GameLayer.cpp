@@ -59,20 +59,20 @@ void GameLayer::keysToControl(SDL_Event event) {
 		case SDLK_1:
 			game->scale();
 			break;
-		case SDLK_d:	// Right
+		case SDLK_d:		// Right
 			controlMoveRight_P1 = 1;
 			break;
-		case SDLK_a:	// Left
+		case SDLK_a:		// Left
 			controlMoveLeft_P1 = -1;
 			break;
-		case SDLK_w:	// Up
-			cout << "JUMP" << endl;
+		case SDLK_w:		// Jump
+			//cout << "JUMP" << endl;
 			player1->jump();
 			break;
-			/*
-		case SDLK_s: // abajo
-			controlMoveY1 = 1;
+		case SDLK_LSHIFT:	// Dash
+			player1->dash();
 			break;
+			/*
 		case SDLK_SPACE: // dispara
 			controlShoot1 = true;
 			break;

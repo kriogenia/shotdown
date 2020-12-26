@@ -1,5 +1,6 @@
 #include "StateFactory.h"
 
+#include "DashingPlayerState.h"
 #include "DoubleJumpingPlayerState.h"
 #include "FallingPlayerState.h"
 #include "IdlePlayerState.h"
@@ -31,6 +32,8 @@ PlayerState* StateFactory::getState(ePlayerStates stateId, Player* player) {
         return new FallingPlayerState(player);
     case ePlayerStates::SLIDING:
         return new SlidingPlayerState(player);
+    case ePlayerStates::DASHING:
+        return new DashingPlayerState(player);
     default: 
         return nullptr;
     }

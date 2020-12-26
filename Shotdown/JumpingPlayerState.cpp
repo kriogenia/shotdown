@@ -14,7 +14,6 @@ void JumpingPlayerState::enter()
 void JumpingPlayerState::update()
 {
 	// Stop ascension check
-	cout << cpBodyGetVelocity(player->body).y << endl;
 	if (cpBodyGetVelocity(player->body).y > 0.01) {
 		player->setState(ePlayerStates::FALLING);
 	}
@@ -22,11 +21,8 @@ void JumpingPlayerState::update()
 
 void JumpingPlayerState::jump()
 {
-	//if (cpBodyGetVelocity(player->body).y > -DOUBLE_JUMP_CAP) {
-		//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_DOUBLE_JUMP_IMPULSE), cpv(0, 0));
-		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_IMPULSE), cpv(0, 0));
-		player->setState(ePlayerStates::DOUBLE_JUMPING);
-	//}
+	PlayerState::jump();
+	player->setState(ePlayerStates::DOUBLE_JUMPING);
 }
 
 void JumpingPlayerState::hitLeft()

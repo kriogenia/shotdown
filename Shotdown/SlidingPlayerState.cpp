@@ -18,23 +18,10 @@ void SlidingPlayerState::enter()
 void SlidingPlayerState::update()
 {
 	// Limit player velocity
-	if (cpBodyGetVelocity(player->body).y > SLIDING_SPEED) {
-		cpBodySetVelocity(player->body, 
-			cpv(cpBodyGetVelocity(player->body).x, SLIDING_SPEED));
-	}
+	cpBodySetVelocity(player->body, cpv(cpBodyGetVelocity(player->body).x, SLIDING_SPEED));
 	// Swap to falling when not wall appended
 	if (!keepsSliding) {
 		player->setState(ePlayerStates::FALLING);
-	}
-	// Swap to idle when grounded
-	if (cpBodyGetVelocity(player->body).y < 1.8) {
-		ticksGrounded++;
-		if (ticksGrounded >= TICKS_TO_SWAP) {
-			player->setState(ePlayerStates::IDLE);
-		}
-	}
-	else {
-		ticksGrounded = 0;
 	}
 	// Restart to no sliding to next tick
 	keepsSliding = false;
@@ -42,11 +29,12 @@ void SlidingPlayerState::update()
 
 void SlidingPlayerState::jump()
 {
-	// Wall jump, 45º degrees jump
-	int direction = (player->orientation == PlayerOrientation::RIGHT) ? 1 : -1;
-	cpBodyApplyImpulseAtLocalPoint(player->body, 
-		cpv(direction * (WALL_JUMP_IMPULSE_X), -WALL_JUMP_IMPULSE_Y),
-		cpv(0, 0));
+	// Wall jump, angled jump
+	auto direction = (player->orientation == PlayerOrientation::RIGHT) ? 1.0 : -1.0;
+	auto impulse = direction * PLAYER_WALL_JUMP_X;
+	cpBodySetVelocity(player->body, cpv(impulse, -PLAYER_WALL_JUMP_Y));
+	//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(impulse, -PLAYER_WALL_JUMP_IMPULSE_Y),cpv(0, 0));
+	player->setState(ePlayerStates::JUMPING);
 }
 
 void SlidingPlayerState::hitLeft()

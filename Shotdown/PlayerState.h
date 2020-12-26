@@ -18,6 +18,7 @@ public:
 	/* Player control */
 	virtual void move(int direction);
 	virtual void jump();
+	virtual void dash();
 	/* Events */
 	virtual void hitTop() {};
 	virtual void hitLeft() {};

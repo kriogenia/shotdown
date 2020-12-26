@@ -19,6 +19,9 @@ Player::~Player()
 
 void Player::update()
 {
+	cout << cpBodyGetVelocity(body).x << ", " << cpBodyGetVelocity(body).y << endl;
+	// Update cooldowns
+	dashCd--;
 	// Limit player fall velocity
 	if (cpBodyGetVelocity(body).y > PLAYER_MAX_FALL_SPEED) {
 		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
@@ -68,6 +71,12 @@ void Player::jump()
 	state->jump();
 }
 
+/* Manage the dash input */
+void Player::dash()
+{
+	state->dash();
+}
+
 /* Changes the player state */
 void Player::setState(ePlayerStates id)
 {
@@ -107,4 +116,5 @@ void Player::initStates()
 	states.insert_or_assign(ePlayerStates::DOUBLE_JUMPING, factory->getState(ePlayerStates::DOUBLE_JUMPING, this));
 	states.insert_or_assign(ePlayerStates::FALLING, factory->getState(ePlayerStates::FALLING, this));
 	states.insert_or_assign(ePlayerStates::SLIDING, factory->getState(ePlayerStates::SLIDING, this));
+	states.insert_or_assign(ePlayerStates::DASHING, factory->getState(ePlayerStates::DASHING, this));
 }
