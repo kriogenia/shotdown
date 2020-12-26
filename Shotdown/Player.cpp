@@ -30,6 +30,18 @@ void Player::tick()
 	// Set calculated position
 	position.x = static_cast<float>(cpBodyGetPosition(body).x);
 	position.y = static_cast<float>(cpBodyGetPosition(body).y);
+	// Update weapon
+	if (weapon != nullptr) {
+		weapon->tick();
+	}
+}
+
+void Player::render()
+{
+	Actor::render();
+	if (weapon != nullptr) {
+		weapon->render();
+	}
 }
 
 /* Init the player to start a new scenario */

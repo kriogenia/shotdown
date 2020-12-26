@@ -9,6 +9,16 @@ WeaponSpawner::WeaponSpawner(float x, float y, Game* game) :
 	getWeapon();
 }
 
+void WeaponSpawner::tick()
+{
+	if (weapon == nullptr) {
+		cooldown--;
+		if (cooldown <= 0) {
+			getWeapon();
+		}
+	}
+}
+
 void WeaponSpawner::render()
 {
 	Actor::render();
@@ -17,10 +27,18 @@ void WeaponSpawner::render()
 	}
 }
 
+void WeaponSpawner::pickWeapon(Player* player)
+{
+	player->weapon = weapon->clone(player);
+	weapon = nullptr;
+	cooldown = SPAWNER_CD;
+}
+
 /* Get a new weapon from the pool or goes ? */
 void WeaponSpawner::getWeapon()
 {
 	random = (rand() % RANDOM_SPAWNER_RARITY == 0);
+	//random = true;				// Debug
 	WeaponFactory* factory = WeaponFactory::getInstance(game);
 	weapon = random ? factory->getRandomWeapon() : factory->getWeapon();
 	weapon->position = position;

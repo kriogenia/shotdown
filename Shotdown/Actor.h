@@ -19,6 +19,7 @@ public:
 	cpBody* body = nullptr;
 	cpShape* shape = nullptr;
 	virtual void configureChipmunkSpace(cpSpace* chipSpace) {};
+	bool isOverlap(Actor* actor);
 	/* Position */
 	Point position = { 0, 0 };
 	

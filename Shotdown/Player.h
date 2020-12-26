@@ -49,7 +49,8 @@ public:
     Player(PlayerTag tag, Game* game);
     ~Player();
     /* Game cycle */
-    void tick();
+    void tick() override;
+    void render() override;
     /* Configuration */
     void init();
     void configureChipmunkSpace(cpSpace* chipSpace) override;
@@ -61,6 +62,8 @@ public:
     PlayerState* prevState = nullptr;
     void setState(ePlayerStates id);
     PlayerOrientation orientation;
+    /* Weapon */
+    Weapon* weapon = nullptr;
     /* Events */
     void collisioned(Point collisionedPosition);
     /* Tag */
@@ -73,8 +76,6 @@ private:
     PlayerState* state = nullptr;
     map<ePlayerStates, PlayerState*> states;
     void initStates();
-    /* Weapon */
-    Weapon* weapon = nullptr;
     /* Movement */
     int controlX = 0;
 };

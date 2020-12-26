@@ -15,6 +15,9 @@ class Weapon :
 {
 public:
 	Weapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game);
+	/* Actor */
+	void tick() override;
+	void render() override;
 	/* Control */
 	virtual void pressTrigger() = 0;
 	virtual void releaseTrigger() = 0;

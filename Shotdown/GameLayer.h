@@ -33,6 +33,8 @@ private:
 	void generateScenarios();
 	void reset();
 	void playNextScenario();
+	/* Events */
+	void pickWeapon(Player* player);
 	/* Current scenario */
 	Scenario* currentScenario;
 	/* Player1 Movement */

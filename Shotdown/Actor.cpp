@@ -49,3 +49,16 @@ void Actor::destroy()
 {
 	this->pendingDestruction = true;
 }
+
+/* Check if two actors are overlapped */
+bool Actor::isOverlap(Actor* actor)
+{
+	bool overlap = false;
+	if (actor->position.x - actor->width / 2 <= position.x + width / 2
+		&& actor->position.x + actor->width / 2 >= position.x - width / 2
+		&& actor->position.y + actor->height / 2 >= position.y - height / 2
+		&& actor->position.y - actor->height / 2 <= position.y + height / 2) {
+		overlap = true;
+	}
+	return overlap;
+}

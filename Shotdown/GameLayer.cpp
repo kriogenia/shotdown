@@ -42,6 +42,10 @@ void GameLayer::tick()
 	cpSpaceStep(currentScenario->chipSpace, 1.0/TARGET_FPS);
 	// Players update
 	player1->tick();
+	// Spawners update
+	for (auto const& spawner : spawners) {
+		spawner->tick();
+	}
 }
 
 void GameLayer::render()
@@ -78,6 +82,9 @@ void GameLayer::keysToControl(SDL_Event event) {
 			break;
 		case SDLK_LSHIFT:	// Dash
 			player1->dash();
+			break;
+		case SDLK_e:		// Pick weapon
+			pickWeapon(player1);
 			break;
 			/*
 		case SDLK_SPACE: // dispara
@@ -145,6 +152,15 @@ void GameLayer::playNextScenario()
 	}
 	/* Create the collision handlers */
 	ChipmunkHelper::setHandlers(currentScenario->chipSpace);
-
 }
 
+/* Launch player and spawner interaction event */
+void GameLayer::pickWeapon(Player* player)
+{
+	for (auto const& spawner : spawners) {
+		if (spawner->isOverlap(player)) {
+			spawner->pickWeapon(player);
+			return;
+		}
+	}
+}

@@ -10,11 +10,7 @@ Ak47::Ak47(Game* game) :
 
 void Ak47::tick()
 {
-	// Relocation
-	if (owner != nullptr) {
-		position = owner->position;
-		// orientation
-	}
+	Weapon::tick();
 	// Player is shooting
 	if (shooting) {
 		// Has ammo to shoot
