@@ -9,7 +9,7 @@ public:
     SlidingPlayerState(Player* player);
     /* State */
     void enter() override;
-    void update() override;
+    void tick() override;
     /* PlayerState */
     // Control
     inline void move(int duration) override {};

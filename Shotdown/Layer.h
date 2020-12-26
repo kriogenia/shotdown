@@ -10,7 +10,7 @@ public:
 	/* Game cycle */
 	virtual void init() = 0;
 	virtual void processControls();
-	virtual void update() = 0;
+	virtual void tick() = 0;
 	virtual void render() = 0;
 	/* Input control */
 	virtual void keysToControl(SDL_Event event) = 0;

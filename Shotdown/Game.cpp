@@ -32,7 +32,7 @@ void Game::loop() {
 		initTick = SDL_GetTicks();
 		/* Game cycle */
 		layer->processControls();
-		layer->update();
+		layer->tick();
 		layer->render();
 		/* Rendering */
 		SDL_RenderPresent(renderer);

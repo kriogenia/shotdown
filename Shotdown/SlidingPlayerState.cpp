@@ -15,7 +15,7 @@ void SlidingPlayerState::enter()
 		cpv(cpBodyGetVelocity(player->body).x, SLIDING_SPEED));
 }
 
-void SlidingPlayerState::update()
+void SlidingPlayerState::tick()
 {
 	// Limit player velocity
 	cpBodySetVelocity(player->body, cpv(cpBodyGetVelocity(player->body).x, SLIDING_SPEED));

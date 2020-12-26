@@ -6,7 +6,7 @@ Tile::Tile(int tileNum, float x, float y, Game* game)
 	this->tileNum = tileNum;
 }
 
-void Tile::render(float scrollX) {
+void Tile::render() {
 	// Pointer to the specified portion
 	int xOfTileInFile = (tileNum % TILES_PER_LINE_ON_FILE) - 1;
 	int yOfTileInFile = tileNum / TILES_PER_LINE_ON_FILE;
@@ -18,7 +18,7 @@ void Tile::render(float scrollX) {
 	source.h = TILE_SIZE;
 	// Destination to draw
 	SDL_Rect destination;
-	destination.x = static_cast<int>(position.x - TILE_SIZE / 2 - scrollX);
+	destination.x = static_cast<int>(position.x - TILE_SIZE / 2);
 	destination.y = static_cast<int>(position.y - TILE_SIZE / 2);
 	destination.w = TILE_SIZE+1;
 	destination.h = TILE_SIZE+1;

@@ -6,6 +6,7 @@
 #include "Layer.h"
 #include "Player.h"
 #include "Scenario.h"
+#include "WeaponSpawner.h"
 
 class GameLayer :
     public Layer
@@ -16,7 +17,7 @@ public:
 	/* Game cycle */
 	void init() override;
 	void processControls() override;
-	void update() override;
+	void tick() override;
 	void render() override;
 	/* Input control */
 	void keysToControl(SDL_Event event) override;
@@ -26,6 +27,7 @@ private:
 	Player* player1;
 	Player* player2;
 	Background* background;
+	vector<WeaponSpawner*> spawners;
 	queue<Scenario*> scenarios;
 	/* Showmatch loading */
 	void generateScenarios();
@@ -39,7 +41,6 @@ private:
 	int controlMoveLeft_P2 = 0;
 	int controlMoveRight_P2 = 0;
 	// vector<Projectile> projectiles;
-	// vector<Spawner> spawners
 
 };
 

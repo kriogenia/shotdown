@@ -23,7 +23,7 @@ WeaponFactory::WeaponFactory(Game* game)
 Weapon* WeaponFactory::getWeapon()
 {
     int position = rand() % pool.size();
-    Weapon* weapon = weapons[position]->clone();
+    Weapon* weapon = weapons[pool[position]]->clone();
     pool.erase(pool.begin() + position);
     if (pool.size() <= 0) {
         fillPool();
@@ -40,7 +40,7 @@ Weapon* WeaponFactory::getRandomWeapon()
 /* Add weapons based on rarity to the pool */
 void WeaponFactory::fillPool()
 {
-    for (int i = 0; i < weapons.size(); i++) {
+    for (unsigned int i = 0; i < weapons.size(); i++) {
         int copies = weapons[i]->rarity;
         for (int j = 0; j < copies; j++) {
             pool.push_back(i);

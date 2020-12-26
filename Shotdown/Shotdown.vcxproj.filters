@@ -61,6 +61,12 @@
     <Filter Include="Archivos de origen\State\Player">
       <UniqueIdentifier>{d2662232-5882-4332-9528-ad0f5080121c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Actor\Weapons">
+      <UniqueIdentifier>{fdffa6d5-56de-4121-ba2c-2688d1e1efd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actor\Weapons">
+      <UniqueIdentifier>{8e15c468-ef57-40ab-8fa6-86af492c7e6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -228,6 +234,18 @@
     <ClCompile Include="DashingPlayerState.cpp">
       <Filter>Archivos de origen\State\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Archivos de origen\Actor\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Ak47.cpp">
+      <Filter>Archivos de origen\Actor\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponFactory.cpp">
+      <Filter>Archivos de origen\Actor\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponSpawner.cpp">
+      <Filter>Archivos de origen\Actor\Weapons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -298,6 +316,18 @@
     </ClInclude>
     <ClInclude Include="DashingPlayerState.h">
       <Filter>Archivos de encabezado\State\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Archivos de encabezado\Actor\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Ak47.h">
+      <Filter>Archivos de encabezado\Actor\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponFactory.h">
+      <Filter>Archivos de encabezado\Actor\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponSpawner.h">
+      <Filter>Archivos de encabezado\Actor\Weapons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@ void MovingPlayerState::enter()
 	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now MOVING " << endl;
 }
 
-void MovingPlayerState::update()
+void MovingPlayerState::tick()
 {
 	// Falling check
 	if (cpBodyGetVelocity(player->body).y > 0.01) {

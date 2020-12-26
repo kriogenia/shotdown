@@ -11,7 +11,7 @@ public:
     JumpingPlayerState(Player* actor);
     /* State */
     void enter() override;
-    void update() override;
+    void tick() override;
     /* Player control */
     // Control
     void jump() override;

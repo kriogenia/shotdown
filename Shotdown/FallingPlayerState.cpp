@@ -12,10 +12,8 @@ void FallingPlayerState::enter()
 	ticksGrounded = 0;
 }
 
-void FallingPlayerState::update()
+void FallingPlayerState::tick()
 {
-	if (player->position.y < HEIGHT)
-		cout << cpBodyGetVelocity(player->body).y << endl;
 	// Fall end check
 	if (cpBodyGetVelocity(player->body).y < 0.01) {
 		ticksGrounded++;

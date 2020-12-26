@@ -11,7 +11,7 @@ void JumpingPlayerState::enter()
 	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now JUMPING " << endl;
 }
 
-void JumpingPlayerState::update()
+void JumpingPlayerState::tick()
 {
 	// Stop ascension check
 	if (cpBodyGetVelocity(player->body).y > 0.01) {

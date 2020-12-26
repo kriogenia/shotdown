@@ -16,10 +16,12 @@ public:
     void pressTrigger() override;
     void releaseTrigger() override;
     /* Prototype */
-    Weapon* clone() override;
+    inline Weapon* clone() override { return new Ak47(game); };
     Weapon* clone(Player* owner) override;
+    /* Debug */
+    inline string toString() override { return "AK-47"; };
 
 private:
-    bool shooting;
+    bool shooting = false;
 };
 

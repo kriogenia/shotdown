@@ -9,7 +9,7 @@ public:
     IdlePlayerState(Player* actor);
     /* State */
     void enter() override;
-    void update() override;
+    void tick() override;
     /* PlayerState */
     // Control
     void move(int direction) override;

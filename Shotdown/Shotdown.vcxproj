@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Ak47.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="ChipmunkHelper.cpp" />
     <ClCompile Include="chipmunk\chipmunk.c" />
@@ -206,9 +207,13 @@
     <ClCompile Include="StateFactory.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="WeaponFactory.cpp" />
+    <ClCompile Include="WeaponSpawner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
+    <ClInclude Include="Ak47.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="ChipmunkHelper.h" />
     <ClInclude Include="chipmunk\prime.h" />
@@ -231,6 +236,9 @@
     <ClInclude Include="StateFactory.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="WeaponFactory.h" />
+    <ClInclude Include="WeaponSpawner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

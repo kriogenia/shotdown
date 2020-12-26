@@ -9,7 +9,7 @@ public:
     DoubleJumpingPlayerState(Player* actor);
     /* State */
     void enter() override;
-    void update() override;
+    void tick() override;
     /* Player control */
     // Control
     inline void jump() override {};

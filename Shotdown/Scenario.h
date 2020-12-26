@@ -14,6 +14,7 @@ public:
 	cpSpace* chipSpace;
 	/* Spawn points */
 	vector<Point> playerSpawns;
+	vector<Point> wsSpawns;
 	/* Properties */
 	int code;
 private:
@@ -21,5 +22,4 @@ private:
 	void loadScenario(string filename);
 	/* Scenario map */
 	Map* scenario_map;
-	// weapon spawns
 };

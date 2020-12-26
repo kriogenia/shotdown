@@ -17,9 +17,8 @@ Player::~Player()
 	states.clear();
 }
 
-void Player::update()
+void Player::tick()
 {
-	cout << cpBodyGetVelocity(body).x << ", " << cpBodyGetVelocity(body).y << endl;
 	// Update cooldowns
 	dashCd--;
 	// Limit player fall velocity
@@ -27,7 +26,7 @@ void Player::update()
 		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
 	}
 	// Update state
-	state->update();
+	state->tick();
 	// Set calculated position
 	position.x = static_cast<float>(cpBodyGetPosition(body).x);
 	position.y = static_cast<float>(cpBodyGetPosition(body).y);
@@ -89,8 +88,8 @@ void Player::setState(ePlayerStates id)
 /* Manage the collision with a Tile */
 void Player::collisioned(Point collisionedPosition)
 {
-	int orientationX = collisionedPosition.x - position.x;
-	int orientationY = collisionedPosition.y - position.y;
+	float orientationX = collisionedPosition.x - position.x;
+	float orientationY = collisionedPosition.y - position.y;
 	if (abs(orientationX) >= abs(orientationY)) {
 		if (orientationX > 0)
 			state->hitRight();

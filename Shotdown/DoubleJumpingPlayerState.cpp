@@ -11,7 +11,7 @@ void DoubleJumpingPlayerState::enter()
 	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now DOUBLE JUMPING " << endl;
 }
 
-void DoubleJumpingPlayerState::update()
+void DoubleJumpingPlayerState::tick()
 {
 	// Stop ascension check
 	if (cpBodyGetVelocity(player->body).y > 0.01) {

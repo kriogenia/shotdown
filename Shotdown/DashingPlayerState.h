@@ -9,7 +9,7 @@ public:
     DashingPlayerState(Player* player);
     /* State */
     void enter() override;
-    void update() override;
+    void tick() override;
     void exit() override;
     /* Player state */
     // Controls
@@ -20,6 +20,6 @@ public:
     void hitRight() override;
 
 private:
-    int remainingDuration = PLAYER_DASH_DURATION;
+    float remainingDuration = PLAYER_DASH_DURATION;
 };
 

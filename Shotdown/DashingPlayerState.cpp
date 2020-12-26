@@ -12,7 +12,7 @@ void DashingPlayerState::enter()
 	remainingDuration = PLAYER_DASH_DURATION;
 }
 
-void DashingPlayerState::update()
+void DashingPlayerState::tick()
 {
 	// Dash out
 	remainingDuration--;

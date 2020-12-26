@@ -1,14 +1,20 @@
 #include "Ak47.h"
 
 Ak47::Ak47(Game* game) :
-	Weapon("res/weapons/ak47.png", 11, 8, 11, 8, game)
+	Weapon("res/weapons/ak47.png", 30, 8, 30, 8, game)
 {
 	loadedAmmo = AK47_CLIP_SIZE;
 	unloadedAmmo = AK47_EXTRA_AMMO;
+	rarity = COMMON;
 }
 
 void Ak47::tick()
 {
+	// Relocation
+	if (owner != nullptr) {
+		position = owner->position;
+		// orientation
+	}
 	// Player is shooting
 	if (shooting) {
 		// Has ammo to shoot

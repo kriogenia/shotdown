@@ -26,6 +26,7 @@ constexpr auto GRAVITY = 10 * TARGET_FPS;
 enum class ActorType {
 	BACKGROUND,
 	PLAYER,
+	SPAWNER,
 	TILE,
 	WEAPON
 };

@@ -14,7 +14,7 @@ class PlayerState :
 public:
     PlayerState(Player* actor);
 	/* Game cycle */
-	virtual void update() {};
+	virtual void tick() {};
 	/* Player control */
 	virtual void move(int direction);
 	virtual void jump();

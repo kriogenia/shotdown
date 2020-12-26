@@ -19,8 +19,10 @@ public:
 	virtual void pressTrigger() = 0;
 	virtual void releaseTrigger() = 0;
 	/* Prototype */
-	inline virtual Weapon* clone() { return new Ak47(game); };
+	virtual Weapon* clone() = 0;
 	virtual Weapon* clone(Player* owner) = 0;
+	/* Debug */
+	virtual string toString() = 0;
 	/* Owner */
 	Player* owner = nullptr;
 	/* Attributes */

@@ -16,7 +16,6 @@ Scenario::Scenario(int code, Game* game) :
 Scenario::~Scenario()
 {
 	cpSpaceFree(chipSpace);
-	delete chipSpace;
 	delete scenario_map;
 	playerSpawns.clear();
 }
@@ -78,13 +77,23 @@ void Scenario::loadScenario(string filename)
 			}
 		}
 
-		// Player spawns
-		if (name == "Player") {
+		// Player spawn points
+		else if (name == "Player") {
 			tinyxml2::XMLNode* n;
 			for (n = c->FirstChild(); n != NULL; n = n->NextSibling()) {
 				string objectX = n->ToElement()->Attribute("x");
 				string objectY = n->ToElement()->Attribute("y");
 				playerSpawns.push_back({ stof(objectX), stof(objectY) });
+			}
+		}
+
+		// WeaponSpawners spawn points
+		else if (name == "Spawner") {
+			tinyxml2::XMLNode* n;
+			for (n = c->FirstChild(); n != NULL; n = n->NextSibling()) {
+				string objectX = n->ToElement()->Attribute("x");
+				string objectY = n->ToElement()->Attribute("y");
+				wsSpawns.push_back({ stof(objectX), stof(objectY) });
 			}
 		}
 	}

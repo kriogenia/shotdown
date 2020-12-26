@@ -13,7 +13,7 @@ void IdlePlayerState::enter()
 	cpBodySetVelocity(player->body, cpv(cpBodyGetVelocity(player->body).x, 0));
 }
 
-void IdlePlayerState::update()
+void IdlePlayerState::tick()
 {
 	// Falling check
 	if (cpBodyGetVelocity(player->body).y > 0.01) {

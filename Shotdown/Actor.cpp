@@ -26,7 +26,7 @@ Actor::~Actor()
 }
 
 /* Creates the renderization of the actor */
-void Actor::render(float scrollX) {
+void Actor::render() {
 	// Portion from source
 	SDL_Rect source;
 	source.x = 0;
@@ -35,8 +35,8 @@ void Actor::render(float scrollX) {
 	source.h = fileHeight;	// texture.height;
 	// Destination to draw
 	SDL_Rect destination;
-	destination.x = position.x - width / 2 - scrollX;
-	destination.y = position.y - height / 2;
+	destination.x = static_cast<int>(position.x - width / 2);
+	destination.y = static_cast<int>(position.y - height / 2);
 	destination.w = width;
 	destination.h = height;
 	// Render invocation

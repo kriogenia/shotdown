@@ -49,7 +49,7 @@ public:
     Player(PlayerTag tag, Game* game);
     ~Player();
     /* Game cycle */
-    void update();
+    void tick();
     /* Configuration */
     void init();
     void configureChipmunkSpace(cpSpace* chipSpace) override;

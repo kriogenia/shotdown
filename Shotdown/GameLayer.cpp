@@ -16,6 +16,7 @@ GameLayer::~GameLayer()
 	delete background;
 	delete player1;
 	delete player2;
+	spawners.clear();
 }
 
 void GameLayer::init()
@@ -35,18 +36,21 @@ void GameLayer::processControls()
 	player1->move(controlMoveLeft_P1 + controlMoveRight_P1);
 }
 
-void GameLayer::update()
+void GameLayer::tick()
 {
 	// Physics update
 	cpSpaceStep(currentScenario->chipSpace, 1.0/TARGET_FPS);
 	// Players update
-	player1->update();
+	player1->tick();
 }
 
 void GameLayer::render()
 {
 	background->render();
 	currentScenario->render();
+	for (auto const& spawner : spawners) {
+		spawner->render();
+	}
 	player1->render();
 	//player2->render();
 }
@@ -116,7 +120,7 @@ void GameLayer::reset()
 	player1->init();
 	//player2->init();
 	// projectiles.clear();
-	// spawners.clear();
+	spawners.clear();
 }
 
 /* Finish the current scenario and starts a new one */
@@ -134,7 +138,11 @@ void GameLayer::playNextScenario()
 	player1->configureChipmunkSpace(currentScenario->chipSpace);
 	//player2->position = spawnPoints[0];
 	//player2->configureChipmunkSpace(currentScenario->chipSpace);
-	// place Spawners
+	/* Create spawners on the specified locations */
+	auto spawnerLocations = currentScenario->wsSpawns;
+	for (auto const& location : spawnerLocations) {
+		spawners.push_back(new WeaponSpawner(location.x, location.y, game));
+	}
 	/* Create the collision handlers */
 	ChipmunkHelper::setHandlers(currentScenario->chipSpace);
 
