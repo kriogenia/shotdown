@@ -4,6 +4,8 @@
 
 #include "PlayerState.h"
 class PlayerState;
+#include "Weapon.h"
+class Weapon;
 
 /* Attributes */
 constexpr auto PLAYER_SIZE = 24;
@@ -24,11 +26,6 @@ constexpr auto DASH_CD = 5 * TARGET_FPS; // 5s
 constexpr auto PLAYER_BODY_WEIGHT = 75;
 constexpr auto PLAYER_SHAPE_FRICTION = 2;
 constexpr auto PLAYER_MAX_FALL_SPEED = 10 * TARGET_FPS;
-
-enum class PlayerTag {
-    P1,
-    P2
-};
 
 enum class PlayerOrientation {
     LEFT,
@@ -76,6 +73,8 @@ private:
     PlayerState* state = nullptr;
     map<ePlayerStates, PlayerState*> states;
     void initStates();
+    /* Weapon */
+    Weapon* weapon = nullptr;
     /* Movement */
     int controlX = 0;
 };

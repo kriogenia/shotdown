@@ -21,6 +21,8 @@ Actor::Actor(ActorType type, string filename, float x, float y, int width, int h
 Actor::~Actor()
 {
 	SDL_DestroyTexture(texture);
+	cpShapeFree(shape);
+	cpBodyFree(body);
 }
 
 /* Creates the renderization of the actor */

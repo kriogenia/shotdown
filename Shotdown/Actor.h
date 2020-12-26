@@ -11,6 +11,7 @@ public:
 	Actor(ActorType type, string filename, float x, float y, int width, int height, Game* game);
 	~Actor();
 	/* Game cycle */
+	virtual void tick() {};
 	virtual void render(float scrollX = 0);
 	/* Destruction */
 	virtual void destroy();

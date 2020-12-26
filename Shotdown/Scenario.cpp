@@ -15,6 +15,8 @@ Scenario::Scenario(int code, Game* game) :
 
 Scenario::~Scenario()
 {
+	cpSpaceFree(chipSpace);
+	delete chipSpace;
 	delete scenario_map;
 	playerSpawns.clear();
 }

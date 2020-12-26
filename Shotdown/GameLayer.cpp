@@ -13,6 +13,9 @@ GameLayer::GameLayer(Game* game) :
 
 GameLayer::~GameLayer()
 {
+	delete background;
+	delete player1;
+	delete player2;
 }
 
 void GameLayer::init()

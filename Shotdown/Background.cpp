@@ -7,6 +7,13 @@ Background::Background(Game* game)
 	front = new Parallax("res/backgrounds/near-buildings-bg.png", 493, 209, game);
 }
 
+Background::~Background()
+{
+	delete back;
+	delete mid;
+	delete front;
+}
+
 void Background::render()
 {
 	back->render();

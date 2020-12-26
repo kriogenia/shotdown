@@ -6,6 +6,7 @@ class Background
 {
 public:
 	Background(Game* game);
+	~Background();
 	/* Game cycle */
 	void render();
 private:
