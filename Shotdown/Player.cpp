@@ -19,7 +19,7 @@ Player::~Player()
 
 void Player::update()
 {
-	// Limit player velocity
+	// Limit player fall velocity
 	if (cpBodyGetVelocity(body).y > PLAYER_MAX_FALL_SPEED) {
 		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
 	}

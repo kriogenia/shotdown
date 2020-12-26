@@ -22,10 +22,11 @@ void JumpingPlayerState::update()
 
 void JumpingPlayerState::jump()
 {
-	if (cpBodyGetVelocity(player->body).y > -DOUBLE_JUMP_CAP) {
-		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_DOUBLE_JUMP_HEIGHT), cpv(0, 0));
+	//if (cpBodyGetVelocity(player->body).y > -DOUBLE_JUMP_CAP) {
+		//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_DOUBLE_JUMP_IMPULSE), cpv(0, 0));
+		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_IMPULSE), cpv(0, 0));
 		player->setState(ePlayerStates::DOUBLE_JUMPING);
-	}
+	//}
 }
 
 void JumpingPlayerState::hitLeft()

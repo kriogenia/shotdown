@@ -14,7 +14,6 @@ void DoubleJumpingPlayerState::enter()
 void DoubleJumpingPlayerState::update()
 {
 	// Stop ascension check
-	cout << cpBodyGetVelocity(player->body).y << endl;
 	if (cpBodyGetVelocity(player->body).y > 0.01) {
 		player->setState(ePlayerStates::FALLING);
 	}

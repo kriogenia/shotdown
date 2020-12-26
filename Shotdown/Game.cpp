@@ -39,8 +39,12 @@ void Game::loop() {
 		/* FPS check */
 		endTick = SDL_GetTicks();
 		differenceTick = endTick - initTick;
+		//cout << differenceTick << " - " << 1000 / TARGET_FPS << endl;
 		if (differenceTick < (1000 / TARGET_FPS)) {
 			SDL_Delay((1000 / TARGET_FPS) - differenceTick);
+		}
+		else {
+			cout << "LAG" << endl;
 		}
 	}
 }

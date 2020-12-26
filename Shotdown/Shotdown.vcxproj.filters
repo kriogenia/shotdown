@@ -225,6 +225,9 @@
     <ClCompile Include="SlidingPlayerState.cpp">
       <Filter>Archivos de origen\State\Player</Filter>
     </ClCompile>
+    <ClCompile Include="DashingPlayerState.cpp">
+      <Filter>Archivos de origen\State\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -291,6 +294,9 @@
       <Filter>Archivos de encabezado\State\Player</Filter>
     </ClInclude>
     <ClInclude Include="SlidingPlayerState.h">
+      <Filter>Archivos de encabezado\State\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="DashingPlayerState.h">
       <Filter>Archivos de encabezado\State\Player</Filter>
     </ClInclude>
   </ItemGroup>

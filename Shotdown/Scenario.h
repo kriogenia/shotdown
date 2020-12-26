@@ -3,8 +3,6 @@
 #include "Game.h"
 #include "Map.h"
 
-constexpr auto GRAVITY = 0.6;
-
 class Scenario
 {
 public:

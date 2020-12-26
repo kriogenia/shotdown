@@ -21,6 +21,7 @@ using namespace std;
 constexpr auto WIDTH = 720;
 constexpr auto HEIGHT = 480;
 constexpr auto TARGET_FPS = 60;
+constexpr auto GRAVITY = 10 * TARGET_FPS;
 
 enum class ActorType {
 	BACKGROUND,

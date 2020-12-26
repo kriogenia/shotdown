@@ -10,16 +10,18 @@ void PlayerState::move(int direction)
 {
 	setOrientation(direction);
 	if (direction > 0 && cpBodyGetVelocity(player->body).x < PLAYER_SPEED) {
-		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
+		cpBodySetVelocity(player->body, cpv(PLAYER_SPEED, cpBodyGetVelocity(player->body).y));
+		//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
 	}
 	if (direction < 0 && cpBodyGetVelocity(player->body).x > -PLAYER_SPEED) {
-		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(-PLAYER_SPEED, 0), cpv(0, 0));
+		cpBodySetVelocity(player->body, cpv(-PLAYER_SPEED, cpBodyGetVelocity(player->body).y));
+		//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(-PLAYER_SPEED, 0), cpv(0, 0));
 	}
 }
 
 void PlayerState::jump()
 {
-	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_HEIGHT), cpv(0, 0));
+	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_IMPULSE), cpv(0, 0));
 }
 
 void PlayerState::setOrientation(int direction)

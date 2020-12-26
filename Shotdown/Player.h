@@ -7,13 +7,13 @@ class PlayerState;
 
 /* Attributes */
 constexpr auto PLAYER_SIZE = 24;
-constexpr auto PLAYER_SPEED = 3;
-constexpr auto PLAYER_JUMP_HEIGHT = 32;
-constexpr auto PLAYER_DOUBLE_JUMP_HEIGHT = 24;
+constexpr auto PLAYER_SPEED = 3 * TARGET_FPS;
+constexpr auto PLAYER_JUMP_IMPULSE = 360 * TARGET_FPS;
+//constexpr auto PLAYER_DOUBLE_JUMP_IMPULSE = 240 * TARGET_FPS;
 /* Physics */
-constexpr auto PLAYER_BODY_WEIGHT = 3;
-constexpr auto PLAYER_SHAPE_FRICTION = 0.8;
-constexpr auto PLAYER_MAX_FALL_SPEED = 8;
+constexpr auto PLAYER_BODY_WEIGHT = 75;
+constexpr auto PLAYER_SHAPE_FRICTION = 2;
+constexpr auto PLAYER_MAX_FALL_SPEED = 10 * TARGET_FPS;
 
 enum class PlayerTag {
     P1,
@@ -31,7 +31,8 @@ enum class ePlayerStates {
     JUMPING,
     DOUBLE_JUMPING,
     FALLING,
-    SLIDING
+    SLIDING,
+    DASHING
 };
 
 class Player :

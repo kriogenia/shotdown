@@ -2,23 +2,21 @@
 
 #include "PlayerState.h"
 
-constexpr auto DOUBLE_JUMP_CAP = 100;
-
-class JumpingPlayerState :
+class DashingPlayerState :
     public PlayerState
 {
 public:
-    JumpingPlayerState(Player* actor);
+    DashingPlayerState(Player* player);
     /* State */
     void enter() override;
     void update() override;
-    /* Player control */
-    // Control
-    void jump() override;
+    /* Player state */
+    // Controls
+    inline void move(int direction) override {};
+    inline void jump() override {};
     // Events
     void hitLeft() override;
     void hitRight() override;
-    /* Extra */
-    bool doubleJump = true;
 
 };
+

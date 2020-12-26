@@ -45,7 +45,7 @@ void SlidingPlayerState::jump()
 	// Wall jump, 45º degrees jump
 	int direction = (player->orientation == PlayerOrientation::RIGHT) ? 1 : -1;
 	cpBodyApplyImpulseAtLocalPoint(player->body, 
-		cpv(direction * (WALL_JUMP_X), -WALL_JUMP_Y),
+		cpv(direction * (WALL_JUMP_IMPULSE_X), -WALL_JUMP_IMPULSE_Y),
 		cpv(0, 0));
 }
 

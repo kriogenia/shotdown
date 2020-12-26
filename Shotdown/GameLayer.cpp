@@ -35,7 +35,7 @@ void GameLayer::processControls()
 void GameLayer::update()
 {
 	// Physics update
-	cpSpaceStep(currentScenario->chipSpace, 1);
+	cpSpaceStep(currentScenario->chipSpace, 1.0/TARGET_FPS);
 	// Players update
 	player1->update();
 }
@@ -66,7 +66,7 @@ void GameLayer::keysToControl(SDL_Event event) {
 			controlMoveLeft_P1 = -1;
 			break;
 		case SDLK_w:	// Up
-			//cout << "JUMP" << endl;
+			cout << "JUMP" << endl;
 			player1->jump();
 			break;
 			/*

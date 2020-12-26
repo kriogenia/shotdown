@@ -186,6 +186,7 @@
     <ClCompile Include="chipmunk\cpSpaceStep.c" />
     <ClCompile Include="chipmunk\cpSpatialIndex.c" />
     <ClCompile Include="chipmunk\cpSweep1D.c" />
+    <ClCompile Include="DashingPlayerState.cpp" />
     <ClCompile Include="DoubleJumpingPlayerState.cpp" />
     <ClCompile Include="FallingPlayerState.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -211,6 +212,7 @@
     <ClInclude Include="Background.h" />
     <ClInclude Include="ChipmunkHelper.h" />
     <ClInclude Include="chipmunk\prime.h" />
+    <ClInclude Include="DashingPlayerState.h" />
     <ClInclude Include="DoubleJumpingPlayerState.h" />
     <ClInclude Include="FallingPlayerState.h" />
     <ClInclude Include="Game.h" />
