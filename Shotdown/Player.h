@@ -20,6 +20,11 @@ enum class PlayerTag {
     P2
 };
 
+enum class PlayerOrientation {
+    LEFT,
+    RIGHT
+};
+
 enum class ePlayerStates {
     IDLE,
     MOVING,
@@ -46,7 +51,8 @@ public:
     /* State */
     PlayerState* prevState = nullptr;
     void setState(ePlayerStates id);
-    /* Interaction */
+    PlayerOrientation orientation;
+    /* Events */
     void collisioned(Point collisionedPosition);
     /* Tag */
     PlayerTag tag;

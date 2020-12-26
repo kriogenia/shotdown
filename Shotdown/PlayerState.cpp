@@ -8,6 +8,7 @@ PlayerState::PlayerState(Player* actor) :
 
 void PlayerState::move(int direction)
 {
+	setOrientation(direction);
 	if (direction > 0 && cpBodyGetVelocity(player->body).x < PLAYER_SPEED) {
 		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
 	}
@@ -19,4 +20,14 @@ void PlayerState::move(int direction)
 void PlayerState::jump()
 {
 	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(0, -PLAYER_JUMP_HEIGHT), cpv(0, 0));
+}
+
+void PlayerState::setOrientation(int direction)
+{
+	if (direction < 0) {
+		player->orientation = PlayerOrientation::LEFT;
+	}
+	else if (direction > 0) {
+		player->orientation = PlayerOrientation::RIGHT;
+	}
 }

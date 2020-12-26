@@ -3,6 +3,8 @@
 #include "PlayerState.h"
 
 constexpr auto SLIDING_SPEED = 2.5;
+constexpr auto WALL_JUMP_X = 16;
+constexpr auto WALL_JUMP_Y = 48;
 
 class SlidingPlayerState :
     public PlayerState

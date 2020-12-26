@@ -18,7 +18,7 @@ public:
 	/* Player control */
 	virtual void move(int direction);
 	virtual void jump();
-	/* Player interaction */
+	/* Events */
 	virtual void hitTop() {};
 	virtual void hitLeft() {};
 	virtual void hitRight() {};
@@ -27,6 +27,9 @@ public:
 	ePlayerStates tag;
 
 protected:
+	/* Context pointer */
 	Player* player;
+	/* Orientation */
+	void setOrientation(int direction);
 };
 

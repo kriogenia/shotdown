@@ -22,10 +22,12 @@ void DoubleJumpingPlayerState::update()
 
 void DoubleJumpingPlayerState::hitLeft()
 {
+	player->orientation = PlayerOrientation::RIGHT;
 	player->setState(ePlayerStates::SLIDING);
 }
 
 void DoubleJumpingPlayerState::hitRight()
 {
+	player->orientation = PlayerOrientation::LEFT;
 	player->setState(ePlayerStates::SLIDING);
 }

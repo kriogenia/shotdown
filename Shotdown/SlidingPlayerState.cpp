@@ -17,7 +17,6 @@ void SlidingPlayerState::enter()
 
 void SlidingPlayerState::update()
 {
-	cout << cpBodyGetVelocity(player->body).y << endl;
 	// Limit player velocity
 	if (cpBodyGetVelocity(player->body).y > SLIDING_SPEED) {
 		cpBodySetVelocity(player->body, 
@@ -43,7 +42,11 @@ void SlidingPlayerState::update()
 
 void SlidingPlayerState::jump()
 {
-	cout << "Wall jump!" << endl;
+	// Wall jump, 45º degrees jump
+	int direction = (player->orientation == PlayerOrientation::RIGHT) ? 1 : -1;
+	cpBodyApplyImpulseAtLocalPoint(player->body, 
+		cpv(direction * (WALL_JUMP_X), -WALL_JUMP_Y),
+		cpv(0, 0));
 }
 
 void SlidingPlayerState::hitLeft()

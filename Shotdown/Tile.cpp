@@ -20,8 +20,8 @@ void Tile::render(float scrollX) {
 	SDL_Rect destination;
 	destination.x = static_cast<int>(position.x - TILE_SIZE / 2 - scrollX);
 	destination.y = static_cast<int>(position.y - TILE_SIZE / 2);
-	destination.w = TILE_SIZE;
-	destination.h = TILE_SIZE;
+	destination.w = TILE_SIZE+1;
+	destination.h = TILE_SIZE+1;
 	// Render invocation
 	SDL_RenderCopyEx(game->renderer,
 		texture, &source, &destination, 0, NULL, SDL_FLIP_NONE);

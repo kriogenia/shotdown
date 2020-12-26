@@ -15,7 +15,7 @@ public:
     /* Player control */
     // Control
     void jump() override;
-    // Interaction
+    // Events
     void hitLeft() override;
     void hitRight() override;
     /* Extra */
