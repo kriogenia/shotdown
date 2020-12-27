@@ -10,8 +10,8 @@ public:
 	~Scenario();
 	/* Game cycle */
 	void render();
-	/* Physics */
-	cpSpace* chipSpace;
+	/* Showmatch */
+	void play();
 	/* Spawn points */
 	vector<Point> playerSpawns;
 	vector<Point> wsSpawns;

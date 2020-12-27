@@ -4,18 +4,14 @@
 Scenario::Scenario(int code, Game* game) :
 	code(code)
 {
-	// Create the physics engine of the scenario
-	chipSpace = cpSpaceNew();
-	cpSpaceSetGravity(chipSpace, cpv(0, GRAVITY));
 	// Create the map
-	scenario_map = new Map(chipSpace, game);
+	scenario_map = new Map(game);
 	// Load scenario info
 	loadScenario("res/scenarios/scenario" + to_string(code) + ".tmx");
 }
 
 Scenario::~Scenario()
 {
-	cpSpaceFree(chipSpace);
 	delete scenario_map;
 	playerSpawns.clear();
 }
@@ -23,6 +19,12 @@ Scenario::~Scenario()
 void Scenario::render()
 {
 	scenario_map->render();
+}
+
+void Scenario::play()
+{
+	scenario_map->addToSpace();
+	cout << "New match on scenario " << code << endl;
 }
 
 /* Reads and loads the XML content */

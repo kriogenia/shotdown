@@ -51,6 +51,9 @@ void Player::init()
 	initStates();
 	prevState = states[ePlayerStates::IDLE];
 	state = states[ePlayerStates::IDLE];
+	// Set the weapon
+	delete weapon;
+	weapon = nullptr;
 }
 
 /* Create the physics of the object */
@@ -113,6 +116,16 @@ void Player::collisioned(Point collisionedPosition)
 			state->hitGround();
 		else
 			state->hitTop();
+	}
+}
+
+/* Manage the collision with a Projectile */
+void Player::impacted(PlayerTag shooter)
+{
+	if (shooter != tag) {
+		// TODO damage
+		// TODO go invul
+		cout << "Ouch!" << endl;
 	}
 }
 

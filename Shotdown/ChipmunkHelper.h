@@ -2,9 +2,27 @@
 
 #include <chipmunk/chipmunk.h>
 
+#include "Actor.h"
+
+/* singleton */
 class ChipmunkHelper
 {
 public:
-	static void setHandlers(cpSpace* chipSpace);
+	static ChipmunkHelper* getInstance();
+	/* Game cycle */
+	void tick();
+	/* Configuration */
+	void init();
+	void setHandlers();
+	/* Entites */
+	void addActor(Actor* actor);
+	void removeActor(Actor* actor);
+
+private:
+	/* Instance */
+	static ChipmunkHelper* instance;
+	ChipmunkHelper();
+	/* Physics */
+	cpSpace* chipSpace;
 };
 

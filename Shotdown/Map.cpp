@@ -1,14 +1,16 @@
 #include "Map.h"
 
-Map::Map(cpSpace* chipSpace, Game* game) :
-	chipSpace(chipSpace),
+Map::Map(Game* game) :
 	game(game)
 {
+	engine = ChipmunkHelper::getInstance();
+	physicTiles.clear();
 	tiles.clear();
 }
 
 Map::~Map()
 {
+	physicTiles.clear();
 	tiles.clear();
 }
 
@@ -25,7 +27,14 @@ void Map::loadTMXTile(int tileNum, float x, float y, bool physic) {
 	tiles.push_back(tile);
 	// Statics
 	if (physic) {
-		tile->configureChipmunkSpace(chipSpace);
+		physicTiles.push_back(tile);
 	}
+}
 
+/* Adds the physic tiles to the space */
+void Map::addToSpace()
+{
+	for (auto const& tile : physicTiles) {
+		engine->addActor(tile);
+	}
 }

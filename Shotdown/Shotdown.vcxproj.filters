@@ -246,6 +246,9 @@
     <ClCompile Include="WeaponSpawner.cpp">
       <Filter>Archivos de origen\Actor\Weapons</Filter>
     </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Archivos de origen\Actor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -328,6 +331,9 @@
     </ClInclude>
     <ClInclude Include="WeaponSpawner.h">
       <Filter>Archivos de encabezado\Actor\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Archivos de encabezado\Actor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

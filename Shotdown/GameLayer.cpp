@@ -5,6 +5,7 @@
 GameLayer::GameLayer(Game* game) :
 	Layer(game)
 {
+	engine = ChipmunkHelper::getInstance();
 	background = new Background(game);
 	currentScenario = nullptr;
 	player1 = nullptr;
@@ -16,17 +17,20 @@ GameLayer::~GameLayer()
 	delete background;
 	delete player1;
 	delete player2;
+	projectiles.clear();
 	spawners.clear();
 }
 
 void GameLayer::init()
 {
-	// Generate the Players
+	// Generates the Players
 	player1 = new Player(PlayerTag::P1, game);
+	player1->projectiles = &projectiles;
 	//player2 = new Player(PlayerTag::P2, game);
-	// Generate the scenarios
+	//player2->projectiles = &projectiles;
+	// Generates the scenarios
 	generateScenarios();
-	// Load the first scenario
+	// Loads the first scenario
 	playNextScenario();
 }
 
@@ -34,17 +38,33 @@ void GameLayer::processControls()
 {
 	Layer::processControls();
 	player1->move(controlMoveLeft_P1 + controlMoveRight_P1);
+	//player2->move(controlMoveLeft_P2 + controlMoveRight_P2);
 }
 
 void GameLayer::tick()
 {
 	// Physics update
-	cpSpaceStep(currentScenario->chipSpace, 1.0/TARGET_FPS);
+	engine->tick();
 	// Players update
 	player1->tick();
+	//player2->tick();
+	// Projectiles update
+	vector<Actor*> projectilesToDelete;
+	for (auto const& projectile : projectiles) {
+		projectile->tick();
+		if (projectile->pendingDestruction) {
+			projectilesToDelete.push_back(projectile);
+		}
+	}
 	// Spawners update
 	for (auto const& spawner : spawners) {
 		spawner->tick();
+	}
+	/* Actors deletion */
+	// Projectiles
+	for (auto const& projectile : projectilesToDelete) {
+		engine->removeActor(projectile);
+		projectiles.remove(projectile);
 	}
 }
 
@@ -57,6 +77,9 @@ void GameLayer::render()
 	}
 	player1->render();
 	//player2->render();
+	for (auto const& projectile : projectiles) {
+		projectile->render();
+	}
 }
 
 void GameLayer::keysToControl(SDL_Event event) {
@@ -118,43 +141,44 @@ void GameLayer::generateScenarios()
 	}
 }
 
-/* Clean previous state */
+/* Cleans previous state */
 void GameLayer::reset()
 {
-	// Clear the scenario
+	// Clears the scenario
 	delete currentScenario;
-	// Clear the entities
+	// Starts and configures a new space
+	engine->init();
+	engine->setHandlers();
+	// Clears the entities
 	player1->init();
 	//player2->init();
-	// projectiles.clear();
+	projectiles.clear();
 	spawners.clear();
 }
 
-/* Finish the current scenario and starts a new one */
+/* Finishes the current scenario and starts a new one */
 void GameLayer::playNextScenario()
 {
-	/* Clean state from previous scenario */
+	/* Cleans state from previous scenario */
 	reset();
-	/* Load new scenario */
+	/* Loads new scenario */
 	currentScenario = scenarios.front();
 	scenarios.pop();
-	cout << "New match on scenario " << currentScenario->code << endl;
-	/* Place the players and weapon spawners */
+	currentScenario->play();
+	/* Places the players and weapon spawners */
 	auto spawnPoints = currentScenario->playerSpawns;
 	player1->position = spawnPoints[0];
-	player1->configureChipmunkSpace(currentScenario->chipSpace);
+	engine->addActor(player1);
 	//player2->position = spawnPoints[0];
-	//player2->configureChipmunkSpace(currentScenario->chipSpace);
-	/* Create spawners on the specified locations */
+	//engine->addActor(player2);
+	/* Creates spawners on the specified locations */
 	auto spawnerLocations = currentScenario->wsSpawns;
 	for (auto const& location : spawnerLocations) {
 		spawners.push_back(new WeaponSpawner(location.x, location.y, game));
 	}
-	/* Create the collision handlers */
-	ChipmunkHelper::setHandlers(currentScenario->chipSpace);
 }
 
-/* Launch player and spawner interaction event */
+/* Launches player and spawner interaction event */
 void GameLayer::pickWeapon(Player* player)
 {
 	for (auto const& spawner : spawners) {

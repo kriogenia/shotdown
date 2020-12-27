@@ -66,10 +66,13 @@ public:
     Weapon* weapon = nullptr;
     /* Events */
     void collisioned(Point collisionedPosition);
+    void impacted(PlayerTag shotOwner);
     /* Tag */
     PlayerTag tag;
-    /* Cooldonws */
+    /* Cooldowns */
     int dashCd = 0;
+    /* Environment */
+    list<Actor*>* projectiles;
 
 private:
     /* State */

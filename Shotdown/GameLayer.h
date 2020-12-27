@@ -5,6 +5,7 @@
 #include "Background.h"
 #include "Layer.h"
 #include "Player.h"
+#include "Projectile.h"
 #include "Scenario.h"
 #include "WeaponSpawner.h"
 
@@ -23,10 +24,13 @@ public:
 	void keysToControl(SDL_Event event) override;
 	void padToControl(SDL_Event event) override {};
 private:
+	/* Engine */
+	ChipmunkHelper* engine = nullptr;
 	/* Showmatch */
 	Player* player1;
 	Player* player2;
 	Background* background;
+	list<Actor*> projectiles;
 	vector<WeaponSpawner*> spawners;
 	queue<Scenario*> scenarios;
 	/* Showmatch loading */
@@ -42,7 +46,6 @@ private:
 	int controlMoveRight_P1 = 0;
 	int controlMoveLeft_P2 = 0;
 	int controlMoveRight_P2 = 0;
-	// vector<Projectile> projectiles;
 
 };
 

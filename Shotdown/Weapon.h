@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Projectile.h"
+
 #include "Player.h"
 class Player;
 

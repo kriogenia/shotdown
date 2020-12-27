@@ -20,17 +20,16 @@ public:
 	cpShape* shape = nullptr;
 	virtual void configureChipmunkSpace(cpSpace* chipSpace) {};
 	bool isOverlap(Actor* actor);
-	/* Position */
+	/* Properties */
+	ActorType type;
 	Point position = { 0, 0 };
+	bool pendingDestruction = false;
 	
 protected:
 	/* Game instance */
 	Game* game;
 	/* Texture */
 	SDL_Texture* texture;
-	/* Properties */
-	ActorType type;
-	bool pendingDestruction = false;
 	/* Size */
 	int width;
 	int height;

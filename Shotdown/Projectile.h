@@ -11,11 +11,13 @@ public:
 	void render() override;
 	/* Physics */
 	void configureChipmunkSpace(cpSpace* chipSpace);
+	/* Player */
+	PlayerTag shooter;
 
 private:
 	/* Attributes */
-	PlayerTag shooter;
 	Point startingPoint;
 	int lifeTime;
+
 };
 

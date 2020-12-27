@@ -201,6 +201,7 @@
     <ClCompile Include="Parallax.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerState.cpp" />
+    <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="Scenario.cpp" />
     <ClCompile Include="SlidingPlayerState.cpp" />
     <ClCompile Include="State.cpp" />
@@ -230,6 +231,7 @@
     <ClInclude Include="Parallax.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="Projectile.h" />
     <ClInclude Include="Scenario.h" />
     <ClInclude Include="SlidingPlayerState.h" />
     <ClInclude Include="State.h" />

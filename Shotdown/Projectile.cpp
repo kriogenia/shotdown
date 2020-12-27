@@ -8,7 +8,7 @@ Projectile::Projectile(PlayerTag shooter, int lifeTime, float x, float y, Game* 
 	this->startingPoint = { x, y };
 }
 
-void Projectile::tick() 
+void Projectile::tick()
 {
 	// Update life time and destroy call
 	lifeTime--;
@@ -16,13 +16,18 @@ void Projectile::tick()
 		this->destroy();
 	}
 	// Update position
-	position = { cpBodyGetPosition(body).x, cpBodyGetPosition(body).y };
+	position.x = static_cast<float>(cpBodyGetPosition(body).x);
+	position.y = static_cast<float>(cpBodyGetPosition(body).y);
 }
 
 void Projectile::render()
 {
 	SDL_SetRenderDrawColor(game->renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
-	SDL_RenderDrawLine(game->renderer,	startingPoint.x, startingPoint.y, position.x, position.y);
+	SDL_RenderDrawLine(game->renderer,	
+		static_cast<int>(startingPoint.x),
+		static_cast<int>(startingPoint.y),
+		static_cast<int>(position.x),
+		static_cast<int>(position.y));
 }
 
 void Projectile::configureChipmunkSpace(cpSpace* chipSpace) 
