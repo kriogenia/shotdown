@@ -7,8 +7,9 @@ Ak47::Ak47(Game* game) :
 	rarity = COMMON;
 	loadedAmmo = AK47_CLIP_SIZE;
 	unloadedAmmo = AK47_EXTRA_AMMO;
-	shotPointOffset = { AK47_SHOT_POINT_X , AK47_SHOT_POINT_Y };
+	shotCooldown = AK47_WAIT_TIME;
 	recoil = AK47_RECOIL_FORCE;
+	shotPointOffset = { AK47_SHOT_POINT_X , AK47_SHOT_POINT_Y };
 	/* AutomaticWeapon */
 	bulletLife = AK47_PROJECTILE_LIFE;
 	projectileSpeed = AK47_PROJECTILE_SPEED;

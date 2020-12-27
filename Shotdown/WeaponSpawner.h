@@ -15,7 +15,7 @@ public:
     void tick() override;
     void render(float rotation = 0.0) override;
     /* Events */
-    void pickWeapon(Player* player);
+    bool pickWeapon(Player* player);
 
 private:
     /* State */

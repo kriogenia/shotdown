@@ -47,19 +47,22 @@ void AutomaticWeapon::releaseTrigger()
 
 void AutomaticWeapon::shoot()
 {
-	Weapon::shoot();
-	float orientation = static_cast<float>(owner->orientation);
-	// Create projectile
-	float weaponRecoil = static_cast<float>(consecutiveShots * recoilPerShot);
-	Projectile* projectile = new Projectile(owner->tag, bulletLife,
-		shotPoint.x, shotPoint.y - weaponRecoil, game);
-	// Add projectile to game and engine
-	engine->addActor(projectile);
-	owner->projectiles->push_back(projectile);
-	// Fires projectile
-	cpBodyApplyImpulseAtLocalPoint(projectile->body,
-		cpv(orientation * projectileSpeed, -weaponRecoil),
-		cpv(shotPoint.x, shotPoint.y));
-	// Lowers accuracy
-	consecutiveShots++;
+	if (remainingShotCd <= 0) {
+		Weapon::shoot();
+		float orientation = static_cast<float>(owner->orientation);
+		// Creates projectile
+		float weaponRecoil = static_cast<float>(consecutiveShots * recoilPerShot);
+		Projectile* projectile = new Projectile(owner->tag, bulletLife,
+			shotPoint.x, shotPoint.y - weaponRecoil, game);
+		// Adds projectile to game and engine
+		engine->addActor(projectile);
+		owner->projectiles->push_back(projectile);
+		// Fires projectile
+		cpBodyApplyImpulseAtLocalPoint(projectile->body,
+			cpv(orientation * projectileSpeed, -weaponRecoil),
+			cpv(shotPoint.x, shotPoint.y));
+		// Lowers accuracy and starts cd
+		consecutiveShots++;
+		remainingShotCd = shotCooldown;
+	}
 }

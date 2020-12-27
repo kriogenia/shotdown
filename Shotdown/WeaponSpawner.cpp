@@ -27,11 +27,15 @@ void WeaponSpawner::render(float rotation)
 	}
 }
 
-void WeaponSpawner::pickWeapon(Player* player)
+bool WeaponSpawner::pickWeapon(Player* player)
 {
-	player->weapon = weapon->clone(player);
-	weapon = nullptr;
-	cooldown = SPAWNER_CD;
+	if (weapon != nullptr) {
+		player->weapon = weapon->clone(player);
+		weapon = nullptr;
+		cooldown = SPAWNER_CD;
+		return true;
+	}
+	return false;
 }
 
 /* Get a new weapon from the pool or goes ? */

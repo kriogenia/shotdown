@@ -46,5 +46,8 @@ protected:
 	Point shotPoint = { 0, 0 };
 	Point shotPointOffset = { 0, 0 };
 	int recoil = 0;
+	int shotCooldown = 0;
 	//int reloadTime;
+	/* Cooldowns */
+	int remainingShotCd = 0;
 };

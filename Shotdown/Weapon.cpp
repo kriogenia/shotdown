@@ -16,6 +16,7 @@ void Weapon::tick()
 			position.y + shotPointOffset.y
 		};
 	}
+	remainingShotCd--;
 }
 
 void Weapon::render(float rotation)

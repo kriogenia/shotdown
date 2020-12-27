@@ -2,10 +2,14 @@
 
 #include "AutomaticWeapon.h"
 
+/* Ammo */
 constexpr auto AK47_CLIP_SIZE = 10;
 constexpr auto AK47_EXTRA_AMMO = 10;
+/* Reload */
+constexpr auto AK47_WAIT_TIME = 10; // 0.16s
+/* Recoil */
 constexpr auto AK47_RECOIL_PER_SHOT = 0.25;
-constexpr auto AK47_RECOIL_FORCE = 45 * TARGET_FPS;
+constexpr auto AK47_RECOIL_FORCE = 60 * TARGET_FPS;
 /* Projectile */
 constexpr auto AK47_PROJECTILE_LIFE = 30; // 0.5s
 constexpr auto AK47_PROJECTILE_SPEED = 5.0;
