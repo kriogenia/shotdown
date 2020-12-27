@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Ak47.cpp" />
+    <ClCompile Include="AutomaticWeapon.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="ChipmunkHelper.cpp" />
     <ClCompile Include="chipmunk\chipmunk.c" />
@@ -215,6 +216,7 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Ak47.h" />
+    <ClInclude Include="AutomaticWeapon.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="ChipmunkHelper.h" />
     <ClInclude Include="chipmunk\prime.h" />
