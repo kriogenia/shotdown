@@ -31,9 +31,6 @@ protected:
 	/* Properties */
 	ActorType type;
 	bool pendingDestruction = false;
-	/* Velocity */
-	float vx = 0;
-	float vy = 0;
 	/* Size */
 	int width;
 	int height;
