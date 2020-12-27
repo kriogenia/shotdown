@@ -13,7 +13,7 @@ public:
     WeaponSpawner(float x, float y, Game* game);
     /* Actor */
     void tick() override;
-    void render() override;
+    void render(float rotation = 0.0) override;
     /* Events */
     void pickWeapon(Player* player);
 

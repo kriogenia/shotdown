@@ -6,6 +6,8 @@ Ak47::Ak47(Game* game) :
 	rarity = COMMON;
 	loadedAmmo = AK47_CLIP_SIZE;
 	unloadedAmmo = AK47_EXTRA_AMMO;
+	shotPointOffset = { AK47_SHOT_POINT_X , AK47_SHOT_POINT_Y };
+	recoil = AK47_RECOIL_FORCE;
 }
 
 void Ak47::tick()
@@ -32,16 +34,20 @@ void Ak47::tick()
 	}
 }
 
+void Ak47::render(float rotation)
+{
+	Weapon::render(static_cast<float>(consecutiveShots));
+}
+
 void Ak47::pressTrigger()
 {
-	cout << "Player pressing trigger" << endl;
 	shooting = true;
 }
 
 void Ak47::releaseTrigger()
 {
-	cout << "Player released trigger" << endl;
 	shooting = false;
+	consecutiveShots = 0;
 }
 
 Weapon* Ak47::clone(Player* owner)
@@ -54,8 +60,19 @@ Weapon* Ak47::clone(Player* owner)
 
 void Ak47::shoot()
 {
-	loadedAmmo--;
-	cout << "AK-47 shooting" << endl;
-	// Pushes back player
-	owner->recoil(AK47_RECOIL);
+	Weapon::shoot();
+	float orientation = static_cast<float>(owner->orientation);
+	// Create projectile
+	float weaponRecoil = static_cast<float>(consecutiveShots * AK47_RECOIL_PER_SHOT);
+	Projectile* projectile = new Projectile(owner->tag, AK47_BULLET_LIFE, 
+		shotPoint.x, shotPoint.y - weaponRecoil, game);
+	// Add projectile to game and engine
+	engine->addActor(projectile);
+	owner->projectiles->push_back(projectile);
+	// Fires projectile
+	cpBodyApplyImpulseAtLocalPoint(projectile->body, 
+		cpv(orientation * 5.0, -weaponRecoil),
+		cpv(shotPoint.x, shotPoint.y));
+	// Lowers accuracy
+	consecutiveShots++;
 }

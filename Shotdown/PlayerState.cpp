@@ -31,7 +31,7 @@ void PlayerState::jump()
 void PlayerState::dash()
 {
 	if (player->dashCd <= 0) {
-		auto direction = (player->orientation == PlayerOrientation::RIGHT) ? 1.0 : -1.0;
+		auto direction = (player->orientation == Orientation::RIGHT) ? 1.0 : -1.0;
 		auto impulse = direction * PLAYER_DASH_IMPULSE;
 		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(impulse, 0), cpv(0, 0));
 		player->setState(ePlayerStates::DASHING);
@@ -52,19 +52,19 @@ void PlayerState::releaseTrigger()
 	}
 }
 
-void PlayerState::recoil(int force)
+void PlayerState::recoil(int force, cpVect point)
 {
 	player->pushedBack = PLAYER_PUSH_DURATION;
-	int recoil = (player->orientation == PlayerOrientation::LEFT ? 1 : -1) * force;
-	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(recoil, 0), cpv(0, 0));
+	int recoil = -1 * static_cast<int>(player->orientation) * force;
+	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(recoil, 0), point);
 }
 
 void PlayerState::setOrientation(int direction)
 {
 	if (direction < 0) {
-		player->orientation = PlayerOrientation::LEFT;
+		player->orientation = Orientation::LEFT;
 	}
 	else if (direction > 0) {
-		player->orientation = PlayerOrientation::RIGHT;
+		player->orientation = Orientation::RIGHT;
 	}
 }

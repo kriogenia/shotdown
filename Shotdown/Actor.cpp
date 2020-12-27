@@ -26,7 +26,7 @@ Actor::~Actor()
 }
 
 /* Creates the renderization of the actor */
-void Actor::render() {
+void Actor::render(float rotation) {
 	// Portion from source
 	SDL_Rect source;
 	source.x = 0;
@@ -41,7 +41,7 @@ void Actor::render() {
 	destination.h = height;
 	// Render invocation
 	SDL_RenderCopyEx(game->renderer,
-		texture, &source, &destination, 0, NULL, SDL_FLIP_NONE);
+		texture, &source, &destination, rotation, NULL, SDL_FLIP_NONE);
 }
 
 /* Actions to do when the actor is destroyed */

@@ -26,3 +26,7 @@ private:
 	cpSpace* chipSpace;
 };
 
+/* Extra body configuration functions */
+
+void disableGravity(cpBody* body, cpVect gravity, cpFloat damping, cpFloat dt);
+

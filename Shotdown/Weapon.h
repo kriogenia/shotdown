@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Projectile.h"
+#include "ChipmunkHelper.h"
 
 #include "Player.h"
 class Player;
@@ -19,7 +20,7 @@ public:
 	Weapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game);
 	/* Actor */
 	void tick() override;
-	void render() override;
+	void render(float rotation = 0.0) override;
 	/* Control */
 	virtual void pressTrigger() = 0;
 	virtual void releaseTrigger() = 0;
@@ -37,8 +38,13 @@ public:
 
 protected:
 	/* Function */
-	virtual void shoot() = 0;
-	//WeaponState state;
-	//int shotPoint;
+	virtual void shoot();
+	// WeaponState state;
+	/* Engine */
+	ChipmunkHelper* engine = ChipmunkHelper::getInstance();
+	/* Properties */
+	Point shotPoint = { 0, 0 };
+	Point shotPointOffset = { 0, 0 };
+	int recoil = 0;
 	//int reloadTime;
 };

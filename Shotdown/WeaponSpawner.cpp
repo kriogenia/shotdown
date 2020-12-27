@@ -19,11 +19,11 @@ void WeaponSpawner::tick()
 	}
 }
 
-void WeaponSpawner::render()
+void WeaponSpawner::render(float rotation)
 {
 	Actor::render();
 	if (weapon != nullptr) {
-		random ? randomDisplay->render() : weapon->render();
+		random ? randomDisplay->render() : weapon->render(-90.0);
 	}
 }
 

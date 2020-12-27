@@ -8,7 +8,7 @@ public:
 	Projectile(PlayerTag shooter, int lifeTime, float x, float y, Game* game);
 	/* Actor */
 	void tick() override;
-	void render() override;
+	void render(float rotation = 0.0) override;
 	/* Physics */
 	void configureChipmunkSpace(cpSpace* chipSpace);
 	/* Player */
@@ -16,7 +16,7 @@ public:
 
 private:
 	/* Attributes */
-	Point startingPoint;
+	Point previousPosition;
 	int lifeTime;
 
 };

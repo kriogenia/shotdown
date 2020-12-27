@@ -10,22 +10,22 @@ void Weapon::tick()
 	// Relocation
 	if (owner != nullptr) {
 		position = { owner->position.x, owner->position.y + 8 };
-		// orientation
+		int orientation = static_cast<int>(owner->orientation);
+		shotPoint = {
+			position.x + orientation * shotPointOffset.x, 
+			position.y + shotPointOffset.y
+		};
 	}
 }
 
-void Weapon::render()
+void Weapon::render(float rotation)
 {
 	// Orientation and rotation
 	SDL_RendererFlip orientation = SDL_RendererFlip::SDL_FLIP_NONE;
-	double rotation = 0;
 	if (owner != nullptr) {
-		if (owner->orientation == PlayerOrientation::LEFT) {
+		if (owner->orientation == Orientation::LEFT) {
 			orientation = SDL_FLIP_HORIZONTAL;
 		}
-	}
-	else {
-		rotation = -90;
 	}
 	// Portion from source
 	SDL_Rect source;
@@ -42,4 +42,11 @@ void Weapon::render()
 	// Render invocation
 	SDL_RenderCopyEx(game->renderer,
 		texture, &source, &destination, rotation, NULL, orientation);
+}
+
+/* Shoots the weapon and apply its recoil */
+void Weapon::shoot()
+{
+	loadedAmmo--;
+	owner->recoil(recoil, cpv(shotPoint.x, shotPoint.y));
 }

@@ -33,12 +33,12 @@ void DashingPlayerState::exit()
 
 void DashingPlayerState::hitLeft()
 {
-	player->orientation = PlayerOrientation::RIGHT;
+	player->orientation = Orientation::RIGHT;
 	player->setState(ePlayerStates::SLIDING);
 }
 
 void DashingPlayerState::hitRight()
 {
-	player->orientation = PlayerOrientation::LEFT;
+	player->orientation = Orientation::LEFT;
 	player->setState(ePlayerStates::SLIDING);
 }

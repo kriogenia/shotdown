@@ -26,7 +26,7 @@ public:
 	virtual void hitLeft() {};
 	virtual void hitRight() {};
 	virtual void hitGround() {};
-	virtual void recoil(int force);
+	virtual void recoil(int force, cpVect point);
 	/* Tag */
 	ePlayerStates tag;
 

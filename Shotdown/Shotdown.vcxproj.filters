@@ -13,35 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Archivos de encabezado\Layer">
-      <UniqueIdentifier>{b239cacd-b7d0-47e7-b451-616044d378b0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Layer">
-      <UniqueIdentifier>{44fb0c48-a4a7-4160-8e3a-a8d9f016440d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Scenario">
-      <UniqueIdentifier>{586fc031-9a04-4a27-8784-e0cb2e68fdee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Scenario">
-      <UniqueIdentifier>{68c33409-6fd6-4518-8737-7e2d722ca940}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Actor">
-      <UniqueIdentifier>{f5cd8c76-7958-4bfd-bb76-bb352060cc66}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Actor">
-      <UniqueIdentifier>{c377cf1a-0db8-4c30-87fa-8e036bb41719}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de origen\Util">
       <UniqueIdentifier>{06060572-fa2a-40ad-aded-210ead6f4eb7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de encabezado\Util">
       <UniqueIdentifier>{dbe258a4-0585-49fe-a295-46db73d4517b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Actor\Map">
-      <UniqueIdentifier>{06507570-696b-436a-9a6d-9817a03758ae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Actor\Map">
-      <UniqueIdentifier>{60a9522b-85da-407b-a14e-bd9f26fd1db0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de encabezado\Util\Chipmunk">
       <UniqueIdentifier>{0ebd7796-a2f5-4866-a54a-11d6552f6560}</UniqueIdentifier>
@@ -49,23 +25,53 @@
     <Filter Include="Archivos de origen\Util\Chipmunk">
       <UniqueIdentifier>{c868ad0b-82a5-4772-8b34-ffef86a97c8e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\State">
-      <UniqueIdentifier>{53d6af94-489a-4f8c-a36b-bc4bace1145b}</UniqueIdentifier>
+    <Filter Include="Archivos de encabezado\Factories">
+      <UniqueIdentifier>{d380da33-38d4-4de3-9df0-2de60960bc01}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de origen\State">
-      <UniqueIdentifier>{3edeffff-28ff-4f5f-959f-1e96583f10be}</UniqueIdentifier>
+    <Filter Include="Archivos de encabezado\Actors">
+      <UniqueIdentifier>{f5cd8c76-7958-4bfd-bb76-bb352060cc66}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\State\Player">
-      <UniqueIdentifier>{4a775da0-85b5-4ab9-a3e0-b80c8365398d}</UniqueIdentifier>
+    <Filter Include="Archivos de encabezado\Actors\Map">
+      <UniqueIdentifier>{06507570-696b-436a-9a6d-9817a03758ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de origen\State\Player">
-      <UniqueIdentifier>{d2662232-5882-4332-9528-ad0f5080121c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Actor\Weapons">
+    <Filter Include="Archivos de encabezado\Actors\Weapons">
       <UniqueIdentifier>{fdffa6d5-56de-4121-ba2c-2688d1e1efd7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de origen\Actor\Weapons">
+    <Filter Include="Archivos de encabezado\Layers">
+      <UniqueIdentifier>{b239cacd-b7d0-47e7-b451-616044d378b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Scenarios">
+      <UniqueIdentifier>{586fc031-9a04-4a27-8784-e0cb2e68fdee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\States">
+      <UniqueIdentifier>{53d6af94-489a-4f8c-a36b-bc4bace1145b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\States\Player">
+      <UniqueIdentifier>{4a775da0-85b5-4ab9-a3e0-b80c8365398d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actors">
+      <UniqueIdentifier>{c377cf1a-0db8-4c30-87fa-8e036bb41719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actors\Map">
+      <UniqueIdentifier>{60a9522b-85da-407b-a14e-bd9f26fd1db0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actors\Weapons">
       <UniqueIdentifier>{8e15c468-ef57-40ab-8fa6-86af492c7e6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Layers">
+      <UniqueIdentifier>{44fb0c48-a4a7-4160-8e3a-a8d9f016440d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Scenarios">
+      <UniqueIdentifier>{68c33409-6fd6-4518-8737-7e2d722ca940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\States">
+      <UniqueIdentifier>{3edeffff-28ff-4f5f-959f-1e96583f10be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\States\Player">
+      <UniqueIdentifier>{d2662232-5882-4332-9528-ad0f5080121c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Factories">
+      <UniqueIdentifier>{d11b12b8-2698-4338-be48-e2cb5f960b70}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -76,34 +82,34 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Layer.cpp">
-      <Filter>Archivos de origen\Layer</Filter>
+      <Filter>Archivos de origen\Layers</Filter>
     </ClCompile>
     <ClCompile Include="GameLayer.cpp">
-      <Filter>Archivos de origen\Layer</Filter>
+      <Filter>Archivos de origen\Layers</Filter>
     </ClCompile>
     <ClCompile Include="Scenario.cpp">
-      <Filter>Archivos de origen\Scenario</Filter>
+      <Filter>Archivos de origen\Scenarios</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>Archivos de origen\Scenario</Filter>
+      <Filter>Archivos de origen\Scenarios</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
-      <Filter>Archivos de origen\Actor</Filter>
+      <Filter>Archivos de origen\Actors</Filter>
     </ClCompile>
     <ClCompile Include="tinyxml2.cpp">
       <Filter>Archivos de origen\Util</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>Archivos de origen\Actor\Map</Filter>
+      <Filter>Archivos de origen\Actors\Map</Filter>
     </ClCompile>
     <ClCompile Include="Parallax.cpp">
-      <Filter>Archivos de origen\Actor\Map</Filter>
+      <Filter>Archivos de origen\Actors\Map</Filter>
     </ClCompile>
     <ClCompile Include="Background.cpp">
-      <Filter>Archivos de origen\Scenario</Filter>
+      <Filter>Archivos de origen\Scenarios</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Archivos de origen\Actor</Filter>
+      <Filter>Archivos de origen\Actors</Filter>
     </ClCompile>
     <ClCompile Include="chipmunk\chipmunk.c">
       <Filter>Archivos de origen\Util\Chipmunk</Filter>
@@ -202,52 +208,52 @@
       <Filter>Archivos de origen\Util\Chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>Archivos de origen\State</Filter>
+      <Filter>Archivos de origen\States</Filter>
     </ClCompile>
     <ClCompile Include="PlayerState.cpp">
-      <Filter>Archivos de origen\State\Player</Filter>
+      <Filter>Archivos de origen\States\Player</Filter>
     </ClCompile>
     <ClCompile Include="IdlePlayerState.cpp">
-      <Filter>Archivos de origen\State\Player</Filter>
+      <Filter>Archivos de origen\States\Player</Filter>
     </ClCompile>
     <ClCompile Include="MovingPlayerState.cpp">
-      <Filter>Archivos de origen\State\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="StateFactory.cpp">
-      <Filter>Archivos de origen\State</Filter>
+      <Filter>Archivos de origen\States\Player</Filter>
     </ClCompile>
     <ClCompile Include="JumpingPlayerState.cpp">
-      <Filter>Archivos de origen\State\Player</Filter>
+      <Filter>Archivos de origen\States\Player</Filter>
     </ClCompile>
     <ClCompile Include="FallingPlayerState.cpp">
-      <Filter>Archivos de origen\State\Player</Filter>
+      <Filter>Archivos de origen\States\Player</Filter>
     </ClCompile>
     <ClCompile Include="ChipmunkHelper.cpp">
       <Filter>Archivos de origen\Util</Filter>
     </ClCompile>
     <ClCompile Include="DoubleJumpingPlayerState.cpp">
-      <Filter>Archivos de origen\State\Player</Filter>
+      <Filter>Archivos de origen\States\Player</Filter>
     </ClCompile>
     <ClCompile Include="SlidingPlayerState.cpp">
-      <Filter>Archivos de origen\State\Player</Filter>
+      <Filter>Archivos de origen\States\Player</Filter>
     </ClCompile>
     <ClCompile Include="DashingPlayerState.cpp">
-      <Filter>Archivos de origen\State\Player</Filter>
+      <Filter>Archivos de origen\States\Player</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
-      <Filter>Archivos de origen\Actor\Weapons</Filter>
+      <Filter>Archivos de origen\Actors\Weapons</Filter>
     </ClCompile>
     <ClCompile Include="Ak47.cpp">
-      <Filter>Archivos de origen\Actor\Weapons</Filter>
-    </ClCompile>
-    <ClCompile Include="WeaponFactory.cpp">
-      <Filter>Archivos de origen\Actor\Weapons</Filter>
+      <Filter>Archivos de origen\Actors\Weapons</Filter>
     </ClCompile>
     <ClCompile Include="WeaponSpawner.cpp">
-      <Filter>Archivos de origen\Actor\Weapons</Filter>
+      <Filter>Archivos de origen\Actors\Weapons</Filter>
     </ClCompile>
     <ClCompile Include="Projectile.cpp">
-      <Filter>Archivos de origen\Actor</Filter>
+      <Filter>Archivos de origen\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="StateFactory.cpp">
+      <Filter>Archivos de origen\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponFactory.cpp">
+      <Filter>Archivos de origen\Factories</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -255,85 +261,85 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Layer.h">
-      <Filter>Archivos de encabezado\Layer</Filter>
+      <Filter>Archivos de encabezado\Layers</Filter>
     </ClInclude>
     <ClInclude Include="GameLayer.h">
-      <Filter>Archivos de encabezado\Layer</Filter>
+      <Filter>Archivos de encabezado\Layers</Filter>
     </ClInclude>
     <ClInclude Include="Scenario.h">
-      <Filter>Archivos de encabezado\Scenario</Filter>
+      <Filter>Archivos de encabezado\Scenarios</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
-      <Filter>Archivos de encabezado\Scenario</Filter>
+      <Filter>Archivos de encabezado\Scenarios</Filter>
     </ClInclude>
     <ClInclude Include="tinyxml2.h">
       <Filter>Archivos de encabezado\Util</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>Archivos de encabezado\Actor\Map</Filter>
+      <Filter>Archivos de encabezado\Actors\Map</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
-      <Filter>Archivos de encabezado\Actor</Filter>
+      <Filter>Archivos de encabezado\Actors</Filter>
     </ClInclude>
     <ClInclude Include="Parallax.h">
-      <Filter>Archivos de encabezado\Actor\Map</Filter>
+      <Filter>Archivos de encabezado\Actors\Map</Filter>
     </ClInclude>
     <ClInclude Include="Background.h">
-      <Filter>Archivos de encabezado\Scenario</Filter>
+      <Filter>Archivos de encabezado\Scenarios</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Archivos de encabezado\Actor</Filter>
+      <Filter>Archivos de encabezado\Actors</Filter>
     </ClInclude>
     <ClInclude Include="chipmunk\prime.h">
       <Filter>Archivos de encabezado\Util\Chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>Archivos de encabezado\State</Filter>
+      <Filter>Archivos de encabezado\States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerState.h">
-      <Filter>Archivos de encabezado\State\Player</Filter>
+      <Filter>Archivos de encabezado\States\Player</Filter>
     </ClInclude>
     <ClInclude Include="IdlePlayerState.h">
-      <Filter>Archivos de encabezado\State\Player</Filter>
+      <Filter>Archivos de encabezado\States\Player</Filter>
     </ClInclude>
     <ClInclude Include="MovingPlayerState.h">
-      <Filter>Archivos de encabezado\State\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="StateFactory.h">
-      <Filter>Archivos de encabezado\State</Filter>
+      <Filter>Archivos de encabezado\States\Player</Filter>
     </ClInclude>
     <ClInclude Include="JumpingPlayerState.h">
-      <Filter>Archivos de encabezado\State\Player</Filter>
+      <Filter>Archivos de encabezado\States\Player</Filter>
     </ClInclude>
     <ClInclude Include="FallingPlayerState.h">
-      <Filter>Archivos de encabezado\State\Player</Filter>
+      <Filter>Archivos de encabezado\States\Player</Filter>
     </ClInclude>
     <ClInclude Include="ChipmunkHelper.h">
       <Filter>Archivos de encabezado\Util</Filter>
     </ClInclude>
     <ClInclude Include="DoubleJumpingPlayerState.h">
-      <Filter>Archivos de encabezado\State\Player</Filter>
+      <Filter>Archivos de encabezado\States\Player</Filter>
     </ClInclude>
     <ClInclude Include="SlidingPlayerState.h">
-      <Filter>Archivos de encabezado\State\Player</Filter>
+      <Filter>Archivos de encabezado\States\Player</Filter>
     </ClInclude>
     <ClInclude Include="DashingPlayerState.h">
-      <Filter>Archivos de encabezado\State\Player</Filter>
+      <Filter>Archivos de encabezado\States\Player</Filter>
     </ClInclude>
     <ClInclude Include="Weapon.h">
-      <Filter>Archivos de encabezado\Actor\Weapons</Filter>
+      <Filter>Archivos de encabezado\Actors\Weapons</Filter>
     </ClInclude>
     <ClInclude Include="Ak47.h">
-      <Filter>Archivos de encabezado\Actor\Weapons</Filter>
-    </ClInclude>
-    <ClInclude Include="WeaponFactory.h">
-      <Filter>Archivos de encabezado\Actor\Weapons</Filter>
+      <Filter>Archivos de encabezado\Actors\Weapons</Filter>
     </ClInclude>
     <ClInclude Include="WeaponSpawner.h">
-      <Filter>Archivos de encabezado\Actor\Weapons</Filter>
+      <Filter>Archivos de encabezado\Actors\Weapons</Filter>
     </ClInclude>
     <ClInclude Include="Projectile.h">
-      <Filter>Archivos de encabezado\Actor</Filter>
+      <Filter>Archivos de encabezado\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="StateFactory.h">
+      <Filter>Archivos de encabezado\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponFactory.h">
+      <Filter>Archivos de encabezado\Factories</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

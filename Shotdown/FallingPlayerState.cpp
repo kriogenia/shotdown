@@ -36,13 +36,13 @@ void FallingPlayerState::jump()
 
 void FallingPlayerState::hitLeft()
 {
-	player->orientation = PlayerOrientation::RIGHT;
+	player->orientation = Orientation::RIGHT;
 	player->setState(ePlayerStates::SLIDING);
 }
 
 void FallingPlayerState::hitRight()
 {
-	player->orientation = PlayerOrientation::LEFT;
+	player->orientation = Orientation::LEFT;
 	player->setState(ePlayerStates::SLIDING);
 }
 

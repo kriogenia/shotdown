@@ -11,22 +11,17 @@ constexpr auto AK47_BULLET_LIFE = 30; // 0.5s
 constexpr auto AK47_SHOT_POINT_X = 12.0;
 constexpr auto AK47_SHOT_POINT_Y = -4.0;
 
-class Ak47 :
+class AutomaticWeapon :
     public Weapon
 {
 public:
-    Ak47(Game* game);
+    AutomaticWeapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game);
     /* Game cycle */
     void tick() override;
     void render(float rotation = 0.0) override;
     /* Control */
     void pressTrigger() override;
     void releaseTrigger() override;
-    /* Prototype */
-    inline Weapon* clone() override { return new Ak47(game); };
-    Weapon* clone(Player* owner) override;
-    /* Debug */
-    inline string toString() override { return "AK-47"; };
 
 private:
     /* Function */
@@ -35,4 +30,3 @@ private:
     bool shooting = false;
     int consecutiveShots = 0;
 };
-

@@ -28,9 +28,9 @@ constexpr auto PLAYER_SHAPE_FRICTION = 2;
 constexpr auto PLAYER_MAX_FALL_SPEED = 10 * TARGET_FPS;
 constexpr auto PLAYER_PUSH_DURATION = 3;
 
-enum class PlayerOrientation {
-    LEFT,
-    RIGHT
+enum class Orientation {
+    LEFT = -1,
+    RIGHT = 1
 };
 
 enum class ePlayerStates {
@@ -51,7 +51,7 @@ public:
     ~Player();
     /* Game cycle */
     void tick() override;
-    void render() override;
+    void render(float rotation = 0.0) override;
     /* Configuration */
     void init();
     void configureChipmunkSpace(cpSpace* chipSpace) override;
@@ -64,11 +64,11 @@ public:
     /* Events */
     void collisioned(Point collisionedPosition);
     void impacted(PlayerTag shotOwner);
-    void recoil(int force);
+    void recoil(int force, cpVect point);
     /* State */
     PlayerState* prevState = nullptr;
     void setState(ePlayerStates id);
-    PlayerOrientation orientation;
+    Orientation orientation;
     int pushedBack = 0;
     /* Weapon */
     Weapon* weapon = nullptr;

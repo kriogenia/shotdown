@@ -30,7 +30,7 @@ void SlidingPlayerState::tick()
 void SlidingPlayerState::jump()
 {
 	// Wall jump, angled jump
-	auto direction = (player->orientation == PlayerOrientation::RIGHT) ? 1.0 : -1.0;
+	auto direction = (player->orientation == Orientation::RIGHT) ? 1.0 : -1.0;
 	auto impulse = direction * PLAYER_WALL_JUMP_X;
 	cpBodySetVelocity(player->body, cpv(impulse, -PLAYER_WALL_JUMP_Y));
 	//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(impulse, -PLAYER_WALL_JUMP_IMPULSE_Y),cpv(0, 0));

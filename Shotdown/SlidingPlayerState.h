@@ -18,7 +18,7 @@ public:
     void hitLeft() override;
     void hitRight() override;
     void hitGround() override;
-    inline void recoil(int force) override {};
+    inline void recoil(int force, cpVect point) override {};
 
 private:
     /* State change checkers */

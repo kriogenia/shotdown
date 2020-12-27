@@ -30,17 +30,6 @@ void ChipmunkHelper::init()
 	cpSpaceSetGravity(chipSpace, cpv(0, GRAVITY));
 }
 
-void ChipmunkHelper::addActor(Actor* actor)
-{
-	actor->configureChipmunkSpace(chipSpace);
-}
-
-void ChipmunkHelper::removeActor(Actor* actor)
-{
-	cpSpaceRemoveBody(chipSpace, actor->body);
-	cpSpaceRemoveShape(chipSpace, actor->shape);
-}
-
 /* Manage the collision between players and tiles */
 cpBool collisionPlayerTile(cpArbiter* arb, cpSpace* space, void* dataPointerCollision)
 {
@@ -89,4 +78,21 @@ void ChipmunkHelper::setHandlers()
 			static_cast<int>(ActorType::PROJECTILE));
 	handlerPlayerProjectile->postSolveFunc = cpCollisionPostSolveFunc();
 
+}
+
+void ChipmunkHelper::addActor(Actor* actor)
+{
+	actor->configureChipmunkSpace(chipSpace);
+}
+
+void ChipmunkHelper::removeActor(Actor* actor)
+{
+	cpSpaceRemoveBody(chipSpace, actor->body);
+	cpSpaceRemoveShape(chipSpace, actor->shape);
+}
+
+/* Sets gravity velocity to 0 */
+void disableGravity(cpBody* body, cpVect gravity, cpFloat damping, cpFloat dt)
+{
+	cpBodyUpdateVelocity(body, cpv(gravity.x, 0), damping, dt);
 }

@@ -12,7 +12,7 @@ public:
 	~Actor();
 	/* Game cycle */
 	virtual void tick() {};
-	virtual void render();
+	virtual void render(float rotation = 0.0);
 	/* Destruction */
 	virtual void destroy();
 	/* Physics */

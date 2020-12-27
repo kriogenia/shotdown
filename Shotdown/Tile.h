@@ -13,7 +13,7 @@ public:
 	//Tile(string filename, float x, float y, Game* game);
 	Tile(int tileNum, float x, float y, Game* game);
 	/* Game cycle */
-	void render() override;
+	void render(float rotation = 0.0) override;
 	/* Physics */
 	void configureChipmunkSpace(cpSpace* chipSpace) override;
 private:

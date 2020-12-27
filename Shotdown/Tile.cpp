@@ -6,7 +6,7 @@ Tile::Tile(int tileNum, float x, float y, Game* game)
 	this->tileNum = tileNum;
 }
 
-void Tile::render() {
+void Tile::render(float rotation) {
 	// Pointer to the specified portion
 	int xOfTileInFile = (tileNum % TILES_PER_LINE_ON_FILE) - 1;
 	int yOfTileInFile = tileNum / TILES_PER_LINE_ON_FILE;

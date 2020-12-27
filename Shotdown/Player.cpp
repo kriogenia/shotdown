@@ -7,8 +7,8 @@ Player::Player(PlayerTag tag, Game* game)
 {
 	this->tag = tag;
 	this->orientation = (tag == PlayerTag::P1) ?
-		PlayerOrientation::LEFT :
-		PlayerOrientation::RIGHT;
+		Orientation::LEFT :
+		Orientation::RIGHT;
 	init();
 }
 
@@ -37,9 +37,9 @@ void Player::tick()
 	}
 }
 
-void Player::render()
+void Player::render(float rotation)
 {
-	Actor::render();
+	Actor::render(rotation);
 	if (weapon != nullptr) {
 		weapon->render();
 	}
@@ -148,9 +148,9 @@ void Player::impacted(PlayerTag shooter)
 }
 
 /* Manage the recoil force from shooting */
-void Player::recoil(int force)
+void Player::recoil(int force, cpVect point)
 {
-	state->recoil(force);
+	state->recoil(force, point);
 }
 
 /* Init the player states */
