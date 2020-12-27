@@ -26,6 +26,7 @@ constexpr auto DASH_CD = 5 * TARGET_FPS; // 5s
 constexpr auto PLAYER_BODY_WEIGHT = 75;
 constexpr auto PLAYER_SHAPE_FRICTION = 2;
 constexpr auto PLAYER_MAX_FALL_SPEED = 10 * TARGET_FPS;
+constexpr auto PLAYER_PUSH_DURATION = 3;
 
 enum class PlayerOrientation {
     LEFT,
@@ -58,15 +59,19 @@ public:
     void move(int direction);
     void jump();
     void dash();
+    void pressTrigger();
+    void releaseTrigger();
+    /* Events */
+    void collisioned(Point collisionedPosition);
+    void impacted(PlayerTag shotOwner);
+    void recoil(int force);
     /* State */
     PlayerState* prevState = nullptr;
     void setState(ePlayerStates id);
     PlayerOrientation orientation;
+    int pushedBack = 0;
     /* Weapon */
     Weapon* weapon = nullptr;
-    /* Events */
-    void collisioned(Point collisionedPosition);
-    void impacted(PlayerTag shotOwner);
     /* Tag */
     PlayerTag tag;
     /* Cooldowns */

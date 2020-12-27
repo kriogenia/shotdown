@@ -21,6 +21,7 @@ void Player::tick()
 {
 	// Update cooldowns
 	dashCd--;
+	pushedBack--;
 	// Limit player fall velocity
 	if (cpBodyGetVelocity(body).y > PLAYER_MAX_FALL_SPEED) {
 		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
@@ -91,6 +92,22 @@ void Player::dash()
 	state->dash();
 }
 
+/* Manage the press trigger input */
+void Player::pressTrigger()
+{
+	if (weapon != nullptr) {
+		state->pressTrigger();
+	}
+}
+
+/* Manage the release trigger input */
+void Player::releaseTrigger()
+{
+	if (weapon != nullptr) {
+		state->releaseTrigger();
+	}
+}
+
 /* Changes the player state */
 void Player::setState(ePlayerStates id)
 {
@@ -125,8 +142,15 @@ void Player::impacted(PlayerTag shooter)
 	if (shooter != tag) {
 		// TODO damage
 		// TODO go invul
+		// TODO push
 		cout << "Ouch!" << endl;
 	}
+}
+
+/* Manage the recoil force from shooting */
+void Player::recoil(int force)
+{
+	state->recoil(force);
 }
 
 /* Init the player states */

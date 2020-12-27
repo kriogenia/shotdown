@@ -36,8 +36,9 @@ public:
 	int unloadedAmmo = 0;
 
 protected:
+	/* Function */
+	virtual void shoot() = 0;
 	//WeaponState state;
 	//int shotPoint;
-	//int recoil; 
 	//int reloadTime;
 };

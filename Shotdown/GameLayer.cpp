@@ -109,22 +109,23 @@ void GameLayer::keysToControl(SDL_Event event) {
 		case SDLK_e:		// Pick weapon
 			pickWeapon(player1);
 			break;
-			/*
-		case SDLK_SPACE: // dispara
-			controlShoot1 = true;
+		case SDLK_SPACE:	// Shoot
+			player1->pressTrigger();
 			break;
-			*/
 		}
 	}
 	/* Release */
 	if (event.type == SDL_KEYUP) {
 		int code = event.key.keysym.sym;
 		switch (code) {
-		case SDLK_d:	// Right
+		case SDLK_d:		// Right
 			controlMoveRight_P1 = 0;
 			break;
-		case SDLK_a:	// Left
+		case SDLK_a:		// Left
 			controlMoveLeft_P1 = 0;
+			break;
+		case SDLK_SPACE:	// Stop Shooting
+			player1->releaseTrigger();
 			break;
 		}
 	}

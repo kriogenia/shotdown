@@ -19,11 +19,14 @@ public:
 	virtual void move(int direction);
 	virtual void jump();
 	virtual void dash();
+	virtual void pressTrigger();
+	virtual void releaseTrigger();
 	/* Events */
 	virtual void hitTop() {};
 	virtual void hitLeft() {};
 	virtual void hitRight() {};
 	virtual void hitGround() {};
+	virtual void recoil(int force);
 	/* Tag */
 	ePlayerStates tag;
 

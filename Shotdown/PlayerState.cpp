@@ -9,13 +9,16 @@ PlayerState::PlayerState(Player* actor) :
 void PlayerState::move(int direction)
 {
 	setOrientation(direction);
-	if (direction > 0 && cpBodyGetVelocity(player->body).x < PLAYER_SPEED) {
-		cpBodySetVelocity(player->body, cpv(PLAYER_SPEED, cpBodyGetVelocity(player->body).y));
-		//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
-	}
-	if (direction < 0 && cpBodyGetVelocity(player->body).x > -PLAYER_SPEED) {
-		cpBodySetVelocity(player->body, cpv(-PLAYER_SPEED, cpBodyGetVelocity(player->body).y));
-		//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(-PLAYER_SPEED, 0), cpv(0, 0));
+	// Checks player is not being pushed
+	if (player->pushedBack <= 0) {
+		if (direction > 0 && cpBodyGetVelocity(player->body).x < PLAYER_SPEED) {
+			cpBodySetVelocity(player->body, cpv(PLAYER_SPEED, cpBodyGetVelocity(player->body).y));
+			//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(PLAYER_SPEED, 0), cpv(0, 0));
+		}
+		if (direction < 0 && cpBodyGetVelocity(player->body).x > -PLAYER_SPEED) {
+			cpBodySetVelocity(player->body, cpv(-PLAYER_SPEED, cpBodyGetVelocity(player->body).y));
+			//cpBodyApplyImpulseAtLocalPoint(player->body, cpv(-PLAYER_SPEED, 0), cpv(0, 0));
+		}
 	}
 }
 
@@ -33,6 +36,27 @@ void PlayerState::dash()
 		cpBodyApplyImpulseAtLocalPoint(player->body, cpv(impulse, 0), cpv(0, 0));
 		player->setState(ePlayerStates::DASHING);
 	}
+}
+
+void PlayerState::pressTrigger()
+{
+	if (player->weapon != nullptr) {
+		player->weapon->pressTrigger();
+	}
+}
+
+void PlayerState::releaseTrigger()
+{
+	if (player->weapon != nullptr) {
+		player->weapon->releaseTrigger();
+	}
+}
+
+void PlayerState::recoil(int force)
+{
+	player->pushedBack = PLAYER_PUSH_DURATION;
+	int recoil = (player->orientation == PlayerOrientation::LEFT ? 1 : -1) * force;
+	cpBodyApplyImpulseAtLocalPoint(player->body, cpv(recoil, 0), cpv(0, 0));
 }
 
 void PlayerState::setOrientation(int direction)

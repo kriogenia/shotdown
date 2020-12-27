@@ -3,9 +3,9 @@
 Ak47::Ak47(Game* game) :
 	Weapon("res/weapons/ak47.png", 30, 8, 30, 8, game)
 {
+	rarity = COMMON;
 	loadedAmmo = AK47_CLIP_SIZE;
 	unloadedAmmo = AK47_EXTRA_AMMO;
-	rarity = COMMON;
 }
 
 void Ak47::tick()
@@ -15,11 +15,11 @@ void Ak47::tick()
 	if (shooting) {
 		// Has ammo to shoot
 		if (loadedAmmo > 0) {
-			cout << "AK-47 shooting" << endl;
+			shoot();
 		}
 		// No ammo left
 		else {
-			cout << "No ammo!" << endl;
+			//cout << "No ammo!" << endl;
 			// TODO play empty clip sound
 		}
 	}
@@ -27,20 +27,21 @@ void Ak47::tick()
 	else {
 		// No ammo left -> starts reload
 		if (loadedAmmo <= 0) {
-			cout << "Start reload" << endl;
+			//cout << "Start reload" << endl;
 		}
 	}
 }
 
 void Ak47::pressTrigger()
 {
+	cout << "Player pressing trigger" << endl;
 	shooting = true;
 }
 
 void Ak47::releaseTrigger()
 {
+	cout << "Player released trigger" << endl;
 	shooting = false;
-	rarity = COMMON;
 }
 
 Weapon* Ak47::clone(Player* owner)
@@ -49,4 +50,12 @@ Weapon* Ak47::clone(Player* owner)
 	clone->owner = owner;
 	clone->position = owner->position;
 	return clone;
+}
+
+void Ak47::shoot()
+{
+	loadedAmmo--;
+	cout << "AK-47 shooting" << endl;
+	// Pushes back player
+	owner->recoil(AK47_RECOIL);
 }

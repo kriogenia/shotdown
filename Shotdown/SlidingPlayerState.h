@@ -14,10 +14,11 @@ public:
     // Control
     inline void move(int duration) override {};
     void jump() override;
-    // Interaction
+    // Events
     void hitLeft() override;
     void hitRight() override;
     void hitGround() override;
+    inline void recoil(int force) override {};
 
 private:
     /* State change checkers */

@@ -4,6 +4,7 @@
 
 constexpr auto AK47_CLIP_SIZE = 10;
 constexpr auto AK47_EXTRA_AMMO = 10;
+constexpr auto AK47_RECOIL = 45 * TARGET_FPS;
 
 class Ak47 :
     public Weapon
@@ -22,6 +23,9 @@ public:
     inline string toString() override { return "AK-47"; };
 
 private:
+    /* Function */
+    void shoot() override;
+    /* State */
     bool shooting = false;
 };
 

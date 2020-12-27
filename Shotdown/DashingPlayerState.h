@@ -15,6 +15,7 @@ public:
     // Controls
     inline void move(int direction) override {};
     inline void jump() override {};
+    inline void pressTrigger() override{};
     // Events
     void hitLeft() override;
     void hitRight() override;
