@@ -1,5 +1,7 @@
 #include "EmptyWeaponState.h"
 
+#include "Broadcaster.h"
+
 EmptyWeaponState::EmptyWeaponState(Weapon* weapon) :
 	WeaponStateBase(weapon)
 {
@@ -12,5 +14,5 @@ void EmptyWeaponState::enter()
 
 void EmptyWeaponState::shoot()
 {
-	// Play empty clip sound
+	weapon->messager->notify(Notifications::EMPTY_CLIP);
 }

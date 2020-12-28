@@ -8,6 +8,11 @@ SoundEffect::SoundEffect(string filename)
     }
 }
 
+SoundEffect::~SoundEffect()
+{
+    Mix_FreeChunk(mix);
+}
+
 void SoundEffect::play()
 {
     Mix_PlayChannel(-1, mix, 0);

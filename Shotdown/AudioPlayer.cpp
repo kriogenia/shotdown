@@ -12,16 +12,16 @@ AudioPlayer* AudioPlayer::getInstance()
 AudioPlayer::AudioPlayer()
 {
 	// Add background themes
-	menuTheme = new BackgroundAudio("res/audio/Ludum Dare 30 - Track 2.wav");
-	endTheme = new BackgroundAudio("res/audio/Ludum Dare 30 - Track 8.wav");
-	themes.push_back(new BackgroundAudio("res/audio/Ludum Dare 28 - Track 1.wav"));
-	themes.push_back(new BackgroundAudio("res/audio/Ludum Dare 28 - Track 3.wav"));
-	themes.push_back(new BackgroundAudio("res/audio/Ludum Dare 28 - Track 5.wav"));
-	themes.push_back(new BackgroundAudio("res/audio/Ludum Dare 28 - Track 8.wav"));
-	themes.push_back(new BackgroundAudio("res/audio/Ludum Dare 30 - Track 4.wav"));
+	menuTheme = new BackgroundAudio("res/audio/themes/Ludum Dare 30 - Track 2.wav");
+	endTheme = new BackgroundAudio("res/audio/themes/Ludum Dare 30 - Track 8.wav");
+	themes.push_back(new BackgroundAudio("res/audio/themes/Ludum Dare 28 - Track 1.wav"));
+	themes.push_back(new BackgroundAudio("res/audio/themes/Ludum Dare 28 - Track 3.wav"));
+	themes.push_back(new BackgroundAudio("res/audio/themes/Ludum Dare 28 - Track 5.wav"));
+	themes.push_back(new BackgroundAudio("res/audio/themes/Ludum Dare 28 - Track 8.wav"));
+	themes.push_back(new BackgroundAudio("res/audio/themes/Ludum Dare 30 - Track 4.wav"));
 	currentTheme = menuTheme;
 
-	// clips.insert_or_assign(TRACK_BLOCKED_SHOT, new AudioClip("res/audio/blocked_shot.wav"));
+	clips.insert_or_assign(AudioClips::NO_AMMO, new AudioClip("res/audio/clips/no_ammo.wav"));
 
 }
 
@@ -60,7 +60,7 @@ void AudioPlayer::end()
 }
 
 /* Plays the specified clip */
-void AudioPlayer::play(eAudioClips key)
+void AudioPlayer::play(AudioClips key)
 {
 	clips[key]->play();
 }

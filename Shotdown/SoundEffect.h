@@ -9,6 +9,8 @@ class SoundEffect
 {
 public:
 	SoundEffect(string filename);
+	~SoundEffect();
+
 	void play();
 
 private:

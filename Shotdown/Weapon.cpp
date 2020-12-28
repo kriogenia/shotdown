@@ -9,6 +9,7 @@ Weapon::Weapon(string filename, int width, int height, int fileWidth, int fileHe
 
 Weapon::~Weapon()
 {
+	delete sound;
 	states.clear();
 }
 

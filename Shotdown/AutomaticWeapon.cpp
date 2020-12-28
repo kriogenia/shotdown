@@ -4,7 +4,6 @@
 AutomaticWeapon::AutomaticWeapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game) :
 	Weapon(filename, width, height, fileWidth, fileHeight, game)
 {
-	type = WeaponType::AUTO;
 }
 
 void AutomaticWeapon::tick()

@@ -5,8 +5,8 @@
 #include <map>
 #include <vector>
 
-enum class eAudioClips {
-
+enum class AudioClips {
+	NO_AMMO
 };
 
 /* Singleton */
@@ -19,7 +19,7 @@ public:
 	void start();
 	void next();
 	void end();
-	void play(eAudioClips key);
+	void play(AudioClips key);
 
 private:
 	static AudioPlayer* instance;
@@ -31,7 +31,7 @@ private:
 	BackgroundAudio* endTheme;
 	vector<BackgroundAudio*> themes;
 	int index = 0;
-	/* Sound effects */
-	map<eAudioClips, AudioClip*> clips;
+	/* Audio clips */
+	map<AudioClips, AudioClip*> clips;
 
 };

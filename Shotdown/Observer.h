@@ -20,5 +20,11 @@ enum class Notifications {
 class Observer
 {
 public:
-	virtual void notify(Notifications message, void* publisher = nullptr) = 0;
+	Observer* getInstance();
+
+	void notify(Notifications message, void* publisher = nullptr);
+private:
+	Observer* instance;
+
+	Observer();
 };

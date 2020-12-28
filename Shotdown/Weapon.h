@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Broadcaster.h"
 #include "ChipmunkHelper.h"
 #include "Projectile.h"
 #include "SoundEffect.h"
@@ -7,10 +8,6 @@
 
 #include "Player.h"
 class Player;
-
-enum class WeaponType {
-	AUTO
-};
 
 enum class WeaponRarity {
 	RARE = 1,
@@ -40,10 +37,10 @@ public:
 	virtual Weapon* clone(Player* owner) = 0;
 	/* Debug */
 	virtual string toString() = 0;
-	/* Owner */
+	/* References */
 	Player* owner = nullptr;
+	Broadcaster* messager = Broadcaster::getInstance();
 	/* Attributes */
-	WeaponType type;
 	int rarity = 0;
 	/* Ammo */
 	int loadedAmmo = 0;
