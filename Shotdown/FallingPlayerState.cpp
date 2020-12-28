@@ -1,7 +1,7 @@
 #include "FallingPlayerState.h"
 
 FallingPlayerState::FallingPlayerState(Player* actor) :
-	PlayerState(actor)
+	PlayerStateBase(actor)
 {
 	tag = ePlayerStates::FALLING;
 }
@@ -30,7 +30,7 @@ void FallingPlayerState::tick()
 void FallingPlayerState::jump()
 {
 	if (player->prevState->tag != ePlayerStates::DOUBLE_JUMPING) {
-		PlayerState::jump();
+		PlayerStateBase::jump();
 		player->setState(ePlayerStates::DOUBLE_JUMPING);
 	}
 }

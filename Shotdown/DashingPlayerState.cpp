@@ -1,7 +1,7 @@
 #include "DashingPlayerState.h"
 
 DashingPlayerState::DashingPlayerState(Player* player) :
-	PlayerState(player)
+	PlayerStateBase(player)
 {
 	tag = ePlayerStates::DASHING;
 }

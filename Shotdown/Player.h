@@ -1,9 +1,7 @@
 #pragma once
 
 #include "Actor.h"
-
 #include "PlayerState.h"
-class PlayerState;
 #include "Weapon.h"
 class Weapon;
 
@@ -32,16 +30,6 @@ constexpr auto PLAYER_PUSH_DURATION = 10;
 enum class Orientation {
     LEFT = -1,
     RIGHT = 1
-};
-
-enum class ePlayerStates {
-    IDLE,
-    MOVING,
-    JUMPING,
-    DOUBLE_JUMPING,
-    FALLING,
-    SLIDING,
-    DASHING
 };
 
 class Player :

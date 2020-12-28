@@ -1,7 +1,7 @@
 #include "IdlePlayerState.h"
 
 IdlePlayerState::IdlePlayerState(Player* actor) :
-	PlayerState(actor)
+	PlayerStateBase(actor)
 {
 	tag = ePlayerStates::IDLE;
 }
@@ -31,13 +31,13 @@ void IdlePlayerState::tick()
 void IdlePlayerState::move(int direction)
 {
 	if (direction != 0) {
-		PlayerState::move(direction);
+		PlayerStateBase::move(direction);
 		player->setState(ePlayerStates::MOVING);
 	}
 }
 
 void IdlePlayerState::jump()
 {
-	PlayerState::jump();
+	PlayerStateBase::jump();
 	player->setState(ePlayerStates::JUMPING);
 }

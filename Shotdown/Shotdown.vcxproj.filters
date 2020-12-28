@@ -285,6 +285,9 @@
     <ClCompile Include="WeaponState.cpp">
       <Filter>Archivos de origen\States</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerStateBase.cpp">
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -388,6 +391,9 @@
     </ClInclude>
     <ClInclude Include="PlayerState.h">
       <Filter>Archivos de encabezado\States</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerStateBase.h">
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "PlayerState.h"
+#include "PlayerStateBase.h"
 
 class DashingPlayerState :
-    public PlayerState
+    public PlayerStateBase
 {
 public:
     DashingPlayerState(Player* player);

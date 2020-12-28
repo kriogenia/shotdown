@@ -1,7 +1,7 @@
 #include "JumpingPlayerState.h"
 
 JumpingPlayerState::JumpingPlayerState(Player* actor) :
-	PlayerState(actor)
+	PlayerStateBase(actor)
 {
 	tag = ePlayerStates::JUMPING;
 }
@@ -22,7 +22,7 @@ void JumpingPlayerState::tick()
 
 void JumpingPlayerState::jump()
 {
-	PlayerState::jump();
+	PlayerStateBase::jump();
 	player->setState(ePlayerStates::DOUBLE_JUMPING);
 }
 

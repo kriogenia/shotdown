@@ -1,7 +1,7 @@
 #include "MovingPlayerState.h"
 
 MovingPlayerState::MovingPlayerState(Player* actor) :
-	PlayerState(actor)
+	PlayerStateBase(actor)
 {
 	tag = ePlayerStates::MOVING;
 }
@@ -25,11 +25,11 @@ void MovingPlayerState::move(int direction)
 	if (direction == 0) {
 		player->setState(ePlayerStates::IDLE);
 	}
-	PlayerState::move(direction);
+	PlayerStateBase::move(direction);
 }
 
 void MovingPlayerState::jump()
 {
-	PlayerState::jump();
+	PlayerStateBase::jump();
 	player->setState(ePlayerStates::JUMPING);
 }

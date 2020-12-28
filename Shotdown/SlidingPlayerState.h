@@ -1,9 +1,9 @@
 #pragma once
 
-#include "PlayerState.h"
+#include "PlayerStateBase.h"
 
 class SlidingPlayerState :
-    public PlayerState
+    public PlayerStateBase
 {
 public:
     SlidingPlayerState(Player* player);

@@ -1,7 +1,7 @@
 #include "SlidingPlayerState.h"
 
 SlidingPlayerState::SlidingPlayerState(Player* player) :
-	PlayerState(player)
+	PlayerStateBase(player)
 {
 	tag = ePlayerStates::SLIDING;
 }

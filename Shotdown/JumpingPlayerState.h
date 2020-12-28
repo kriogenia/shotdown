@@ -1,11 +1,11 @@
 #pragma once
 
-#include "PlayerState.h"
+#include "PlayerStateBase.h"
 
 constexpr auto DOUBLE_JUMP_CAP = 100;
 
 class JumpingPlayerState :
-    public PlayerState
+    public PlayerStateBase
 {
 public:
     JumpingPlayerState(Player* actor);

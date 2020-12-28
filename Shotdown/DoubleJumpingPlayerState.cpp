@@ -1,7 +1,7 @@
 #include "DoubleJumpingPlayerState.h"
 
 DoubleJumpingPlayerState::DoubleJumpingPlayerState(Player* actor) :
-	PlayerState(actor)
+	PlayerStateBase(actor)
 {
 	tag = ePlayerStates::DOUBLE_JUMPING;
 }
