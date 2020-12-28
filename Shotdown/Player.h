@@ -26,7 +26,7 @@ constexpr auto DASH_CD = 5 * TARGET_FPS; // 5s
 constexpr auto PLAYER_BODY_WEIGHT = 75;
 constexpr auto PLAYER_SHAPE_FRICTION = 2;
 constexpr auto PLAYER_MAX_FALL_SPEED = 10 * TARGET_FPS;
-constexpr auto PLAYER_PUSH_DURATION = 3;
+constexpr auto PLAYER_PUSH_DURATION = 10;
 
 enum class Orientation {
     LEFT = -1,

@@ -9,6 +9,7 @@ constexpr auto AK47_EXTRA_AMMO = 10;
 constexpr auto AK47_WAIT_TIME = 10; // 0.16s
 /* Recoil */
 constexpr auto AK47_RECOIL_PER_SHOT = 0.25;
+constexpr auto AK47_ANGLE_PER_SHOT = 1.9;
 constexpr auto AK47_RECOIL_FORCE = 60 * TARGET_FPS;
 /* Projectile */
 constexpr auto AK47_PROJECTILE_LIFE = 30; // 0.5s

@@ -23,6 +23,7 @@ void Player::tick()
 	dashCd--;
 	pushedBack--;
 	// Limit player fall velocity
+	// TODO move to change update velocity func
 	if (cpBodyGetVelocity(body).y > PLAYER_MAX_FALL_SPEED) {
 		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
 	}

@@ -26,8 +26,8 @@ void GameLayer::init()
 	// Generates the Players
 	player1 = new Player(PlayerTag::P1, game);
 	player1->projectiles = &projectiles;
-	//player2 = new Player(PlayerTag::P2, game);
-	//player2->projectiles = &projectiles;
+	player2 = new Player(PlayerTag::P2, game);
+	player2->projectiles = &projectiles;
 	// Generates the scenarios
 	generateScenarios();
 	// Loads the first scenario
@@ -38,7 +38,7 @@ void GameLayer::processControls()
 {
 	Layer::processControls();
 	player1->move(controlMoveLeft_P1 + controlMoveRight_P1);
-	//player2->move(controlMoveLeft_P2 + controlMoveRight_P2);
+	player2->move(controlMoveLeft_P2 + controlMoveRight_P2);
 }
 
 void GameLayer::tick()
@@ -47,7 +47,7 @@ void GameLayer::tick()
 	engine->tick();
 	// Players update
 	player1->tick();
-	//player2->tick();
+	player2->tick();
 	// Projectiles update
 	vector<Actor*> projectilesToDelete;
 	for (auto const& projectile : projectiles) {
@@ -76,7 +76,7 @@ void GameLayer::render()
 		spawner->render();
 	}
 	player1->render();
-	//player2->render();
+	player2->render();
 	for (auto const& projectile : projectiles) {
 		projectile->render();
 	}
@@ -152,7 +152,7 @@ void GameLayer::reset()
 	engine->setHandlers();
 	// Clears the entities
 	player1->init();
-	//player2->init();
+	player2->init();
 	projectiles.clear();
 	spawners.clear();
 }
@@ -170,8 +170,8 @@ void GameLayer::playNextScenario()
 	auto spawnPoints = currentScenario->playerSpawns;
 	player1->position = spawnPoints[0];
 	engine->addActor(player1);
-	//player2->position = spawnPoints[0];
-	//engine->addActor(player2);
+	player2->position = spawnPoints[1];
+	engine->addActor(player2);
 	/* Creates spawners on the specified locations */
 	auto spawnerLocations = currentScenario->wsSpawns;
 	for (auto const& location : spawnerLocations) {

@@ -31,7 +31,12 @@ void AutomaticWeapon::tick()
 
 void AutomaticWeapon::render(float rotation)
 {
-	Weapon::render(static_cast<float>(consecutiveShots * 2));
+	if (owner != nullptr) {
+		Weapon::render(consecutiveShots * anglePerShot * -static_cast<float>(owner->orientation));
+	}
+	else {
+		Weapon::render(rotation);
+	}
 }
 
 void AutomaticWeapon::pressTrigger()

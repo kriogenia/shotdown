@@ -40,6 +40,7 @@ void Projectile::configureChipmunkSpace(cpSpace* chipSpace)
 	cpSpaceAddBody(chipSpace, body);
 	// Create the shape
 	shape = cpBoxShapeNew(body, width, height, 0.0);
+	cpShapeSetCollisionType(shape, static_cast<int>(type));
 	cpShapeSetElasticity(shape, 0); 
 	cpShapeSetFriction(shape, 0.8); 
 	cpSpaceAddShape(chipSpace, shape);

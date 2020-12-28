@@ -60,6 +60,21 @@ cpBool collisionPlayerProjectile(cpArbiter* arb, cpSpace* space, void* dataPoint
 	return cpTrue;
 }
 
+/* Manage the collision between projectiles and tiles */
+cpBool collisionProjectileTile(cpArbiter* arb, cpSpace* space, void* dataPointerCollision)
+{
+	// Shape extraction
+	cpShape* projectileShape;
+	cpShape* tileShape;
+	cpArbiterGetShapes(arb, &projectileShape, &tileShape);
+	// Invoke collision method
+	Projectile* projectile = (Projectile*)cpShapeGetUserData(projectileShape);
+	Tile* tile = (Tile*)cpShapeGetUserData(tileShape);
+	// tile->impacted(projectile->shooter);
+	projectile->destroy();
+	return cpTrue;
+}
+
 /* Creates the collision handlers */
 void ChipmunkHelper::setHandlers()
 {
@@ -76,8 +91,14 @@ void ChipmunkHelper::setHandlers()
 			chipSpace,
 			static_cast<int>(ActorType::PLAYER),
 			static_cast<int>(ActorType::PROJECTILE));
-	handlerPlayerProjectile->postSolveFunc = cpCollisionPostSolveFunc();
-
+	handlerPlayerProjectile->postSolveFunc = cpCollisionPostSolveFunc(collisionPlayerProjectile);
+	/* Projectile and tile collision */
+	cpCollisionHandler* handlerProjectileTile =
+		cpSpaceAddCollisionHandler(
+			chipSpace,
+			static_cast<int>(ActorType::PROJECTILE),
+			static_cast<int>(ActorType::TILE));
+	handlerProjectileTile->preSolveFunc = cpCollisionPreSolveFunc(collisionProjectileTile);
 }
 
 void ChipmunkHelper::addActor(Actor* actor)
