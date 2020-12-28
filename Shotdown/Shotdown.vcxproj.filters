@@ -85,6 +85,18 @@
     <Filter Include="Archivos de origen\States\WeaponStates">
       <UniqueIdentifier>{e2cd7d04-eb38-492c-8de4-96b7d3ed5ac9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Observers">
+      <UniqueIdentifier>{feaaea2f-833a-46df-8d3a-d7b892bd53dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Observers">
+      <UniqueIdentifier>{88984d40-6dc9-4775-90d0-e6187d31616d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Audio">
+      <UniqueIdentifier>{7cc985aa-bba4-4a96-b526-b039a2166017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Audio">
+      <UniqueIdentifier>{6dcb9c69-9ca3-4ef8-8cf3-9078f20ff291}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -288,6 +300,18 @@
     <ClCompile Include="PlayerStateBase.cpp">
       <Filter>Archivos de origen\States\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="Observer.cpp">
+      <Filter>Archivos de origen\Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioPlayer.cpp">
+      <Filter>Archivos de origen\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundAudio.cpp">
+      <Filter>Archivos de origen\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioClip.cpp">
+      <Filter>Archivos de origen\Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -394,6 +418,18 @@
     </ClInclude>
     <ClInclude Include="PlayerStateBase.h">
       <Filter>Archivos de encabezado\States\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Archivos de encabezado\Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioPlayer.h">
+      <Filter>Archivos de encabezado\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundAudio.h">
+      <Filter>Archivos de encabezado\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioClip.h">
+      <Filter>Archivos de encabezado\Audio</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

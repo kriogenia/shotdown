@@ -2,6 +2,7 @@
 
 #include <chipmunk/chipmunk.h>
 
+#include "AudioPlayer.h"
 #include "Background.h"
 #include "Layer.h"
 #include "Player.h"
@@ -24,7 +25,8 @@ public:
 	void keysToControl(SDL_Event event) override;
 	void padToControl(SDL_Event event) override {};
 private:
-	/* Engine */
+	/* Engines */
+	AudioPlayer* audio = nullptr;
 	ChipmunkHelper* engine = nullptr;
 	/* Showmatch */
 	Player* player1;

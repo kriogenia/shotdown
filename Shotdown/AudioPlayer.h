@@ -3,6 +3,7 @@
 #include "AudioClip.h"
 #include "BackgroundAudio.h"
 #include <map>
+#include <vector>
 
 enum class eAudioClips {
 
@@ -16,7 +17,8 @@ public:
 	~AudioPlayer();
 	/* Actions */
 	void start();
-	//void next();
+	void next();
+	void end();
 	void play(eAudioClips key);
 
 private:
@@ -25,7 +27,10 @@ private:
 	AudioPlayer();
 	/* Background tracks */
 	BackgroundAudio* currentTheme;
-	//list<BackgroundAudio*> themes;
+	BackgroundAudio* menuTheme;
+	BackgroundAudio* endTheme;
+	vector<BackgroundAudio*> themes;
+	int index = 0;
 	/* Sound effects */
 	map<eAudioClips, AudioClip*> clips;
 

@@ -5,6 +5,7 @@
 GameLayer::GameLayer(Game* game) :
 	Layer(game)
 {
+	audio = AudioPlayer::getInstance();
 	engine = ChipmunkHelper::getInstance();
 	background = new Background(game);
 	currentScenario = nullptr;
@@ -167,6 +168,8 @@ void GameLayer::playNextScenario()
 	for (auto const& location : spawnerLocations) {
 		spawners.push_back(new WeaponSpawner(location.x, location.y, game));
 	}
+	/* Starts the new background clip */
+	audio->next();
 }
 
 /* Launches player and spawner interaction event */

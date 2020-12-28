@@ -153,8 +153,11 @@
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Ak47.cpp" />
+    <ClCompile Include="AudioClip.cpp" />
+    <ClCompile Include="AudioPlayer.cpp" />
     <ClCompile Include="AutomaticWeapon.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="BackgroundAudio.cpp" />
     <ClCompile Include="ChipmunkHelper.cpp" />
     <ClCompile Include="chipmunk\chipmunk.c" />
     <ClCompile Include="chipmunk\cpArbiter.c" />
@@ -201,6 +204,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MovingPlayerState.cpp" />
+    <ClCompile Include="Observer.cpp" />
     <ClCompile Include="Parallax.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerState.cpp" />
@@ -222,8 +226,11 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Ak47.h" />
+    <ClInclude Include="AudioClip.h" />
+    <ClInclude Include="AudioPlayer.h" />
     <ClInclude Include="AutomaticWeapon.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="BackgroundAudio.h" />
     <ClInclude Include="ChipmunkHelper.h" />
     <ClInclude Include="chipmunk\prime.h" />
     <ClInclude Include="DashingPlayerState.h" />
@@ -238,6 +245,7 @@
     <ClInclude Include="LoadedWeaponState.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MovingPlayerState.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="Parallax.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerState.h" />
