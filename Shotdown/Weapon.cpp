@@ -1,8 +1,15 @@
 #include "Weapon.h"
 
+#include "StateFactory.h"
+
 Weapon::Weapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game) :
 	Actor(ActorType::WEAPON, filename, 0, 0, width, height, fileWidth, fileHeight, game)
 {
+}
+
+Weapon::~Weapon()
+{
+	states.clear();
 }
 
 void Weapon::tick()
@@ -50,4 +57,22 @@ void Weapon::shoot()
 {
 	loadedAmmo--;
 	owner->recoil(recoil, cpv(shotPoint.x, shotPoint.y));
+}
+
+/* Populates the WeaponStates */
+void Weapon::initStates()
+{
+	states.clear();
+	StateFactory* factory = StateFactory::getInstance();
+	states.insert_or_assign(eWeaponStates::LOADED, factory->getState(eWeaponStates::LOADED, this));
+	states.insert_or_assign(eWeaponStates::RELOADING, factory->getState(eWeaponStates::RELOADING, this));
+	states.insert_or_assign(eWeaponStates::EMPTY, factory->getState(eWeaponStates::EMPTY, this));
+	state = states[eWeaponStates::LOADED];
+}
+
+void Weapon::setState(eWeaponStates stateId)
+{
+	state->exit();
+	state = states[stateId];
+	state->enter();
 }

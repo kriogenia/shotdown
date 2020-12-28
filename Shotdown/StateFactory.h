@@ -1,9 +1,8 @@
 #pragma once
 
-#include "PlayerState.h"
-
 #include "Player.h"
 class Player;
+#include "Weapon.h"
 
 /* Singleton */
 class StateFactory
@@ -12,6 +11,7 @@ public:
     static StateFactory* getInstance();
     /* State generator */
     PlayerState* getState(ePlayerStates stateId, Player* player);
+    WeaponState* getState(eWeaponStates stateId, Weapon* weapon);
 
 private:
     static StateFactory* instance;

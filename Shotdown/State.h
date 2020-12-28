@@ -8,7 +8,7 @@ class State
 public:
 	State() {};
 	/* Game cycle */
-	virtual void tick() = 0;
+	virtual void tick() {};
 	/* State swap */
 	virtual void enter() {};
 	virtual void exit() {};

@@ -71,6 +71,8 @@ public:
     void setState(ePlayerStates id);
     Orientation orientation;
     int pushedBack = 0;
+    /* Debug */
+    string toString();
     /* Showdown */
     unsigned int victories = 0;
     /* Weapon */

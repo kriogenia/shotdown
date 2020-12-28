@@ -8,6 +8,10 @@
 #include "MovingPlayerState.h"
 #include "SlidingPlayerState.h"
 
+#include "EmptyWeaponState.h"
+#include "LoadedWeaponState.h"
+#include "ReloadingWeaponState.h"
+
 StateFactory* StateFactory::instance = 0;
 
 StateFactory* StateFactory::getInstance() 
@@ -39,6 +43,20 @@ PlayerState* StateFactory::getState(ePlayerStates stateId, Player* player)
     case ePlayerStates::DASHING:
         return new DashingPlayerState(player);
     default: 
+        return nullptr;
+    }
+}
+
+WeaponState* StateFactory::getState(eWeaponStates stateId, Weapon* weapon)
+{
+    switch (stateId) {
+    case eWeaponStates::LOADED:
+        return new LoadedWeaponState(weapon);
+    case eWeaponStates::RELOADING:
+        return new ReloadingWeaponState(weapon);
+    case eWeaponStates::EMPTY:
+        return new EmptyWeaponState(weapon);
+    default:
         return nullptr;
     }
 }

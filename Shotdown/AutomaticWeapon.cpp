@@ -3,30 +3,16 @@
 AutomaticWeapon::AutomaticWeapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game) :
 	Weapon(filename, width, height, fileWidth, fileHeight, game)
 {
+	type = WeaponType::AUTO;
 }
 
 void AutomaticWeapon::tick()
 {
 	Weapon::tick();
-	// Player is shooting
 	if (shooting) {
-		// Has ammo to shoot
-		if (loadedAmmo > 0) {
-			shoot();
-		}
-		// No ammo left
-		else {
-			//cout << "No ammo!" << endl;
-			// TODO play empty clip sound
-		}
+		state->shoot();
 	}
-	// Player not shooting
-	else {
-		// No ammo left -> starts reload
-		if (loadedAmmo <= 0) {
-			//cout << "Start reload" << endl;
-		}
-	}
+	state->tick();
 }
 
 void AutomaticWeapon::render(float rotation)

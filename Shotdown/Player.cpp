@@ -130,6 +130,12 @@ void Player::setState(ePlayerStates id)
 	state->enter();
 }
 
+/* Returns player as string */
+string Player::toString()
+{
+	return "Player " + static_cast<int>(tag);
+}
+
 /* Manage the collision with a Tile */
 void Player::collisioned(Point collisionedPosition)
 {

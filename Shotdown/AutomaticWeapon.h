@@ -21,8 +21,6 @@ protected:
     bool shooting = false;
     int consecutiveShots = 0;
     /* Properties */
-    int bulletLife = 0;
-    float projectileSpeed = 0.0;
     float recoilPerShot = 0.0;
     float anglePerShot = 0.0;
 };

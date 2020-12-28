@@ -46,9 +46,6 @@
     <Filter Include="Archivos de encabezado\States">
       <UniqueIdentifier>{53d6af94-489a-4f8c-a36b-bc4bace1145b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\States\Player">
-      <UniqueIdentifier>{4a775da0-85b5-4ab9-a3e0-b80c8365398d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de origen\Actors">
       <UniqueIdentifier>{c377cf1a-0db8-4c30-87fa-8e036bb41719}</UniqueIdentifier>
     </Filter>
@@ -67,9 +64,6 @@
     <Filter Include="Archivos de origen\States">
       <UniqueIdentifier>{3edeffff-28ff-4f5f-959f-1e96583f10be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de origen\States\Player">
-      <UniqueIdentifier>{d2662232-5882-4332-9528-ad0f5080121c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de origen\Factories">
       <UniqueIdentifier>{d11b12b8-2698-4338-be48-e2cb5f960b70}</UniqueIdentifier>
     </Filter>
@@ -78,6 +72,18 @@
     </Filter>
     <Filter Include="Archivos de origen\Actors\Weapons\Auto">
       <UniqueIdentifier>{daf0f17f-3ec0-496f-bfdc-b49c0c9c280d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\States\PlayerStates">
+      <UniqueIdentifier>{4a775da0-85b5-4ab9-a3e0-b80c8365398d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\States\WeaponStates">
+      <UniqueIdentifier>{520e2739-26b8-4eb9-99cb-9eb2a3c7d2d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\States\PlayerStates">
+      <UniqueIdentifier>{d2662232-5882-4332-9528-ad0f5080121c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\States\WeaponStates">
+      <UniqueIdentifier>{e2cd7d04-eb38-492c-8de4-96b7d3ed5ac9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -216,32 +222,29 @@
     <ClCompile Include="State.cpp">
       <Filter>Archivos de origen\States</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerState.cpp">
-      <Filter>Archivos de origen\States\Player</Filter>
-    </ClCompile>
     <ClCompile Include="IdlePlayerState.cpp">
-      <Filter>Archivos de origen\States\Player</Filter>
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="MovingPlayerState.cpp">
-      <Filter>Archivos de origen\States\Player</Filter>
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="JumpingPlayerState.cpp">
-      <Filter>Archivos de origen\States\Player</Filter>
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="FallingPlayerState.cpp">
-      <Filter>Archivos de origen\States\Player</Filter>
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="ChipmunkHelper.cpp">
       <Filter>Archivos de origen\Util</Filter>
     </ClCompile>
     <ClCompile Include="DoubleJumpingPlayerState.cpp">
-      <Filter>Archivos de origen\States\Player</Filter>
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="SlidingPlayerState.cpp">
-      <Filter>Archivos de origen\States\Player</Filter>
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="DashingPlayerState.cpp">
-      <Filter>Archivos de origen\States\Player</Filter>
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
       <Filter>Archivos de origen\Actors\Weapons</Filter>
@@ -263,6 +266,24 @@
     </ClCompile>
     <ClCompile Include="AutomaticWeapon.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Auto</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadedWeaponState.cpp">
+      <Filter>Archivos de origen\States\WeaponStates</Filter>
+    </ClCompile>
+    <ClCompile Include="ReloadingWeaponState.cpp">
+      <Filter>Archivos de origen\States\WeaponStates</Filter>
+    </ClCompile>
+    <ClCompile Include="EmptyWeaponState.cpp">
+      <Filter>Archivos de origen\States\WeaponStates</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>Archivos de origen\States</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponStateBase.cpp">
+      <Filter>Archivos de origen\States\WeaponStates</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponState.cpp">
+      <Filter>Archivos de origen\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -305,32 +326,29 @@
     <ClInclude Include="State.h">
       <Filter>Archivos de encabezado\States</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerState.h">
-      <Filter>Archivos de encabezado\States\Player</Filter>
-    </ClInclude>
     <ClInclude Include="IdlePlayerState.h">
-      <Filter>Archivos de encabezado\States\Player</Filter>
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="MovingPlayerState.h">
-      <Filter>Archivos de encabezado\States\Player</Filter>
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="JumpingPlayerState.h">
-      <Filter>Archivos de encabezado\States\Player</Filter>
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="FallingPlayerState.h">
-      <Filter>Archivos de encabezado\States\Player</Filter>
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="ChipmunkHelper.h">
       <Filter>Archivos de encabezado\Util</Filter>
     </ClInclude>
     <ClInclude Include="DoubleJumpingPlayerState.h">
-      <Filter>Archivos de encabezado\States\Player</Filter>
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="SlidingPlayerState.h">
-      <Filter>Archivos de encabezado\States\Player</Filter>
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="DashingPlayerState.h">
-      <Filter>Archivos de encabezado\States\Player</Filter>
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>Archivos de encabezado\Actors\Weapons</Filter>
@@ -352,6 +370,24 @@
     </ClInclude>
     <ClInclude Include="Ak47.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Auto</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadedWeaponState.h">
+      <Filter>Archivos de encabezado\States\WeaponStates</Filter>
+    </ClInclude>
+    <ClInclude Include="ReloadingWeaponState.h">
+      <Filter>Archivos de encabezado\States\WeaponStates</Filter>
+    </ClInclude>
+    <ClInclude Include="EmptyWeaponState.h">
+      <Filter>Archivos de encabezado\States\WeaponStates</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponStateBase.h">
+      <Filter>Archivos de encabezado\States\WeaponStates</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponState.h">
+      <Filter>Archivos de encabezado\States</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
+      <Filter>Archivos de encabezado\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
