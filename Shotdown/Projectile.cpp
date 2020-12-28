@@ -34,18 +34,21 @@ void Projectile::render(float rotation)
 
 void Projectile::configureChipmunkSpace(cpSpace* chipSpace) 
 {
-	// Create the body
+	/* Create the body */
 	body = cpBodyNew(0.01, INFINITY);
 	cpBodySetPosition(body, cpv(position.x, position.y));
+	// Disable the gravity to this object
+	cpBodySetVelocityUpdateFunc(body, disableGravity);
 	cpSpaceAddBody(chipSpace, body);
-	// Create the shape
+	/* Create the shape */
 	shape = cpBoxShapeNew(body, width, height, 0.0);
+	// Collision type
 	cpShapeSetCollisionType(shape, static_cast<int>(type));
 	cpShapeSetElasticity(shape, 0); 
 	cpShapeSetFriction(shape, 0.8); 
-	cpSpaceAddShape(chipSpace, shape);
-	// Disable the gravity to this object
-	cpBodySetVelocityUpdateFunc(body, disableGravity);
+	// Collision filter
+	cpShapeSetFilter(shape, cpShapeFilterNew(2, CP_ALL_CATEGORIES, CP_ALL_CATEGORIES));
 	// Reference to the Actor into the Shape
 	cpShapeSetUserData(shape, cpDataPointer(this));
+	cpSpaceAddShape(chipSpace, shape);
 }

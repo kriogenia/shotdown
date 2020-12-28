@@ -72,19 +72,23 @@ void limitFallingSpeed(cpBody* body, cpVect gravity, cpFloat damping, cpFloat dt
 /* Create the physics of the object */
 void Player::configureChipmunkSpace(cpSpace* chipSpace)
 {
-	// Create the body
+	/* Create the body */
 	body = cpBodyNew(PLAYER_BODY_WEIGHT, INFINITY);
 	cpBodySetPosition(body, cpv(position.x, position.y));
-	cpBodySetVelocityUpdateFunc(body, limitFallingSpeed);
+	// Falling Speed limitation
+	cpBodySetVelocityUpdateFunc(body, limitFallingSpeed);		
 	cpSpaceAddBody(chipSpace, body);
-	// Create the shape
+	/* Create the shape */
 	shape = cpBoxShapeNew(body, 8, height, 0.0);
-	cpShapeSetCollisionType(shape, static_cast<int>(type));
+	// Collision type
+	cpShapeSetCollisionType(shape, static_cast<int>(type));		
 	cpShapeSetElasticity(shape, 0);
 	cpShapeSetFriction(shape, PLAYER_SHAPE_FRICTION);
-	cpSpaceAddShape(chipSpace, shape);
+	// Collision filter
+	cpShapeSetFilter(shape, cpShapeFilterNew(1, CP_ALL_CATEGORIES, CP_ALL_CATEGORIES));			
 	// Reference to the Actor into the Shape
 	cpShapeSetUserData(shape, cpDataPointer(this));
+	cpSpaceAddShape(chipSpace, shape);
 }
 
 /* Manage the horizontal movement input */
