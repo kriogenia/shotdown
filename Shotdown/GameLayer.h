@@ -39,6 +39,9 @@ private:
 	void playNextScenario();
 	/* Events */
 	void pickWeapon(Player* player);
+	/* Tick */
+	void tickProjectiles();
+	void victoryCheck();
 	/* Current scenario */
 	Scenario* currentScenario;
 	/* Player1 Movement */

@@ -33,7 +33,7 @@ enum class ActorType {
 };
 
 enum class PlayerTag {
-	P1,
+	P1 = 1,
 	P2
 };
 

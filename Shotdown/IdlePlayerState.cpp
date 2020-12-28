@@ -8,7 +8,8 @@ IdlePlayerState::IdlePlayerState(Player* actor) :
 
 void IdlePlayerState::enter()
 {
-	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now IDLE " << endl;
+	// cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now IDLE " << endl;
+	// play idle animation
 	ticksFalling = 0;
 	cpBodySetVelocity(player->body, cpv(cpBodyGetVelocity(player->body).x, 0));
 }

@@ -55,7 +55,7 @@ cpBool collisionPlayerProjectile(cpArbiter* arb, cpSpace* space, void* dataPoint
 	// Invoke collision method
 	Player* player = (Player*)cpShapeGetUserData(playerShape);
 	Projectile* projectile = (Projectile*)cpShapeGetUserData(projectileShape);
-	player->impacted(projectile->shooter);
+	player->impacted(projectile->shooter, cpBodyGetVelocity(cpShapeGetBody(projectileShape)));
 	projectile->destroy();
 	return cpTrue;
 }

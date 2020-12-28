@@ -22,11 +22,6 @@ void Player::tick()
 	// Update cooldowns
 	dashCd--;
 	pushedBack--;
-	// Limit player fall velocity
-	// TODO move to change update velocity func
-	if (cpBodyGetVelocity(body).y > PLAYER_MAX_FALL_SPEED) {
-		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
-	}
 	// Update state
 	state->tick();
 	// Set calculated position
@@ -35,6 +30,11 @@ void Player::tick()
 	// Update weapon
 	if (weapon != nullptr) {
 		weapon->tick();
+	}
+	// Fall check
+	if (position.y > HEIGHT) {
+		cout << "Player " << static_cast<int>(tag) << " fell out." << endl;
+		pendingDestruction = true;
 	}
 }
 
@@ -46,9 +46,11 @@ void Player::render(float rotation)
 	}
 }
 
-/* Init the player to start a new scenario */
+/* Inits the player to start a new scenario */
 void Player::init()
 {
+	// Set the HP
+	hp = PLAYER_HP;
 	// Set the states
 	initStates();
 	prevState = states[ePlayerStates::IDLE];
@@ -58,12 +60,22 @@ void Player::init()
 	weapon = nullptr;
 }
 
+/* Limits the max falling speed */
+void limitFallingSpeed(cpBody* body, cpVect gravity, cpFloat damping, cpFloat dt)
+{
+	cpBodyUpdateVelocity(body, gravity, damping, dt);
+	if (cpBodyGetVelocity(body).y > PLAYER_MAX_FALL_SPEED) {
+		cpBodySetVelocity(body, cpv(cpBodyGetVelocity(body).x, PLAYER_MAX_FALL_SPEED));
+	}
+}
+
 /* Create the physics of the object */
 void Player::configureChipmunkSpace(cpSpace* chipSpace)
 {
 	// Create the body
 	body = cpBodyNew(PLAYER_BODY_WEIGHT, INFINITY);
 	cpBodySetPosition(body, cpv(position.x, position.y));
+	cpBodySetVelocityUpdateFunc(body, limitFallingSpeed);
 	cpSpaceAddBody(chipSpace, body);
 	// Create the shape
 	shape = cpBoxShapeNew(body, 8, height, 0.0);
@@ -138,13 +150,16 @@ void Player::collisioned(Point collisionedPosition)
 }
 
 /* Manage the collision with a Projectile */
-void Player::impacted(PlayerTag shooter)
+void Player::impacted(PlayerTag shooter, cpVect velocity)
 {
 	if (shooter != tag) {
-		// TODO damage
-		// TODO go invul
-		// TODO push
-		cout << "Ouch!" << endl;
+		hp--;
+		if (hp <= 0) {
+			pendingDestruction = true;
+		}
+		pushedBack = PLAYER_PUSH_DURATION;
+  		cpBodyApplyImpulseAtLocalPoint(body, cpvmult(velocity, 10), cpv(0, 0));
+		// Event hit player
 	}
 }
 

@@ -8,7 +8,8 @@ DoubleJumpingPlayerState::DoubleJumpingPlayerState(Player* actor) :
 
 void DoubleJumpingPlayerState::enter()
 {
-	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now DOUBLE JUMPING " << endl;
+	// cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now DOUBLE JUMPING " << endl;
+	// play jump animation
 }
 
 void DoubleJumpingPlayerState::tick()

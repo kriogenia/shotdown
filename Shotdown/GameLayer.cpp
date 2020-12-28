@@ -49,23 +49,13 @@ void GameLayer::tick()
 	player1->tick();
 	player2->tick();
 	// Projectiles update
-	vector<Actor*> projectilesToDelete;
-	for (auto const& projectile : projectiles) {
-		projectile->tick();
-		if (projectile->pendingDestruction) {
-			projectilesToDelete.push_back(projectile);
-		}
-	}
+	tickProjectiles();
 	// Spawners update
 	for (auto const& spawner : spawners) {
 		spawner->tick();
 	}
-	/* Actors deletion */
-	// Projectiles
-	for (auto const& projectile : projectilesToDelete) {
-		engine->removeActor(projectile);
-		projectiles.remove(projectile);
-	}
+	/* Victory check */
+	victoryCheck();
 }
 
 void GameLayer::render()
@@ -184,8 +174,46 @@ void GameLayer::pickWeapon(Player* player)
 {
 	for (auto const& spawner : spawners) {
 		if (spawner->isOverlap(player)) {
-			spawner->pickWeapon(player);
+			if (spawner->pickWeapon(player)) {
+				cout << "Player " << static_cast<int>(player->tag) << " picked a weapon" << endl;
+			}
 			return;
+		}
+	}
+}
+
+/* Updates and deletes the projectiles */
+void GameLayer::tickProjectiles()
+{
+	// Projectiles update
+	vector<Actor*> projectilesToDelete;
+	for (auto const& projectile : projectiles) {
+		projectile->tick();
+		if (projectile->pendingDestruction) {
+			projectilesToDelete.push_back(projectile);
+		}
+	}
+	// Projectiles deletion
+	for (auto const& projectile : projectilesToDelete) {
+		engine->removeActor(projectile);
+		projectiles.remove(projectile);
+	}
+}
+
+/* Checks showdown result and starts the next phase */
+void GameLayer::victoryCheck()
+{
+	if (player1->pendingDestruction || player2->pendingDestruction) {
+		if (player2->pendingDestruction) {
+			player1->victories++;
+			cout << "Player 1 wins this showdown. Starting next one..." << endl;
+		}
+		else {
+			player2->victories++;
+			cout << "Player 2 wins this showdown. Starting next one..." << endl;
+		}
+		if (scenarios.size() > 0) {
+			playNextScenario();
 		}
 	}
 }

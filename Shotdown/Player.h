@@ -9,6 +9,7 @@ class Weapon;
 
 /* Attributes */
 constexpr auto PLAYER_SIZE = 24;
+constexpr auto PLAYER_HP = 5;
 constexpr auto PLAYER_SPEED = 3 * TARGET_FPS;
 constexpr auto PLAYER_JUMP = 5 * TARGET_FPS;
 // constexpr auto PLAYER_JUMP_IMPULSE = 360 * TARGET_FPS;
@@ -63,13 +64,15 @@ public:
     void releaseTrigger();
     /* Events */
     void collisioned(Point collisionedPosition);
-    void impacted(PlayerTag shotOwner);
+    void impacted(PlayerTag shotOwner, cpVect velocity);
     void recoil(int force, cpVect point);
     /* State */
     PlayerState* prevState = nullptr;
     void setState(ePlayerStates id);
     Orientation orientation;
     int pushedBack = 0;
+    /* Showdown */
+    unsigned int victories = 0;
     /* Weapon */
     Weapon* weapon = nullptr;
     /* Tag */
@@ -84,7 +87,7 @@ private:
     PlayerState* state = nullptr;
     map<ePlayerStates, PlayerState*> states;
     void initStates();
-    /* Movement */
-    int controlX = 0;
+    /* Attributes */
+    int hp = PLAYER_HP;
 };
 

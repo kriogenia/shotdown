@@ -8,7 +8,8 @@ FallingPlayerState::FallingPlayerState(Player* actor) :
 
 void FallingPlayerState::enter()
 {
-	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now FALLING " << endl;
+	// cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now FALLING " << endl;
+	// play falling animation
 	ticksGrounded = 0;
 }
 

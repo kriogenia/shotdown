@@ -8,7 +8,8 @@ DashingPlayerState::DashingPlayerState(Player* player) :
 
 void DashingPlayerState::enter()
 {
-	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now DASHING " << endl;
+	// cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now DASHING " << endl;
+	// play dash animation
 	remainingDuration = PLAYER_DASH_DURATION;
 }
 

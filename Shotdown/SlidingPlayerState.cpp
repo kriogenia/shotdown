@@ -8,7 +8,8 @@ SlidingPlayerState::SlidingPlayerState(Player* player) :
 
 void SlidingPlayerState::enter()
 {
-	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now SLIDING" << endl;
+	// cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now SLIDING" << endl;
+	// play slide animation
 	keepsSliding = true;
 	// Set sliding speed
 	cpBodySetVelocity(player->body,

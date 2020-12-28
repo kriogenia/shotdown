@@ -8,7 +8,8 @@ JumpingPlayerState::JumpingPlayerState(Player* actor) :
 
 void JumpingPlayerState::enter()
 {
-	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now JUMPING " << endl;
+	// cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now JUMPING " << endl;
+	// play jump animation
 }
 
 void JumpingPlayerState::tick()

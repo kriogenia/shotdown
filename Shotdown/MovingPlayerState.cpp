@@ -8,7 +8,8 @@ MovingPlayerState::MovingPlayerState(Player* actor) :
 
 void MovingPlayerState::enter()
 {
-	cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now MOVING " << endl;
+	//cout << (player->tag == PlayerTag::P1 ? "P1" : "P2") << " is now MOVING " << endl;
+	// play moving animation
 }
 
 void MovingPlayerState::tick()
