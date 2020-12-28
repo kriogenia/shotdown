@@ -1,4 +1,5 @@
 #include "AutomaticWeapon.h"
+#include <SDL_mixer.h>
 
 AutomaticWeapon::AutomaticWeapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game) :
 	Weapon(filename, width, height, fileWidth, fileHeight, game)
@@ -52,6 +53,7 @@ void AutomaticWeapon::shoot()
 		cpBodyApplyImpulseAtLocalPoint(projectile->body,
 			cpv(orientation * projectileSpeed, -weaponRecoil),
 			cpv(shotPoint.x, shotPoint.y));
+		sound->play();
 		// Lowers accuracy and starts cd
 		consecutiveShots++;
 		remainingShotCd = shotCooldown;

@@ -2,6 +2,7 @@
 
 #include "ChipmunkHelper.h"
 #include "Projectile.h"
+#include "SoundEffect.h"
 #include "WeaponState.h"
 
 #include "Player.h"
@@ -54,10 +55,12 @@ public:
 
 protected:
 	/* State */
-	WeaponState* state;
+	WeaponState* state = nullptr;
 	map<eWeaponStates, WeaponState*> states;
 	/* Engine */
 	ChipmunkHelper* engine = ChipmunkHelper::getInstance();
+	/* Sound */
+	SoundEffect* sound = nullptr;
 	/* Shooting */
 	Point shotPoint = { 0, 0 };
 	Point shotPointOffset = { 0, 0 };

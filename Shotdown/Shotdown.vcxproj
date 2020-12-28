@@ -213,6 +213,7 @@
     <ClCompile Include="ReloadingWeaponState.cpp" />
     <ClCompile Include="Scenario.cpp" />
     <ClCompile Include="SlidingPlayerState.cpp" />
+    <ClCompile Include="SoundEffect.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateFactory.cpp" />
     <ClCompile Include="Tile.cpp" />
@@ -254,6 +255,7 @@
     <ClInclude Include="ReloadingWeaponState.h" />
     <ClInclude Include="Scenario.h" />
     <ClInclude Include="SlidingPlayerState.h" />
+    <ClInclude Include="SoundEffect.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateFactory.h" />
     <ClInclude Include="Tile.h" />

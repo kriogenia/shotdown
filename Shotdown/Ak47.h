@@ -18,6 +18,8 @@ constexpr auto AK47_PROJECTILE_SPEED = 5.0;
 /* Shot point */
 constexpr auto AK47_SHOT_POINT_X = 12.0;
 constexpr auto AK47_SHOT_POINT_Y = -4.0;
+/* Audio */
+constexpr auto AK47_SOUND = "res/audio/weapons/ak47.wav";
 
 class Ak47 :
     public AutomaticWeapon

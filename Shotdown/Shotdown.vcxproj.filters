@@ -312,6 +312,9 @@
     <ClCompile Include="AudioClip.cpp">
       <Filter>Archivos de origen\Audio</Filter>
     </ClCompile>
+    <ClCompile Include="SoundEffect.cpp">
+      <Filter>Archivos de origen\Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -429,6 +432,9 @@
       <Filter>Archivos de encabezado\Audio</Filter>
     </ClInclude>
     <ClInclude Include="AudioClip.h">
+      <Filter>Archivos de encabezado\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEffect.h">
       <Filter>Archivos de encabezado\Audio</Filter>
     </ClInclude>
   </ItemGroup>
