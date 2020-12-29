@@ -12,7 +12,7 @@ void DyingPlayerState::enter()
 	delete this->player->weapon;
 	this->player->weapon = nullptr;
 	// Start dead animation
-	messager->notify(Notifications::PLAYER_DEAD);
+	messager->notify(Notifications::PLAYER_DEAD, player);
 }
 
 void DyingPlayerState::tick()

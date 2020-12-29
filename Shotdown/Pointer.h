@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Text.h"
 
+constexpr auto ARROW_DISTANCE = 14;
 constexpr auto TEXT_DISTANCE = 25;
 
 class Pointer
@@ -15,9 +16,9 @@ public:
 
 private:
 	/* References */
-	Player* player;
+	Player* player = nullptr;
 	/* Modules */
-	Text* text;
-	Actor* pointer;
+	Text* text = nullptr;
+	Actor* pointer = nullptr;
 };
 

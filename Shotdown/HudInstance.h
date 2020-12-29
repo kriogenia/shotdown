@@ -3,7 +3,6 @@
 #include "Pointer.h"
 #include "WeaponDisplay.h"
 
-constexpr auto FADE_OUT_START = 4 * TARGET_FPS;	// 4s
 constexpr auto SHOW_DURATION = 5 * TARGET_FPS;	// 5s
 
 class HudInstance :
@@ -18,6 +17,7 @@ public:
 	/* Updates */
 	void initShowdown() override;
 	void updateWeapon(void* player) override;
+	void showWinner(void* loser) override;
 
 private:
 	/* Modules */
@@ -29,6 +29,7 @@ private:
 	/* Counters */
 	int show = 0;
 	int round = 0;
+	int loser = 0;
 
 };
 

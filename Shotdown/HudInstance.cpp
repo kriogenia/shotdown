@@ -21,7 +21,7 @@ void HudInstance::tick()
 	show--;
 	weaponPlayer1->tick();
 	weaponPlayer2->tick();
-	if (show > 0) {
+	if (show > 0 || loser != 0) {
 		pointerPlayer1->tick();
 		pointerPlayer2->tick();
 	}
@@ -36,12 +36,22 @@ void HudInstance::render()
 		pointerPlayer2->render();
 		title->render();
 	}
+	// Shows pointer at winning showdown
+	if (loser != 0) {
+		if (loser == static_cast<int>(PlayerTag::P1)) {
+			pointerPlayer2->render();
+		}
+		else {
+			pointerPlayer1->render();
+		}
+	}
 }
 
 void HudInstance::initShowdown()
 {
 	show = SHOW_DURATION;
 	title->content = "Round " + to_string(++round);
+	loser = 0;
 }
 
 void HudInstance::updateWeapon(void* player)
@@ -53,4 +63,9 @@ void HudInstance::updateWeapon(void* player)
 	else {
 		weaponPlayer2->update();
 	}
+}
+
+void HudInstance::showWinner(void* loser)
+{
+	this->loser = static_cast<int>(((Player*)loser)->tag);
 }

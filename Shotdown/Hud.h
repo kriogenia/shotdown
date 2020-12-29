@@ -9,6 +9,6 @@ public:
 	/* Updates */
 	virtual void initShowdown() = 0;
 	virtual void updateWeapon(void* player) = 0;
-
+	virtual void showWinner(void* loser) = 0;
 };
 

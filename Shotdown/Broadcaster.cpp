@@ -40,6 +40,7 @@ void Broadcaster::notify(Notifications notification, void* publisher)
 		// effect blood
 		break;
 	case Notifications::PLAYER_DEAD:
+		hud->showWinner(publisher);
 		audio->play(AudioClips::DEAD);
 		break;
 	default:
