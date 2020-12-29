@@ -15,6 +15,9 @@ enum class WeaponRarity {
 	COMMON
 };
 
+constexpr auto WEAPON_WIDTH = 30;
+constexpr auto WEAPON_HEIGHT = 10;
+
 /* interface */
 class Weapon :
 	public Actor

@@ -1,6 +1,7 @@
 #include "WeaponFactory.h"
 
 #include "Ak47.h"
+#include "M4.h"
 
 WeaponFactory* WeaponFactory::instance = 0;
 
@@ -15,6 +16,7 @@ WeaponFactory::WeaponFactory(Game* game)
 {
     // Add a copy of each weapon to clone
     weapons.push_back(new Ak47(game));
+    weapons.push_back(new M4(game));
     // Fill the pool
     fillPool();
 }

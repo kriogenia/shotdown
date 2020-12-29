@@ -204,6 +204,7 @@
     <ClCompile Include="JumpingPlayerState.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="LoadedWeaponState.cpp" />
+    <ClCompile Include="M4.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MovingPlayerState.cpp" />
@@ -252,6 +253,7 @@
     <ClInclude Include="JumpingPlayerState.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LoadedWeaponState.h" />
+    <ClInclude Include="M4.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MovingPlayerState.h" />
     <ClInclude Include="Parallax.h" />

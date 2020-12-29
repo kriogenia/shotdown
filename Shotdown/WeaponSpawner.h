@@ -4,7 +4,7 @@
 #include "WeaponFactory.h"
 
 constexpr auto SPAWNER_CD = 10 * TARGET_FPS;        // 10s
-constexpr auto RANDOM_SPAWNER_RARITY = 10;
+constexpr auto RANDOM_SPAWNER_RARITY = 5;           // 1 out of 5
 
 class WeaponSpawner :
     public Actor

@@ -3,7 +3,7 @@
 WeaponSpawner::WeaponSpawner(float x, float y, Game* game) :
 	Actor(ActorType::SPAWNER, "res/weapons/spawner.png", x, y, 16, 32, game)
 {
-	position = {x + width/2, y + height/2};
+	position = { x + width/2, y + height/2 };
 	randomDisplay = new Actor(ActorType::SPAWNER, "res/weapons/random_spawner.png",
 		position.x, position.y, 16, 32, game);
 	getWeapon();

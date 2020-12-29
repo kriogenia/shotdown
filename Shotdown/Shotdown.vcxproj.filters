@@ -336,6 +336,9 @@
     <ClCompile Include="WeaponDisplay.cpp">
       <Filter>Archivos de origen\Hud\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="M4.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Auto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -472,6 +475,9 @@
     </ClInclude>
     <ClInclude Include="WeaponDisplay.h">
       <Filter>Archivos de encabezado\Hud\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="M4.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Auto</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
