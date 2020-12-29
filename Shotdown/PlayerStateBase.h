@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Broadcaster.h"
 #include "Player.h"
 #include "PlayerState.h"
 
@@ -10,16 +11,18 @@ public:
     PlayerStateBase(Player* actor);
     /* PlayerState */
     // Control
-    virtual void move(int direction);
-    virtual void jump();
-    virtual void dash();
-    virtual void pressTrigger();
-    virtual void releaseTrigger();
+    void move(int direction) override;
+    void jump() override;
+    void dash() override;
+    void pressTrigger() override;
+    void releaseTrigger() override;
     // Events
-    virtual void recoil(int force, cpVect point);
+    void impacted(PlayerTag shooter, cpVect velocity) override;
+    void recoil(int force, cpVect point) override;
 
 protected:
-    /* Context pointer */
+    /* References */
+    Broadcaster* messager = Broadcaster::getInstance();
     Player* player;
     /* Orientation */
     void setOrientation(int direction);

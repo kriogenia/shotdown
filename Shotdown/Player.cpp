@@ -137,7 +137,7 @@ void Player::setState(ePlayerStates id)
 /* Returns player as string */
 string Player::toString()
 {
-	return "Player " + static_cast<int>(tag);
+	return "Player " + to_string(static_cast<int>(tag));
 }
 
 /* Manage the collision with a Tile */
@@ -162,15 +162,7 @@ void Player::collisioned(Point collisionedPosition)
 /* Manage the collision with a Projectile */
 void Player::impacted(PlayerTag shooter, cpVect velocity)
 {
-	if (shooter != tag) {
-		hp--;
-		if (hp <= 0) {
-			pendingDestruction = true;
-		}
-		pushedBack = PLAYER_PUSH_DURATION;
-  		cpBodyApplyImpulseAtLocalPoint(body, cpvmult(velocity, 10), cpv(0, 0));
-		// Event hit player
-	}
+	state->impacted(shooter, velocity);
 }
 
 /* Manage the recoil force from shooting */
@@ -191,4 +183,5 @@ void Player::initStates()
 	states.insert_or_assign(ePlayerStates::FALLING, factory->getState(ePlayerStates::FALLING, this));
 	states.insert_or_assign(ePlayerStates::SLIDING, factory->getState(ePlayerStates::SLIDING, this));
 	states.insert_or_assign(ePlayerStates::DASHING, factory->getState(ePlayerStates::DASHING, this));
+	states.insert_or_assign(ePlayerStates::DYING, factory->getState(ePlayerStates::DYING, this));
 }

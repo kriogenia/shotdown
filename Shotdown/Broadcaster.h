@@ -13,6 +13,7 @@ enum class Notifications {
 	START_RELOAD,
 	END_RELOAD,
 	PLAYER_IMPACT,
+	PLAYER_DEAD,
 	DASH,
 	PICK_WEAPON
 };

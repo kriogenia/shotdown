@@ -20,9 +20,9 @@ AudioPlayer::AudioPlayer()
 	themes.push_back(new BackgroundAudio("res/audio/themes/Ludum Dare 28 - Track 8.wav"));
 	themes.push_back(new BackgroundAudio("res/audio/themes/Ludum Dare 30 - Track 4.wav"));
 	currentTheme = menuTheme;
-
+	// Add audio clips
+	clips.insert_or_assign(AudioClips::DEAD, new AudioClip("res/audio/clips/dead.wav"));
 	clips.insert_or_assign(AudioClips::NO_AMMO, new AudioClip("res/audio/clips/no_ammo.wav"));
-
 }
 
 AudioPlayer::~AudioPlayer()

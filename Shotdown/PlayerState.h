@@ -11,7 +11,8 @@ enum class ePlayerStates {
 	DOUBLE_JUMPING,
 	FALLING,
 	SLIDING,
-	DASHING
+	DASHING,
+	DYING
 };
 
 class PlayerState :
@@ -27,11 +28,12 @@ public:
 	virtual void pressTrigger() = 0;
 	virtual void releaseTrigger() = 0;
 	/* Events */
+	virtual void impacted(PlayerTag shooter, cpVect velocity) = 0;
+	virtual void recoil(int force, cpVect point) = 0;
 	virtual void hitTop() {};
 	virtual void hitLeft() {};
 	virtual void hitRight() {};
 	virtual void hitGround() {};
-	virtual void recoil(int force, cpVect point) = 0;
 	/* Tag */
 	ePlayerStates tag;
 

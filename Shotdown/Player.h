@@ -63,6 +63,7 @@ public:
     string toString();
     /* Showdown */
     unsigned int victories = 0;
+    int hp = PLAYER_HP;
     /* Weapon */
     Weapon* weapon = nullptr;
     /* Tag */
@@ -77,7 +78,5 @@ private:
     PlayerState* state = nullptr;
     map<ePlayerStates, PlayerState*> states;
     void initStates();
-    /* Attributes */
-    int hp = PLAYER_HP;
 };
 

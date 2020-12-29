@@ -194,6 +194,7 @@
     <ClCompile Include="chipmunk\cpSweep1D.c" />
     <ClCompile Include="DashingPlayerState.cpp" />
     <ClCompile Include="DoubleJumpingPlayerState.cpp" />
+    <ClCompile Include="DyingPlayerState.cpp" />
     <ClCompile Include="EmptyWeaponState.cpp" />
     <ClCompile Include="FallingPlayerState.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -237,6 +238,7 @@
     <ClInclude Include="chipmunk\prime.h" />
     <ClInclude Include="DashingPlayerState.h" />
     <ClInclude Include="DoubleJumpingPlayerState.h" />
+    <ClInclude Include="DyingPlayerState.h" />
     <ClInclude Include="EmptyWeaponState.h" />
     <ClInclude Include="FallingPlayerState.h" />
     <ClInclude Include="Game.h" />

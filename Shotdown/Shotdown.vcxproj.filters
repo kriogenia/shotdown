@@ -309,6 +309,9 @@
     <ClCompile Include="Broadcaster.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="DyingPlayerState.cpp">
+      <Filter>Archivos de origen\States\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -430,6 +433,9 @@
     </ClInclude>
     <ClInclude Include="Broadcaster.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="DyingPlayerState.h">
+      <Filter>Archivos de encabezado\States\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

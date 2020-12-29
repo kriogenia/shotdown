@@ -32,6 +32,11 @@ void DashingPlayerState::exit()
 	player->dashCd = DASH_CD;
 }
 
+void DashingPlayerState::impacted(PlayerTag shooter, cpVect velocity)
+{
+	// TODO iframes
+}
+
 void DashingPlayerState::hitLeft()
 {
 	player->orientation = Orientation::RIGHT;

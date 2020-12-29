@@ -6,6 +6,7 @@
 #include <vector>
 
 enum class AudioClips {
+	DEAD,
 	NO_AMMO
 };
 

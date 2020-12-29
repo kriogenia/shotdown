@@ -15,10 +15,11 @@ public:
     inline void move(int duration) override {};
     void jump() override;
     // Events
+    void impacted(PlayerTag shooter, cpVect velocity);
+    inline void recoil(int force, cpVect point) override {};
     void hitLeft() override;
     void hitRight() override;
     void hitGround() override;
-    inline void recoil(int force, cpVect point) override {};
 
 private:
     /* State change checkers */

@@ -52,6 +52,19 @@ void PlayerStateBase::releaseTrigger()
 	}
 }
 
+void PlayerStateBase::impacted(PlayerTag shooter, cpVect velocity)
+{
+	if (shooter != player->tag) {
+		player->hp--;
+		if (player->hp <= 0) {
+			player->setState(ePlayerStates::DYING);
+		}
+		player->pushedBack = PLAYER_PUSH_DURATION;
+		cpBodyApplyImpulseAtLocalPoint(player->body, cpvmult(velocity, 10), cpv(0, 0));
+		messager->notify(Notifications::PLAYER_IMPACT);
+	}
+}
+
 void PlayerStateBase::recoil(int force, cpVect point)
 {
 	player->pushedBack = PLAYER_PUSH_DURATION;

@@ -38,6 +38,22 @@ void SlidingPlayerState::jump()
 	player->setState(ePlayerStates::JUMPING);
 }
 
+void SlidingPlayerState::impacted(PlayerTag shooter, cpVect velocity)
+{
+	if (shooter != player->tag) {
+		player->hp--;
+		player->pushedBack = PLAYER_PUSH_DURATION;
+		cpBodyApplyImpulseAtLocalPoint(player->body, cpvmult(velocity, -10), cpv(0, 0));
+		if (player->hp <= 0) {
+			player->setState(ePlayerStates::DYING);
+		}
+		else {
+			player->setState(ePlayerStates::FALLING);
+		}
+		messager->notify(Notifications::PLAYER_IMPACT);
+	}
+}
+
 void SlidingPlayerState::hitLeft()
 {
 	keepsSliding = true;

@@ -21,5 +21,10 @@ void Broadcaster::notify(Notifications notification, void* publisher)
 	case Notifications::EMPTY_CLIP:
 		audio->play(AudioClips::NO_AMMO);
 		break;
+	case Notifications::PLAYER_DEAD:
+		audio->play(AudioClips::DEAD);
+		break;
+	default:
+		return;
 	}
 }
