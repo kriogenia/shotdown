@@ -34,7 +34,7 @@ void Player::tick()
 	// Fall check
 	if (position.y > HEIGHT) {
 		cout << "Player " << static_cast<int>(tag) << " fell out." << endl;
-		pendingDestruction = true;
+		setState(ePlayerStates::DYING);
 	}
 }
 
@@ -49,8 +49,9 @@ void Player::render(float rotation)
 /* Inits the player to start a new scenario */
 void Player::init()
 {
-	// Set the HP
+	// Restore player
 	hp = PLAYER_HP;
+	pendingDestruction = false;
 	// Set the states
 	initStates();
 	prevState = states[ePlayerStates::IDLE];

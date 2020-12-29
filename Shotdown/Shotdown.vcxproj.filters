@@ -91,6 +91,12 @@
     <Filter Include="Archivos de origen\Audio">
       <UniqueIdentifier>{6dcb9c69-9ca3-4ef8-8cf3-9078f20ff291}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Hud">
+      <UniqueIdentifier>{22395306-96c4-4b15-8128-0552813c98f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Hud">
+      <UniqueIdentifier>{884e40fa-ad7f-4215-871c-919e4381e89e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -300,9 +306,6 @@
     <ClCompile Include="BackgroundAudio.cpp">
       <Filter>Archivos de origen\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="AudioClip.cpp">
-      <Filter>Archivos de origen\Audio</Filter>
-    </ClCompile>
     <ClCompile Include="SoundEffect.cpp">
       <Filter>Archivos de origen\Audio</Filter>
     </ClCompile>
@@ -311,6 +314,15 @@
     </ClCompile>
     <ClCompile Include="DyingPlayerState.cpp">
       <Filter>Archivos de origen\States\PlayerStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Hud.cpp">
+      <Filter>Archivos de origen\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Archivos de origen\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="HudInstance.cpp">
+      <Filter>Archivos de origen\Hud</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -425,9 +437,6 @@
     <ClInclude Include="BackgroundAudio.h">
       <Filter>Archivos de encabezado\Audio</Filter>
     </ClInclude>
-    <ClInclude Include="AudioClip.h">
-      <Filter>Archivos de encabezado\Audio</Filter>
-    </ClInclude>
     <ClInclude Include="SoundEffect.h">
       <Filter>Archivos de encabezado\Audio</Filter>
     </ClInclude>
@@ -436,6 +445,15 @@
     </ClInclude>
     <ClInclude Include="DyingPlayerState.h">
       <Filter>Archivos de encabezado\States\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Hud.h">
+      <Filter>Archivos de encabezado\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Archivos de encabezado\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="HudInstance.h">
+      <Filter>Archivos de encabezado\Hud</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,13 +1,17 @@
 #pragma once
 
-#include "AudioClip.h"
 #include "BackgroundAudio.h"
+#include "SoundEffect.h"
 #include <map>
 #include <vector>
 
 enum class AudioClips {
+	DASH,
 	DEAD,
-	NO_AMMO
+	GO,
+	IMPACT,
+	NO_AMMO,
+	RELOAD
 };
 
 /* Singleton */
@@ -33,6 +37,6 @@ private:
 	vector<BackgroundAudio*> themes;
 	unsigned int index = 0;
 	/* Audio clips */
-	map<AudioClips, AudioClip*> clips;
+	map<AudioClips, SoundEffect*> clips;
 
 };

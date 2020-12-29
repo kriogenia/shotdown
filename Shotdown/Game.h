@@ -22,6 +22,9 @@ constexpr auto WIDTH = 720;
 constexpr auto HEIGHT = 480;
 constexpr auto TARGET_FPS = 60;
 constexpr auto GRAVITY = 10 * TARGET_FPS;
+/* Text */
+constexpr auto TITLE_OUTLINE_SIZE = 2;
+constexpr auto CAPTION_OUTLINE_SIZE = 1;
 
 enum class ActorType {
 	BACKGROUND,
@@ -59,6 +62,12 @@ public:
 	Layer* gameLayer;
 	Layer* startLayer;
 	Layer* finishLayer;
+
+	/* Fonts */
+	TTF_Font* fontTitle;
+	TTF_Font* fontOutlineTitle;
+	TTF_Font* fontCaption;
+	TTF_Font* fontOutlineSubtitle;
 
 
 private:

@@ -12,7 +12,16 @@ Game::Game() {
 	SDL_SetWindowTitle(window, "Shotdown");
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
-	/* Layer declaration */
+	/* Fonts initilization */
+	TTF_Init();
+	fontTitle = TTF_OpenFont("res/Rubik-Black.ttf", 36);
+	fontOutlineTitle = TTF_OpenFont("res/Rubik-Black.ttf", 36);
+	TTF_SetFontOutline(fontOutlineTitle, TITLE_OUTLINE_SIZE);
+	fontCaption = TTF_OpenFont("res/Rubik-Black.ttf", 18);
+	fontOutlineSubtitle = TTF_OpenFont("res/Rubik-Black.ttf", 18);
+	TTF_SetFontOutline(fontOutlineSubtitle, CAPTION_OUTLINE_SIZE);
+
+	/* Layer initilization */
 	gameLayer = new GameLayer(this);
 	layer = gameLayer;
 	layer->init();
@@ -39,12 +48,11 @@ void Game::loop() {
 		/* FPS check */
 		endTick = SDL_GetTicks();
 		differenceTick = endTick - initTick;
-		//cout << differenceTick << " - " << 1000 / TARGET_FPS << endl;
 		if (differenceTick < (1000 / TARGET_FPS)) {
 			SDL_Delay((1000 / TARGET_FPS) - differenceTick);
 		}
 		else {
-			cout << "LAG" << endl;
+			cout << "Low performance" << endl;
 		}
 	}
 }

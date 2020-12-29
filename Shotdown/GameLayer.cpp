@@ -1,12 +1,10 @@
 #include "GameLayer.h"
 
-#include "ChipmunkHelper.h"
+#include "HudInstance.h"
 
 GameLayer::GameLayer(Game* game) :
 	Layer(game)
 {
-	audio = AudioPlayer::getInstance();
-	engine = ChipmunkHelper::getInstance();
 	background = new Background(game);
 	currentScenario = nullptr;
 	player1 = nullptr;
@@ -18,6 +16,7 @@ GameLayer::~GameLayer()
 	delete background;
 	delete player1;
 	delete player2;
+	delete hud;
 	projectiles.clear();
 	spawners.clear();
 }
@@ -29,6 +28,9 @@ void GameLayer::init()
 	player1->projectiles = &projectiles;
 	player2 = new Player(PlayerTag::P2, game);
 	player2->projectiles = &projectiles;
+	// Generates the HUD
+	hud = new HudInstance(player1, player2, game);
+	messager->hud = hud;
 	// Generates the scenarios
 	generateScenarios();
 	// Loads the first scenario
@@ -55,6 +57,8 @@ void GameLayer::tick()
 	for (auto const& spawner : spawners) {
 		spawner->tick();
 	}
+	// HUD update
+	hud->tick();
 	/* Victory check */
 	victoryCheck();
 }
@@ -71,6 +75,7 @@ void GameLayer::render()
 	for (auto const& projectile : projectiles) {
 		projectile->render();
 	}
+	hud->render();
 }
 
 void GameLayer::keysToControl(SDL_Event event) {
@@ -125,12 +130,18 @@ void GameLayer::keysToControl(SDL_Event event) {
 /* Generates a random pool of scenarios */
 void GameLayer::generateScenarios()
 {
-	queue<int> scenarioCodes;
-	// TODO Populate queue
-	scenarioCodes.push(1);
-	for (int code = scenarioCodes.front(); !scenarioCodes.empty(); scenarioCodes.pop()) {
+	vector<int> scenarioCodes;
+	for (int i = 0; i < NUMBER_OF_SCENARIOS; i++) {
+		scenarioCodes.push_back(i);
+		scenarios.push(new Scenario(i, game));
+	}
+	/*
+	for (int code = rand() % scenarioCodes.size();
+		scenarioCodes.size() != NUMBER_OF_SHOWDOWNS;
+		scenarioCodes.erase(scenarioCodes.begin() + code)) {
 		scenarios.push(new Scenario(code, game));
 	}
+	*/
 }
 
 /* Cleans previous state */
@@ -169,7 +180,7 @@ void GameLayer::playNextScenario()
 		spawners.push_back(new WeaponSpawner(location.x, location.y, game));
 	}
 	/* Starts the new background clip */
-	audio->next();
+	messager->notify(Notifications::SHOWDOWN_INIT);
 }
 
 /* Launches player and spawner interaction event */
@@ -179,6 +190,7 @@ void GameLayer::pickWeapon(Player* player)
 		if (spawner->isOverlap(player)) {
 			if (spawner->pickWeapon(player)) {
 				cout << "Player " << static_cast<int>(player->tag) << " picked a weapon" << endl;
+				messager->notify(Notifications::PICK_WEAPON);
 			}
 			return;
 		}

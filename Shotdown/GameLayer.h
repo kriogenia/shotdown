@@ -4,11 +4,15 @@
 
 #include "AudioPlayer.h"
 #include "Background.h"
+#include "Hud.h"
 #include "Layer.h"
 #include "Player.h"
 #include "Projectile.h"
 #include "Scenario.h"
 #include "WeaponSpawner.h"
+
+constexpr auto NUMBER_OF_SCENARIOS = 2;
+constexpr auto NUMBER_OF_SHOWDOWNS = 2;
 
 class GameLayer :
     public Layer
@@ -24,10 +28,12 @@ public:
 	/* Input control */
 	void keysToControl(SDL_Event event) override;
 	void padToControl(SDL_Event event) override {};
+
 private:
-	/* Engines */
-	AudioPlayer* audio = nullptr;
-	ChipmunkHelper* engine = nullptr;
+	/* References */
+	Broadcaster* messager = Broadcaster::getInstance();
+	ChipmunkHelper* engine = ChipmunkHelper::getInstance();
+	Hud* hud = nullptr;
 	/* Showmatch */
 	Player* player1;
 	Player* player2;
