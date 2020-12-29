@@ -20,7 +20,7 @@ class Weapon :
 	public Actor
 {
 public:
-	Weapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game);
+	Weapon(string filename, int width, int height, Game* game);
 	~Weapon();
 	/* Actor */
 	void tick() override;
@@ -42,6 +42,7 @@ public:
 	Broadcaster* messager = Broadcaster::getInstance();
 	/* Attributes */
 	int rarity = 0;
+	string filename = "";
 	/* Ammo */
 	int loadedAmmo = 0;
 	int unloadedAmmo = 0;

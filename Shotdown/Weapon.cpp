@@ -2,9 +2,10 @@
 
 #include "StateFactory.h"
 
-Weapon::Weapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game) :
-	Actor(ActorType::WEAPON, filename, 0, 0, width, height, fileWidth, fileHeight, game)
+Weapon::Weapon(string filename, int width, int height, Game* game) :
+	Actor(ActorType::WEAPON, filename, 0, 0, width, height, game)
 {
+	this->filename = filename;
 }
 
 Weapon::~Weapon()

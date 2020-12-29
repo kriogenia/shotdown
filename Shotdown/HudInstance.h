@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Player.h"
-#include "Text.h"
+#include "Pointer.h"
+#include "WeaponDisplay.h"
 
+constexpr auto FADE_OUT_START = 4 * TARGET_FPS;	// 4s
 constexpr auto SHOW_DURATION = 5 * TARGET_FPS;	// 5s
 
 class HudInstance :
@@ -14,16 +15,17 @@ public:
 	/* Game cycle */
 	void tick() override;
 	void render() override;
-	/* Showdown */
+	/* Updates */
 	void initShowdown() override;
+	void updateWeapon(void* player) override;
 
 private:
-	/* References */
-	Game* game = nullptr;
-	Player* player1 = nullptr;
-	Player* player2 = nullptr;
 	/* Modules */
 	Text* title = nullptr;
+	Pointer* pointerPlayer1 = nullptr;
+	Pointer* pointerPlayer2 = nullptr;
+	WeaponDisplay* weaponPlayer1 = nullptr;
+	WeaponDisplay* weaponPlayer2 = nullptr;
 	/* Counters */
 	int show = 0;
 	int round = 0;

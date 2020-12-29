@@ -354,7 +354,7 @@ remove_orphaned_handles(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr)
 static inline void
 query_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, void *obj, cpSpatialIndexQueryFunc func, void *data)
 {
-	restart:
+	show:
 	for(cpSpaceHashBin *bin = *bin_ptr; bin; bin = bin->next){
 		cpHandle *hand = bin->handle;
 		void *other = hand->obj;
@@ -368,7 +368,7 @@ query_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, void *obj, cpSpatialIn
 			// The object for this handle has been removed
 			// cleanup this cell and restart the query
 			remove_orphaned_handles(hash, bin_ptr);
-			goto restart; // GCC not smart enough/able to tail call an inlined function.
+			goto show; // GCC not smart enough/able to tail call an inlined function.
 		}
 	}
 }
@@ -461,7 +461,7 @@ segmentQuery_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, void *obj, cpSp
 {
 	cpFloat t = 1.0f;
 	 
-	restart:
+	show:
 	for(cpSpaceHashBin *bin = *bin_ptr; bin; bin = bin->next){
 		cpHandle *hand = bin->handle;
 		void *other = hand->obj;
@@ -476,7 +476,7 @@ segmentQuery_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, void *obj, cpSp
 			// The object for this handle has been removed
 			// cleanup this cell and restart the query
 			remove_orphaned_handles(hash, bin_ptr);
-			goto restart; // GCC not smart enough/able to tail call an inlined function.
+			goto show; // GCC not smart enough/able to tail call an inlined function.
 		}
 	}
 	

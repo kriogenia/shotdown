@@ -1,7 +1,7 @@
 #include "Ak47.h"
 
 Ak47::Ak47(Game* game) :
-	AutomaticWeapon("res/weapons/ak47.png", 30, 8, 30, 8, game)
+	AutomaticWeapon("res/weapons/ak47.png", 30, 8, game)
 {
 	/* Weapon */
 	// Type

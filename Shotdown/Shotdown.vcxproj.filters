@@ -97,6 +97,12 @@
     <Filter Include="Archivos de origen\Hud">
       <UniqueIdentifier>{884e40fa-ad7f-4215-871c-919e4381e89e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Hud\Modules">
+      <UniqueIdentifier>{4dcad3e1-f865-450d-a470-1ecc9688fdd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Hud\Modules">
+      <UniqueIdentifier>{a5191b00-2f86-4e5a-8fb6-4eeef7517b9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -318,11 +324,17 @@
     <ClCompile Include="Hud.cpp">
       <Filter>Archivos de origen\Hud</Filter>
     </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>Archivos de origen\Hud</Filter>
-    </ClCompile>
     <ClCompile Include="HudInstance.cpp">
       <Filter>Archivos de origen\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Archivos de origen\Hud\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointer.cpp">
+      <Filter>Archivos de origen\Hud\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponDisplay.cpp">
+      <Filter>Archivos de origen\Hud\Modules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -449,11 +461,17 @@
     <ClInclude Include="Hud.h">
       <Filter>Archivos de encabezado\Hud</Filter>
     </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>Archivos de encabezado\Hud</Filter>
-    </ClInclude>
     <ClInclude Include="HudInstance.h">
       <Filter>Archivos de encabezado\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Archivos de encabezado\Hud\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointer.h">
+      <Filter>Archivos de encabezado\Hud\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponDisplay.h">
+      <Filter>Archivos de encabezado\Hud\Modules</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

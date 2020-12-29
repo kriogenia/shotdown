@@ -28,6 +28,7 @@ constexpr auto CAPTION_OUTLINE_SIZE = 1;
 
 enum class ActorType {
 	BACKGROUND,
+	HUD,
 	PLAYER,
 	PROJECTILE,
 	SPAWNER,

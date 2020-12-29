@@ -6,7 +6,7 @@ class AutomaticWeapon :
     public Weapon
 {
 public:
-    AutomaticWeapon(string filename, int width, int height, int fileWidth, int fileHeight, Game* game);
+    AutomaticWeapon(string filename, int width, int height, Game* game);
     /* Game cycle */
     void tick() override;
     void render(float rotation = 0.0) override;

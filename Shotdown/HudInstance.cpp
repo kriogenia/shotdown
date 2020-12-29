@@ -3,9 +3,12 @@
 HudInstance::HudInstance(Player* player1, Player* player2, Game* game) :
 	Hud()
 {
-	this->player1 = player1;
-	this->player2 = player2;
-	this->title = new Text("", WIDTH / 2, HEIGHT * 0.1, true, game);
+	this->title = (new Text("", WIDTH / 2, HEIGHT * 0.1, game))
+		->setSize(TextSize::TITLE);
+	this->pointerPlayer1 = new Pointer(player1, game);
+	this->pointerPlayer2 = new Pointer(player2, game);
+	this->weaponPlayer1 = new WeaponDisplay(player1, game);
+	this->weaponPlayer2 = new WeaponDisplay(player2, game);
 }
 
 HudInstance::~HudInstance()
@@ -16,11 +19,21 @@ HudInstance::~HudInstance()
 void HudInstance::tick()
 {
 	show--;
+	weaponPlayer1->tick();
+	weaponPlayer2->tick();
+	if (show > 0) {
+		pointerPlayer1->tick();
+		pointerPlayer2->tick();
+	}
 }
 
 void HudInstance::render()
 {
+	weaponPlayer1->render();
+	weaponPlayer2->render();
 	if (show > 0) {
+		pointerPlayer1->render();
+		pointerPlayer2->render();
 		title->render();
 	}
 }
@@ -29,4 +42,15 @@ void HudInstance::initShowdown()
 {
 	show = SHOW_DURATION;
 	title->content = "Round " + to_string(++round);
+}
+
+void HudInstance::updateWeapon(void* player)
+{
+	PlayerTag tag = ((Player*)player)->tag;
+	if (tag == PlayerTag::P1) {
+		weaponPlayer1->update();
+	}
+	else {
+		weaponPlayer2->update();
+	}
 }

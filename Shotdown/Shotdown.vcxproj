@@ -211,6 +211,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="PlayerStateBase.cpp" />
+    <ClCompile Include="Pointer.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ReloadingWeaponState.cpp" />
     <ClCompile Include="Scenario.cpp" />
@@ -222,6 +223,7 @@
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="WeaponDisplay.cpp" />
     <ClCompile Include="WeaponFactory.cpp" />
     <ClCompile Include="WeaponSpawner.cpp" />
     <ClCompile Include="WeaponState.cpp" />
@@ -256,6 +258,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerState.h" />
     <ClInclude Include="PlayerStateBase.h" />
+    <ClInclude Include="Pointer.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="ReloadingWeaponState.h" />
     <ClInclude Include="Scenario.h" />
@@ -267,6 +270,7 @@
     <ClInclude Include="Tile.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Weapon.h" />
+    <ClInclude Include="WeaponDisplay.h" />
     <ClInclude Include="WeaponFactory.h" />
     <ClInclude Include="WeaponSpawner.h" />
     <ClInclude Include="WeaponState.h" />
