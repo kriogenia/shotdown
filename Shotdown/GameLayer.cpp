@@ -209,11 +209,11 @@ void GameLayer::victoryCheck()
 	if (player1->pendingDestruction || player2->pendingDestruction) {
 		if (player2->pendingDestruction) {
 			player1->victories++;
-			cout << "Player 1 wins this showdown. Starting next one..." << endl;
+			printf("%s wins this showdown. Starting next one...\n", player2->toString().c_str());
 		}
 		else {
 			player2->victories++;
-			cout << "Player 2 wins this showdown. Starting next one..." << endl;
+			printf("%s wins this showdown. Starting next one...\n", player2->toString().c_str());
 		}
 		if (scenarios.size() > 0) {
 			playNextScenario();

@@ -31,7 +31,7 @@ private:
 	BackgroundAudio* menuTheme;
 	BackgroundAudio* endTheme;
 	vector<BackgroundAudio*> themes;
-	int index = 0;
+	unsigned int index = 0;
 	/* Audio clips */
 	map<AudioClips, AudioClip*> clips;
 

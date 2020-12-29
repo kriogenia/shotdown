@@ -16,6 +16,6 @@ public:
     void stop();
 
 private:
-    Mix_Music* mix;
+    Mix_Music* mix = nullptr;
     string filename;
 };

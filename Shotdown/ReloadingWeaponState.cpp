@@ -8,7 +8,7 @@ ReloadingWeaponState::ReloadingWeaponState(Weapon* weapon) :
 
 void ReloadingWeaponState::enter()
 {
-    cout << weapon->owner->toString() << " " << weapon->toString() << " reloading" << endl;
+    printf("%s %s reloading\n", weapon->owner->toString().c_str(), weapon->toString().c_str());
     weapon->reloadTimeLeft = weapon->reloadTime;
     // call to HUD -> make reload animation visible
 }

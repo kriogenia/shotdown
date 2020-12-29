@@ -7,7 +7,7 @@ LoadedWeaponState::LoadedWeaponState(Weapon* weapon) :
 
 void LoadedWeaponState::exit()
 {
-    cout << weapon->owner->toString() << " " << weapon->toString() << " clip is empty" << endl;
+    printf("%s %s clip is empty\n", weapon->owner->toString().c_str(), weapon->toString().c_str());
 }
 
 void LoadedWeaponState::shoot()

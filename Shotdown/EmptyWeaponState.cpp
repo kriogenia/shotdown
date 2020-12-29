@@ -9,7 +9,7 @@ EmptyWeaponState::EmptyWeaponState(Weapon* weapon) :
 
 void EmptyWeaponState::enter()
 {
-	cout << weapon->owner->toString() << " " << weapon->toString() << " has no ammo left" << endl;
+	printf("%s %s has no ammo left\n", weapon->owner->toString().c_str(), weapon->toString().c_str());
 }
 
 void EmptyWeaponState::shoot()

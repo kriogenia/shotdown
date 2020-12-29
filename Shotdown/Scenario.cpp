@@ -24,7 +24,7 @@ void Scenario::render()
 void Scenario::play()
 {
 	scenario_map->addToSpace();
-	cout << "New match on scenario " << code << endl;
+	printf("New match on scenario %i\n", code);
 }
 
 /* Reads and loads the XML content */

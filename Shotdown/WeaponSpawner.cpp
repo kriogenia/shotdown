@@ -46,5 +46,5 @@ void WeaponSpawner::getWeapon()
 	WeaponFactory* factory = WeaponFactory::getInstance(game);
 	weapon = random ? factory->getRandomWeapon() : factory->getWeapon();
 	weapon->position = position;
-	cout << "Spawned " << weapon->toString() << " at " << position.x << ", " << position.y << endl;
+	printf("Spawned %s at %.0f, %.0f\n", weapon->toString().c_str(), position.x, position.y);
 }
