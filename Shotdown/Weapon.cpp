@@ -59,6 +59,7 @@ void Weapon::shoot()
 {
 	loadedAmmo--;
 	owner->recoil(recoil, cpv(shotPoint.x, shotPoint.y));
+	remainingShotCd = shotCooldown;
 }
 
 /* Populates the WeaponStates */

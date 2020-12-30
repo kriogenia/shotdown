@@ -5,7 +5,7 @@ P90::P90(Game* game) :
 {
 	/* Weapon */
 	// Type
-	rarity = static_cast<int>(WeaponRarity::COMMON);
+	rarity = static_cast<int>(WeaponRarity::UNCOMMON);
 	// Ammo
 	clipSize = P90_CLIP_SIZE;
 	loadedAmmo = P90_CLIP_SIZE;
@@ -19,11 +19,11 @@ P90::P90(Game* game) :
 	// Projectile
 	projectileSpeed = P90_PROJECTILE_SPEED;
 	recoilPerShot = P90_RECOIL_PER_SHOT;
+	bulletLife = P90_PROJECTILE_LIFE;
 	// Sound
 	sound = new SoundEffect(P90_SOUND);
 	/* AutomaticWeapon */
 	anglePerShot = P90_ANGLE_PER_SHOT;
-	bulletLife = P90_PROJECTILE_LIFE;
 }
 
 Weapon* P90::clone(Player* owner)

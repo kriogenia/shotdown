@@ -53,8 +53,7 @@ void AutomaticWeapon::shoot()
 			cpv(orientation * projectileSpeed, -weaponRecoil),
 			cpv(shotPoint.x, shotPoint.y));
 		sound->play();
-		// Lowers accuracy and starts cd
+		// Lowers accuracy
 		consecutiveShots++;
-		remainingShotCd = shotCooldown;
 	}
 }

@@ -19,11 +19,11 @@ Ak47::Ak47(Game* game) :
 	// Projectile
 	projectileSpeed = AK47_PROJECTILE_SPEED;
 	recoilPerShot = AK47_RECOIL_PER_SHOT;
+	bulletLife = AK47_PROJECTILE_LIFE;
 	// Sound
 	sound = new SoundEffect(AK47_SOUND);
 	/* AutomaticWeapon */
 	anglePerShot = AK47_ANGLE_PER_SHOT;
-	bulletLife = AK47_PROJECTILE_LIFE;
 }
 
 Weapon* Ak47::clone(Player* owner)

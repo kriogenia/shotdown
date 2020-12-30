@@ -103,6 +103,12 @@
     <Filter Include="Archivos de origen\Hud\Modules">
       <UniqueIdentifier>{a5191b00-2f86-4e5a-8fb6-4eeef7517b9d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Actors\Weapons\Manual">
+      <UniqueIdentifier>{b498dfff-da8f-4dac-9f70-bd79fa4e9182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actors\Weapons\Manual">
+      <UniqueIdentifier>{577b22ca-09f2-48bc-877b-8f6b5a528572}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -342,6 +348,12 @@
     <ClCompile Include="P90.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Auto</Filter>
     </ClCompile>
+    <ClCompile Include="ManualWeapon.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Manual</Filter>
+    </ClCompile>
+    <ClCompile Include="Nova.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Manual</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -484,6 +496,12 @@
     </ClInclude>
     <ClInclude Include="P90.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Auto</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualWeapon.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Manual</Filter>
+    </ClInclude>
+    <ClInclude Include="Nova.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Manual</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

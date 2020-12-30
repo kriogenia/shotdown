@@ -19,11 +19,11 @@ M4::M4(Game* game) :
 	// Projectile
 	projectileSpeed = M4_PROJECTILE_SPEED;
 	recoilPerShot = M4_RECOIL_PER_SHOT;
+	bulletLife = M4_PROJECTILE_LIFE;
 	// Sound
 	sound = new SoundEffect(M4_SOUND);
 	/* AutomaticWeapon */
 	anglePerShot = M4_ANGLE_PER_SHOT;
-	bulletLife = M4_PROJECTILE_LIFE;
 }
 
 Weapon* M4::clone(Player* owner)

@@ -206,8 +206,10 @@
     <ClCompile Include="LoadedWeaponState.cpp" />
     <ClCompile Include="M4.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ManualWeapon.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MovingPlayerState.cpp" />
+    <ClCompile Include="Nova.cpp" />
     <ClCompile Include="P90.cpp" />
     <ClCompile Include="Parallax.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -255,8 +257,10 @@
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LoadedWeaponState.h" />
     <ClInclude Include="M4.h" />
+    <ClInclude Include="ManualWeapon.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MovingPlayerState.h" />
+    <ClInclude Include="Nova.h" />
     <ClInclude Include="P90.h" />
     <ClInclude Include="Parallax.h" />
     <ClInclude Include="Player.h" />

@@ -189,7 +189,7 @@ void GameLayer::pickWeapon(Player* player)
 	for (auto const& spawner : spawners) {
 		if (spawner->isOverlap(player)) {
 			if (spawner->pickWeapon(player)) {
-				printf("%s picked %s", player->toString().c_str(), player->weapon->toString().c_str());
+				printf("%s picked %s\n", player->toString().c_str(), player->weapon->toString().c_str());
 				messager->notify(Notifications::PICK_WEAPON, player);
 			}
 			return;
