@@ -366,6 +366,9 @@
     <ClCompile Include="Galil.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Rifles</Filter>
     </ClCompile>
+    <ClCompile Include="Mac10.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\SMGs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -520,6 +523,9 @@
     </ClInclude>
     <ClInclude Include="Galil.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Rifles</Filter>
+    </ClInclude>
+    <ClInclude Include="Mac10.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\SMGs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 DyingPlayerState::DyingPlayerState(Player* player) :
 	PlayerStateBase(player)
 {
+	this->tag = ePlayerStates::DYING;
 }
 
 void DyingPlayerState::enter()

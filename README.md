@@ -49,11 +49,12 @@ bad position without any way to attack your enemies.
 
 Currently the game features the next weapons:
 
-* **Ak-47**, automatic rifle, uncommon. Two clips of ten bullets.
-* **Galil-AR**, automatic rifle, rare. Three clips of twelve bullets.
-* **M4**, automatic rifle, common. Two clips of ten bullets.
-* **Nova**, shotgun, common. Three clips of three shots with three pellets per shot.
-* **P90**, automatic submachine gun. Three clips of fifteen bullets.
+* **Ak-47**, automatic rifle, uncommon. Two clips of ten bullets. 36 damage per shot.
+* **Galil-AR**, automatic rifle, rare. Three clips of twelve bullets. 30 damage per shot.
+* **Mac-10**, automatic submachine gun. Two clips of ten bullets. 29 damage per shot.
+* **M4**, automatic rifle, common. Two clips of ten bullets. 33 damage per shot.
+* **Nova**, shotgun, common. Three clips of three shots with three pellets per shot. 26 damager per pellet.
+* **P90**, automatic submachine gun. Three clips of fifteen bullets. 26 damage per shot.
 
 # Resources
 

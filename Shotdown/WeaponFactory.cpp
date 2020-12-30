@@ -3,6 +3,7 @@
 #include "Ak47.h"
 #include "Galil.h"
 #include "M4.h"
+#include "Mac10.h"
 #include "Nova.h"
 #include "P90.h"
 
@@ -19,13 +20,14 @@ WeaponFactory::WeaponFactory(Game* game)
 {
     /* Add a copy of each weapon to clone */
     // Rifles
-    weapons.push_back(new M4(game));
-    weapons.push_back(new Ak47(game));
-    weapons.push_back(new Galil(game));
+    weapons.push_back(new M4(game));        // common
+    weapons.push_back(new Ak47(game));      // uncommon
+    weapons.push_back(new Galil(game));     // rare
     // Shotguns
-    weapons.push_back(new Nova(game));
+    weapons.push_back(new Nova(game));      // common
     // SMGs
-    weapons.push_back(new P90(game));
+    weapons.push_back(new Mac10(game));     // uncommon
+    weapons.push_back(new P90(game));       // rare
     // Fill the pool
     fillPool();
 }
@@ -33,7 +35,7 @@ WeaponFactory::WeaponFactory(Game* game)
 /* Get a random weapon from the avaliable pool */
 Weapon* WeaponFactory::getWeapon()
 {
-    return weapons[3]->clone();     // Debug
+    return weapons[4]->clone();     // Debug
     int position = rand() % pool.size();
     Weapon* weapon = weapons[pool[position]]->clone();
     pool.erase(pool.begin() + position);

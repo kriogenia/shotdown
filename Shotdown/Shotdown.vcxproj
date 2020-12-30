@@ -208,6 +208,7 @@
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="LoadedWeaponState.cpp" />
     <ClCompile Include="M4.cpp" />
+    <ClCompile Include="Mac10.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ManualWeapon.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -262,6 +263,7 @@
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LoadedWeaponState.h" />
     <ClInclude Include="M4.h" />
+    <ClInclude Include="Mac10.h" />
     <ClInclude Include="ManualWeapon.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MovingPlayerState.h" />

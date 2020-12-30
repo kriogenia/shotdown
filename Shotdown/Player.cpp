@@ -32,7 +32,7 @@ void Player::tick()
 		weapon->tick();
 	}
 	// Fall check
-	if (position.y > HEIGHT) {
+	if (position.y > HEIGHT && state->tag != ePlayerStates::DYING) {
 		printf("%s fell out\n", toString().c_str());
 		// pendingDestruction = true;
 		setState(ePlayerStates::DYING);
