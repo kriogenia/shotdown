@@ -109,6 +109,12 @@
     <Filter Include="Archivos de origen\Actors\Weapons\Manual">
       <UniqueIdentifier>{577b22ca-09f2-48bc-877b-8f6b5a528572}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Actors\UI">
+      <UniqueIdentifier>{2e9846f3-e710-429e-bece-7f7589f0fa76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actors\UI">
+      <UniqueIdentifier>{12aa1b62-8882-46ca-81ac-388677e5c7b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -354,6 +360,12 @@
     <ClCompile Include="Nova.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Manual</Filter>
     </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Archivos de origen\Hud\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Bar.cpp">
+      <Filter>Archivos de origen\Actors\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -502,6 +514,12 @@
     </ClInclude>
     <ClInclude Include="Nova.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Manual</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Archivos de encabezado\Hud\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Bar.h">
+      <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

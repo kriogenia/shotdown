@@ -5,10 +5,11 @@
 
 constexpr auto DISPLAY_HEIGHT = HEIGHT * 0.95;
 /* Player 1*/
-constexpr auto P1_IMAGE_X = WIDTH * 0.05;
-constexpr auto P1_TEXT_X = WIDTH * 0.12;
-constexpr auto P2_IMAGE_X = WIDTH * 0.95;
-constexpr auto P2_TEXT_X = WIDTH * 0.88;
+constexpr auto P1_WEAPON_X = WIDTH * 0.05;
+constexpr auto P1_AMMO_X = WIDTH * 0.12;
+/* Player 2 */
+constexpr auto P2_WEAPON_X = WIDTH * 0.95;
+constexpr auto P2_AMMO_X = WIDTH * 0.88;
 
 class WeaponDisplay
 {

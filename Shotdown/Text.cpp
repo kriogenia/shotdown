@@ -5,6 +5,10 @@ Text::Text(string content, float x, float y, Game* game) :
 	position({ x, y }),
 	game(game)
 {
+	// Caption by default
+	outlineSize = CAPTION_OUTLINE_SIZE;
+	bgFont = game->fontOutlineSubtitle;
+	fgFont = game->fontCaption;
 }
 
 Text* Text::setSize(TextSize size)

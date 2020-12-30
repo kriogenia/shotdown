@@ -4,7 +4,7 @@ WeaponDisplay::WeaponDisplay(Player* player, Game* game) :
 	player(player),
 	game(game)
 {
-	float x = (player->tag == PlayerTag::P1) ? P1_TEXT_X : P2_TEXT_X;
+	float x = (player->tag == PlayerTag::P1) ? P1_AMMO_X : P2_AMMO_X;
 	ammo = (new Text("-", x, DISPLAY_HEIGHT, game))->setSize(TextSize::CAPTION);
 }
 
@@ -31,7 +31,7 @@ void WeaponDisplay::update()
 {
 	float x;
 	if (player->weapon != nullptr) {
-		float x = (player->tag == PlayerTag::P1) ? P1_IMAGE_X : P2_IMAGE_X;
+		float x = (player->tag == PlayerTag::P1) ? P1_WEAPON_X : P2_WEAPON_X;
 		weaponImage = new Actor(ActorType::HUD, player->weapon->filename, 
 			x, DISPLAY_HEIGHT, 30, 8, game);
 	}

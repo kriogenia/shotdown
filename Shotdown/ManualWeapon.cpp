@@ -14,6 +14,8 @@ void ManualWeapon::tick()
 
 void ManualWeapon::pressTrigger()
 {
-	state->shoot();
+	if (remainingShotCd <= 0) {
+		state->shoot();
+	}
 }
 

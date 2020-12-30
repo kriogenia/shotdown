@@ -157,6 +157,7 @@
     <ClCompile Include="AutomaticWeapon.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BackgroundAudio.cpp" />
+    <ClCompile Include="Bar.cpp" />
     <ClCompile Include="Broadcaster.cpp" />
     <ClCompile Include="ChipmunkHelper.cpp" />
     <ClCompile Include="chipmunk\chipmunk.c" />
@@ -219,6 +220,7 @@
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ReloadingWeaponState.cpp" />
     <ClCompile Include="Scenario.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="SlidingPlayerState.cpp" />
     <ClCompile Include="SoundEffect.cpp" />
     <ClCompile Include="State.cpp" />
@@ -240,6 +242,7 @@
     <ClInclude Include="AutomaticWeapon.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="BackgroundAudio.h" />
+    <ClInclude Include="Bar.h" />
     <ClInclude Include="Broadcaster.h" />
     <ClInclude Include="ChipmunkHelper.h" />
     <ClInclude Include="chipmunk\prime.h" />
@@ -270,6 +273,7 @@
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="ReloadingWeaponState.h" />
     <ClInclude Include="Scenario.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="SlidingPlayerState.h" />
     <ClInclude Include="SoundEffect.h" />
     <ClInclude Include="State.h" />
