@@ -339,12 +339,6 @@
     <ClCompile Include="HudInstance.cpp">
       <Filter>Archivos de origen\Hud</Filter>
     </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>Archivos de origen\Hud\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="Pointer.cpp">
-      <Filter>Archivos de origen\Hud\Modules</Filter>
-    </ClCompile>
     <ClCompile Include="WeaponDisplay.cpp">
       <Filter>Archivos de origen\Hud\Modules</Filter>
     </ClCompile>
@@ -364,6 +358,12 @@
       <Filter>Archivos de origen\Hud\Modules</Filter>
     </ClCompile>
     <ClCompile Include="Bar.cpp">
+      <Filter>Archivos de origen\Actors\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Archivos de origen\Actors\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointer.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
   </ItemGroup>
@@ -494,12 +494,6 @@
     <ClInclude Include="HudInstance.h">
       <Filter>Archivos de encabezado\Hud</Filter>
     </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>Archivos de encabezado\Hud\Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Pointer.h">
-      <Filter>Archivos de encabezado\Hud\Modules</Filter>
-    </ClInclude>
     <ClInclude Include="WeaponDisplay.h">
       <Filter>Archivos de encabezado\Hud\Modules</Filter>
     </ClInclude>
@@ -519,6 +513,12 @@
       <Filter>Archivos de encabezado\Hud\Modules</Filter>
     </ClInclude>
     <ClInclude Include="Bar.h">
+      <Filter>Archivos de encabezado\Actors\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Archivos de encabezado\Actors\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointer.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
   </ItemGroup>

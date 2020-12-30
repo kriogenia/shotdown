@@ -6,19 +6,19 @@
 constexpr auto ARROW_DISTANCE = 14;
 constexpr auto TEXT_DISTANCE = 25;
 
-class Pointer
+class Pointer :
+	public Actor
 {
 public:
 	Pointer(Player* player, Game* game);
 	/* Game cycle */
-	void tick();
-	void render();
+	void tick() override;
+	void render(float rotation = 0.0) override;
 
 private:
 	/* References */
 	Player* player = nullptr;
-	/* Modules */
+	/* Text */
 	Text* text = nullptr;
-	Actor* pointer = nullptr;
 };
 
