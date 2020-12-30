@@ -17,7 +17,7 @@ public:
     inline void jump() override {};
     inline void pressTrigger() override{};
     // Events
-    void impacted(PlayerTag shooter, cpVect velocity);
+    void impacted(PlayerTag shooter, int damage, cpVect velocity);
     void hitLeft() override;
     void hitRight() override;
 

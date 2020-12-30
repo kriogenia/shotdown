@@ -13,6 +13,7 @@ constexpr auto AK47_RECOIL_PER_SHOT = 0.25;
 constexpr float AK47_ANGLE_PER_SHOT = 1.4;
 constexpr auto AK47_RECOIL_FORCE = 60 * TARGET_FPS;
 /* Projectile */
+constexpr auto AK47_DAMAGE = 36;
 constexpr auto AK47_PROJECTILE_LIFE = 0.6 * static_cast<double>(TARGET_FPS); // 0.6s
 constexpr auto AK47_PROJECTILE_SPEED = 6.0;
 /* Shot point */

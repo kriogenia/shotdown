@@ -33,9 +33,9 @@ void DashingPlayerState::exit()
 	player->dashCd = DASH_CD;
 }
 
-void DashingPlayerState::impacted(PlayerTag shooter, cpVect velocity)
+void DashingPlayerState::impacted(PlayerTag shooter, int damage, cpVect velocity)
 {
-	// TODO iframes
+	printf("%s dodge the shot", player->toString().c_str());
 }
 
 void DashingPlayerState::hitLeft()

@@ -7,7 +7,7 @@ class Weapon;
 
 /* Attributes */
 constexpr auto PLAYER_SIZE = 24;
-constexpr auto PLAYER_HP = 5;
+constexpr auto PLAYER_HP = 100;
 constexpr auto PLAYER_SPEED = 3 * TARGET_FPS;
 constexpr auto PLAYER_JUMP = 5 * TARGET_FPS;
 // constexpr auto PLAYER_JUMP_IMPULSE = 360 * TARGET_FPS;

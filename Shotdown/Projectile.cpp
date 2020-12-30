@@ -1,10 +1,11 @@
 #include "ChipmunkHelper.h"
 #include "Projectile.h"
 
-Projectile::Projectile(PlayerTag shooter, int lifeTime, float x, float y, Game* game) :
+Projectile::Projectile(PlayerTag shooter, int damage, int lifeTime, float x, float y, Game* game) :
 	Actor(ActorType::PROJECTILE, "", x, y, 3, 3, game) 
 {
 	this->shooter = shooter;
+	this->damage = damage;
 	this->lifeTime = lifeTime;
 	this->previousPosition = { x, y };
 }

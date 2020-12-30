@@ -11,8 +11,9 @@ constexpr auto NOVA_WAIT_TIME = 0.8 * static_cast<double>(TARGET_FPS); // 1.1s
 /* Recoil */
 constexpr auto NOVA_RECOIL_FORCE = 120 * TARGET_FPS;
 /* Projectile */
-constexpr auto NOVA_PELLETS = 3;
-constexpr auto NOVA_DISPERSION = 1;
+constexpr auto NOVA_DAMAGE = 26;
+constexpr auto NOVA_PELLETS = 4;
+constexpr auto NOVA_DISPERSION = 1.25;
 constexpr auto NOVA_PROJECTILE_LIFE = 0.3 * static_cast<double>(TARGET_FPS); // 0.3s
 constexpr auto NOVA_PROJECTILE_SPEED = 5.0;
 /* Shot point */

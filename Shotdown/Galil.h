@@ -13,6 +13,7 @@ constexpr auto GALIL_RECOIL_PER_SHOT = 0.2;
 constexpr float GALIL_ANGLE_PER_SHOT = 1.1;
 constexpr auto GALIL_RECOIL_FORCE = 45 * TARGET_FPS;
 /* Projectile */
+constexpr auto GALIL_DAMAGE = 30;
 constexpr auto GALIL_PROJECTILE_LIFE = 0.7 * static_cast<double>(TARGET_FPS); // 0.7s
 constexpr auto GALIL_PROJECTILE_SPEED = 6.2;
 /* Shot point */

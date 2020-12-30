@@ -38,10 +38,11 @@ void SlidingPlayerState::jump()
 	player->setState(ePlayerStates::JUMPING);
 }
 
-void SlidingPlayerState::impacted(PlayerTag shooter, cpVect velocity)
+void SlidingPlayerState::impacted(PlayerTag shooter, int damage, cpVect velocity)
 {
 	if (shooter != player->tag) {
-		player->hp--;
+		player->hp -= damage;
+		printf("%s impacted. HP: %i\n", player->toString().c_str(), player->hp);
 		player->pushedBack = PLAYER_PUSH_DURATION;
 		cpBodyApplyImpulseAtLocalPoint(player->body, cpvmult(velocity, -10), cpv(0, 0));
 		if (player->hp <= 0) {

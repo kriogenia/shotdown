@@ -52,10 +52,11 @@ void PlayerStateBase::releaseTrigger()
 	}
 }
 
-void PlayerStateBase::impacted(PlayerTag shooter, cpVect velocity)
+void PlayerStateBase::impacted(PlayerTag shooter, int damage, cpVect velocity)
 {
 	if (shooter != player->tag) {
-		player->hp--;
+		player->hp -= damage;
+		printf("%s impacted. HP: %i\n", player->toString().c_str(), player->hp);
 		if (player->hp <= 0) {
 			player->setState(ePlayerStates::DYING);
 		}

@@ -17,6 +17,7 @@ P90::P90(Game* game) :
 	recoil = P90_RECOIL_FORCE;
 	shotPointOffset = { P90_SHOT_POINT_X , P90_SHOT_POINT_Y };
 	// Projectile
+	damage = P90_DAMAGE;
 	projectileSpeed = P90_PROJECTILE_SPEED;
 	recoilPerShot = P90_RECOIL_PER_SHOT;
 	bulletLife = P90_PROJECTILE_LIFE;

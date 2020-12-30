@@ -17,6 +17,7 @@ Galil::Galil(Game* game) :
 	recoil = GALIL_RECOIL_FORCE;
 	shotPointOffset = { GALIL_SHOT_POINT_X , GALIL_SHOT_POINT_Y };
 	// Projectile
+	damage = GALIL_DAMAGE;
 	projectileSpeed = GALIL_PROJECTILE_SPEED;
 	recoilPerShot = GALIL_RECOIL_PER_SHOT;
 	bulletLife = GALIL_PROJECTILE_LIFE;

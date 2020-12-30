@@ -17,6 +17,7 @@ Ak47::Ak47(Game* game) :
 	recoil = AK47_RECOIL_FORCE;
 	shotPointOffset = { AK47_SHOT_POINT_X , AK47_SHOT_POINT_Y };
 	// Projectile
+	damage = AK47_DAMAGE;
 	projectileSpeed = AK47_PROJECTILE_SPEED;
 	recoilPerShot = AK47_RECOIL_PER_SHOT;
 	bulletLife = AK47_PROJECTILE_LIFE;

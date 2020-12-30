@@ -15,7 +15,7 @@ public:
     inline void move(int duration) override {};
     void jump() override;
     // Events
-    void impacted(PlayerTag shooter, cpVect velocity);
+    void impacted(PlayerTag shooter, int damage, cpVect velocity);
     inline void recoil(int force, cpVect point) override {};
     void hitLeft() override;
     void hitRight() override;

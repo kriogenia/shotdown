@@ -70,6 +70,7 @@ protected:
 	int shotCooldown = 0;
 	int remainingShotCd = 0;
 	/* Projectiles */
+	int damage = 0;
 	int bulletLife = 0;
 	float projectileSpeed = 0.0;
 };

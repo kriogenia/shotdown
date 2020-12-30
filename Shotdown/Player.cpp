@@ -162,9 +162,9 @@ void Player::collisioned(Point collisionedPosition)
 }
 
 /* Manage the collision with a Projectile */
-void Player::impacted(PlayerTag shooter, cpVect velocity)
+void Player::impacted(PlayerTag shooter, int damage, cpVect velocity)
 {
-	state->impacted(shooter, velocity);
+	state->impacted(shooter, damage, velocity);
 }
 
 /* Manage the recoil force from shooting */

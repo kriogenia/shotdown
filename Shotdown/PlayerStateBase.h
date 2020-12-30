@@ -17,7 +17,7 @@ public:
     void pressTrigger() override;
     void releaseTrigger() override;
     // Events
-    void impacted(PlayerTag shooter, cpVect velocity) override;
+    void impacted(PlayerTag shooter, int damage, cpVect velocity) override;
     void recoil(int force, cpVect point) override;
 
 protected:

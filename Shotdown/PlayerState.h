@@ -28,7 +28,7 @@ public:
 	virtual void pressTrigger() = 0;
 	virtual void releaseTrigger() = 0;
 	/* Events */
-	virtual void impacted(PlayerTag shooter, cpVect velocity) = 0;
+	virtual void impacted(PlayerTag shooter, int damage, cpVect velocity) = 0;
 	virtual void recoil(int force, cpVect point) = 0;
 	virtual void hitTop() {};
 	virtual void hitLeft() {};

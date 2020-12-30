@@ -17,6 +17,7 @@ Nova::Nova(Game* game) :
 	recoil = NOVA_RECOIL_FORCE;
 	shotPointOffset = { NOVA_SHOT_POINT_X , NOVA_SHOT_POINT_Y };
 	// Projectile
+	damage = NOVA_DAMAGE;
 	projectileSpeed = NOVA_PROJECTILE_SPEED;
 	// Sound
 	bulletLife = NOVA_PROJECTILE_LIFE;
@@ -39,8 +40,8 @@ void Nova::shoot()
 	float orientation = static_cast<float>(owner->orientation);
 	// Fires projectiles
 	for (int i = 0; i < NOVA_PELLETS; i++) {
-		int dispersion = (i + 1) / 2 * NOVA_DISPERSION * pow(-1, i % 2);
-		projectile = new Projectile(owner->tag, bulletLife, shotPoint.x,
+		float dispersion = NOVA_DISPERSION - i * NOVA_DISPERSION * 2 / 3;
+		projectile = new Projectile(owner->tag, damage, bulletLife, shotPoint.x,
 			shotPoint.y + dispersion, game);
 		engine->addActor(projectile);
 		owner->projectiles->push_back(projectile);

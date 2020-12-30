@@ -43,7 +43,7 @@ void AutomaticWeapon::shoot()
 		float orientation = static_cast<float>(owner->orientation);
 		// Creates projectile
 		float weaponRecoil = static_cast<float>(consecutiveShots * recoilPerShot);
-		Projectile* projectile = new Projectile(owner->tag, bulletLife,
+		Projectile* projectile = new Projectile(owner->tag, damage, bulletLife,
 			shotPoint.x, shotPoint.y - weaponRecoil, game);
 		// Adds projectile to game and engine
 		engine->addActor(projectile);

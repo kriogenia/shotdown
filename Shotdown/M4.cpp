@@ -17,6 +17,7 @@ M4::M4(Game* game) :
 	recoil = M4_RECOIL_FORCE;
 	shotPointOffset = { M4_SHOT_POINT_X , M4_SHOT_POINT_Y };
 	// Projectile
+	damage = M4_DAMAGE;
 	projectileSpeed = M4_PROJECTILE_SPEED;
 	recoilPerShot = M4_RECOIL_PER_SHOT;
 	bulletLife = M4_PROJECTILE_LIFE;
