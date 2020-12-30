@@ -33,7 +33,8 @@ void Player::tick()
 	}
 	// Fall check
 	if (position.y > HEIGHT) {
-		cout << "Player " << static_cast<int>(tag) << " fell out." << endl;
+		printf("%s fell out\n", toString().c_str());
+		pendingDestruction = true;
 		setState(ePlayerStates::DYING);
 	}
 }

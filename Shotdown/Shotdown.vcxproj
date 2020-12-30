@@ -202,6 +202,7 @@
     <ClCompile Include="Hud.cpp" />
     <ClCompile Include="HudInstance.cpp" />
     <ClCompile Include="IdlePlayerState.cpp" />
+    <ClCompile Include="InfoDisplay.cpp" />
     <ClCompile Include="JumpingPlayerState.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="LoadedWeaponState.cpp" />
@@ -220,7 +221,6 @@
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ReloadingWeaponState.cpp" />
     <ClCompile Include="Scenario.cpp" />
-    <ClCompile Include="Score.cpp" />
     <ClCompile Include="SlidingPlayerState.cpp" />
     <ClCompile Include="SoundEffect.cpp" />
     <ClCompile Include="State.cpp" />
@@ -229,7 +229,6 @@
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Weapon.cpp" />
-    <ClCompile Include="WeaponDisplay.cpp" />
     <ClCompile Include="WeaponFactory.cpp" />
     <ClCompile Include="WeaponSpawner.cpp" />
     <ClCompile Include="WeaponState.cpp" />
@@ -256,6 +255,7 @@
     <ClInclude Include="Hud.h" />
     <ClInclude Include="HudInstance.h" />
     <ClInclude Include="IdlePlayerState.h" />
+    <ClInclude Include="InfoDisplay.h" />
     <ClInclude Include="JumpingPlayerState.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LoadedWeaponState.h" />
@@ -273,7 +273,6 @@
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="ReloadingWeaponState.h" />
     <ClInclude Include="Scenario.h" />
-    <ClInclude Include="Score.h" />
     <ClInclude Include="SlidingPlayerState.h" />
     <ClInclude Include="SoundEffect.h" />
     <ClInclude Include="State.h" />
@@ -282,7 +281,6 @@
     <ClInclude Include="Tile.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Weapon.h" />
-    <ClInclude Include="WeaponDisplay.h" />
     <ClInclude Include="WeaponFactory.h" />
     <ClInclude Include="WeaponSpawner.h" />
     <ClInclude Include="WeaponState.h" />

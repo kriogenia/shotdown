@@ -1,8 +1,7 @@
 #pragma once
 
+#include "InfoDisplay.h"
 #include "Pointer.h"
-#include "Score.h"
-#include "WeaponDisplay.h"
 
 constexpr auto SHOW_DURATION = 5 * TARGET_FPS;	// 5s
 
@@ -25,10 +24,8 @@ private:
 	Text* title = nullptr;
 	Pointer* pointerPlayer1 = nullptr;
 	Pointer* pointerPlayer2 = nullptr;
-	Score* scorePlayer1 = nullptr;
-	Score* scorePlayer2 = nullptr;
-	WeaponDisplay* weaponPlayer1 = nullptr;
-	WeaponDisplay* weaponPlayer2 = nullptr;
+	InfoDisplay* infoPlayer1 = nullptr;
+	InfoDisplay* infoPlayer2 = nullptr;
 	/* Counters */
 	int show = 0;
 	int round = 0;

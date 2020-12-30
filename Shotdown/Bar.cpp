@@ -14,7 +14,7 @@ void Bar::render(float rotation) {
 	source.h = fileHeight;		// texture.height;
 
 	SDL_Rect destination;
-	destination.x = position.x - width / 2;
+	destination.x = static_cast<int>(position.x - currentWidth / 2);
 	destination.y = static_cast<int>(position.y - height / 2);
 	destination.w = currentWidth;
 	destination.h = height;

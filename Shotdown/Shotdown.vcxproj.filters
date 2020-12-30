@@ -97,12 +97,6 @@
     <Filter Include="Archivos de origen\Hud">
       <UniqueIdentifier>{884e40fa-ad7f-4215-871c-919e4381e89e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Hud\Modules">
-      <UniqueIdentifier>{4dcad3e1-f865-450d-a470-1ecc9688fdd7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Hud\Modules">
-      <UniqueIdentifier>{a5191b00-2f86-4e5a-8fb6-4eeef7517b9d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\Actors\Weapons\Manual">
       <UniqueIdentifier>{b498dfff-da8f-4dac-9f70-bd79fa4e9182}</UniqueIdentifier>
     </Filter>
@@ -339,9 +333,6 @@
     <ClCompile Include="HudInstance.cpp">
       <Filter>Archivos de origen\Hud</Filter>
     </ClCompile>
-    <ClCompile Include="WeaponDisplay.cpp">
-      <Filter>Archivos de origen\Hud\Modules</Filter>
-    </ClCompile>
     <ClCompile Include="M4.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Auto</Filter>
     </ClCompile>
@@ -354,9 +345,6 @@
     <ClCompile Include="Nova.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Manual</Filter>
     </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>Archivos de origen\Hud\Modules</Filter>
-    </ClCompile>
     <ClCompile Include="Bar.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
@@ -364,6 +352,9 @@
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
     <ClCompile Include="Pointer.cpp">
+      <Filter>Archivos de origen\Actors\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoDisplay.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
   </ItemGroup>
@@ -494,9 +485,6 @@
     <ClInclude Include="HudInstance.h">
       <Filter>Archivos de encabezado\Hud</Filter>
     </ClInclude>
-    <ClInclude Include="WeaponDisplay.h">
-      <Filter>Archivos de encabezado\Hud\Modules</Filter>
-    </ClInclude>
     <ClInclude Include="M4.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Auto</Filter>
     </ClInclude>
@@ -509,9 +497,6 @@
     <ClInclude Include="Nova.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Manual</Filter>
     </ClInclude>
-    <ClInclude Include="Score.h">
-      <Filter>Archivos de encabezado\Hud\Modules</Filter>
-    </ClInclude>
     <ClInclude Include="Bar.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
@@ -519,6 +504,9 @@
       <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
     <ClInclude Include="Pointer.h">
+      <Filter>Archivos de encabezado\Actors\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoDisplay.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
   </ItemGroup>
