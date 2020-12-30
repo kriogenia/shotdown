@@ -5,7 +5,7 @@ Ak47::Ak47(Game* game) :
 {
 	/* Weapon */
 	// Type
-	rarity = static_cast<int>(WeaponRarity::COMMON);
+	rarity = static_cast<int>(WeaponRarity::UNCOMMON);
 	// Ammo
 	clipSize = AK47_CLIP_SIZE;
 	loadedAmmo = AK47_CLIP_SIZE;

@@ -5,7 +5,7 @@ P90::P90(Game* game) :
 {
 	/* Weapon */
 	// Type
-	rarity = static_cast<int>(WeaponRarity::UNCOMMON);
+	rarity = static_cast<int>(WeaponRarity::RARE);
 	// Ammo
 	clipSize = P90_CLIP_SIZE;
 	loadedAmmo = P90_CLIP_SIZE;

@@ -4,7 +4,7 @@
 
 /* Ammo */
 constexpr auto P90_CLIP_SIZE = 15;
-constexpr auto P90_EXTRA_AMMO = 15;
+constexpr auto P90_EXTRA_AMMO = 30;
 /* Reload */
 constexpr auto P90_RELOAD_TIME = 3.3 * TARGET_FPS; // 3.3s
 constexpr auto P90_WAIT_TIME = 0.2 * static_cast<double>(TARGET_FPS); // 0.2s
@@ -14,7 +14,7 @@ constexpr float P90_ANGLE_PER_SHOT = 1.3;
 constexpr auto P90_RECOIL_FORCE = 60 * TARGET_FPS;
 /* Projectile */
 constexpr auto P90_PROJECTILE_LIFE = 0.4 * static_cast<double>(TARGET_FPS); // 0.4s
-constexpr auto P90_PROJECTILE_SPEED = 4.0;
+constexpr auto P90_PROJECTILE_SPEED = 5.0;
 /* Shot point */
 constexpr auto P90_SHOT_POINT_X = 12.0;
 constexpr auto P90_SHOT_POINT_Y = -2.0;

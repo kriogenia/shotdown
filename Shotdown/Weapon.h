@@ -16,7 +16,7 @@ enum class WeaponRarity {
 };
 
 constexpr auto WEAPON_WIDTH = 30;
-constexpr auto WEAPON_HEIGHT = 10;
+constexpr auto WEAPON_HEIGHT = 12;
 
 /* interface */
 class Weapon :

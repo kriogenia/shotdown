@@ -34,7 +34,7 @@ void Player::tick()
 	// Fall check
 	if (position.y > HEIGHT) {
 		printf("%s fell out\n", toString().c_str());
-		pendingDestruction = true;
+		// pendingDestruction = true;
 		setState(ePlayerStates::DYING);
 	}
 }

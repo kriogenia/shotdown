@@ -67,12 +67,6 @@
     <Filter Include="Archivos de origen\Factories">
       <UniqueIdentifier>{d11b12b8-2698-4338-be48-e2cb5f960b70}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Actors\Weapons\Auto">
-      <UniqueIdentifier>{2080fb67-1362-42b4-8a76-b0b96bde19db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Actors\Weapons\Auto">
-      <UniqueIdentifier>{daf0f17f-3ec0-496f-bfdc-b49c0c9c280d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\States\PlayerStates">
       <UniqueIdentifier>{4a775da0-85b5-4ab9-a3e0-b80c8365398d}</UniqueIdentifier>
     </Filter>
@@ -97,17 +91,29 @@
     <Filter Include="Archivos de origen\Hud">
       <UniqueIdentifier>{884e40fa-ad7f-4215-871c-919e4381e89e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Actors\Weapons\Manual">
-      <UniqueIdentifier>{b498dfff-da8f-4dac-9f70-bd79fa4e9182}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Actors\Weapons\Manual">
-      <UniqueIdentifier>{577b22ca-09f2-48bc-877b-8f6b5a528572}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\Actors\UI">
       <UniqueIdentifier>{2e9846f3-e710-429e-bece-7f7589f0fa76}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de origen\Actors\UI">
       <UniqueIdentifier>{12aa1b62-8882-46ca-81ac-388677e5c7b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Actors\Weapons\Rifles">
+      <UniqueIdentifier>{bc1774cc-4021-429f-b62f-3fae51e9cb1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Actors\Weapons\Shotguns">
+      <UniqueIdentifier>{3e2d3a8e-8ef1-4475-80fd-99d312b95ea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actors\Weapons\Rifles">
+      <UniqueIdentifier>{39ea4132-0960-4c75-9377-929e18b3ccac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actors\Weapons\Shotguns">
+      <UniqueIdentifier>{44525e1f-ad39-411c-92ab-0e433623e3f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Actors\Weapons\SMGs">
+      <UniqueIdentifier>{2cfff2d1-2c89-4d33-8441-ae0aa9adacdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Actors\Weapons\SMGs">
+      <UniqueIdentifier>{e61f549f-a8ec-4c2c-af26-15b87a78c987}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -285,12 +291,6 @@
     <ClCompile Include="WeaponFactory.cpp">
       <Filter>Archivos de origen\Factories</Filter>
     </ClCompile>
-    <ClCompile Include="Ak47.cpp">
-      <Filter>Archivos de origen\Actors\Weapons\Auto</Filter>
-    </ClCompile>
-    <ClCompile Include="AutomaticWeapon.cpp">
-      <Filter>Archivos de origen\Actors\Weapons\Auto</Filter>
-    </ClCompile>
     <ClCompile Include="LoadedWeaponState.cpp">
       <Filter>Archivos de origen\States\WeaponStates</Filter>
     </ClCompile>
@@ -333,18 +333,6 @@
     <ClCompile Include="HudInstance.cpp">
       <Filter>Archivos de origen\Hud</Filter>
     </ClCompile>
-    <ClCompile Include="M4.cpp">
-      <Filter>Archivos de origen\Actors\Weapons\Auto</Filter>
-    </ClCompile>
-    <ClCompile Include="P90.cpp">
-      <Filter>Archivos de origen\Actors\Weapons\Auto</Filter>
-    </ClCompile>
-    <ClCompile Include="ManualWeapon.cpp">
-      <Filter>Archivos de origen\Actors\Weapons\Manual</Filter>
-    </ClCompile>
-    <ClCompile Include="Nova.cpp">
-      <Filter>Archivos de origen\Actors\Weapons\Manual</Filter>
-    </ClCompile>
     <ClCompile Include="Bar.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
@@ -356,6 +344,27 @@
     </ClCompile>
     <ClCompile Include="InfoDisplay.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="AutomaticWeapon.cpp">
+      <Filter>Archivos de origen\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Ak47.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Rifles</Filter>
+    </ClCompile>
+    <ClCompile Include="M4.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Rifles</Filter>
+    </ClCompile>
+    <ClCompile Include="P90.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\SMGs</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualWeapon.cpp">
+      <Filter>Archivos de origen\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Nova.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Shotguns</Filter>
+    </ClCompile>
+    <ClCompile Include="Galil.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Rifles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -437,12 +446,6 @@
     <ClInclude Include="WeaponFactory.h">
       <Filter>Archivos de encabezado\Factories</Filter>
     </ClInclude>
-    <ClInclude Include="AutomaticWeapon.h">
-      <Filter>Archivos de encabezado\Actors\Weapons\Auto</Filter>
-    </ClInclude>
-    <ClInclude Include="Ak47.h">
-      <Filter>Archivos de encabezado\Actors\Weapons\Auto</Filter>
-    </ClInclude>
     <ClInclude Include="LoadedWeaponState.h">
       <Filter>Archivos de encabezado\States\WeaponStates</Filter>
     </ClInclude>
@@ -485,18 +488,6 @@
     <ClInclude Include="HudInstance.h">
       <Filter>Archivos de encabezado\Hud</Filter>
     </ClInclude>
-    <ClInclude Include="M4.h">
-      <Filter>Archivos de encabezado\Actors\Weapons\Auto</Filter>
-    </ClInclude>
-    <ClInclude Include="P90.h">
-      <Filter>Archivos de encabezado\Actors\Weapons\Auto</Filter>
-    </ClInclude>
-    <ClInclude Include="ManualWeapon.h">
-      <Filter>Archivos de encabezado\Actors\Weapons\Manual</Filter>
-    </ClInclude>
-    <ClInclude Include="Nova.h">
-      <Filter>Archivos de encabezado\Actors\Weapons\Manual</Filter>
-    </ClInclude>
     <ClInclude Include="Bar.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
@@ -508,6 +499,27 @@
     </ClInclude>
     <ClInclude Include="InfoDisplay.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Ak47.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Rifles</Filter>
+    </ClInclude>
+    <ClInclude Include="M4.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Rifles</Filter>
+    </ClInclude>
+    <ClInclude Include="P90.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\SMGs</Filter>
+    </ClInclude>
+    <ClInclude Include="Nova.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Shotguns</Filter>
+    </ClInclude>
+    <ClInclude Include="AutomaticWeapon.h">
+      <Filter>Archivos de encabezado\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualWeapon.h">
+      <Filter>Archivos de encabezado\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Galil.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Rifles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

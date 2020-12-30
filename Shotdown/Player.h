@@ -52,7 +52,7 @@ public:
     void releaseTrigger();
     /* Events */
     void collisioned(Point collisionedPosition);
-    void impacted(PlayerTag shotOwner, cpVect velocity);
+    void impacted(PlayerTag shotOwner, int damage, cpVect velocity);
     void recoil(int force, cpVect point);
     /* State */
     PlayerState* prevState = nullptr;

@@ -197,6 +197,7 @@
     <ClCompile Include="DyingPlayerState.cpp" />
     <ClCompile Include="EmptyWeaponState.cpp" />
     <ClCompile Include="FallingPlayerState.cpp" />
+    <ClCompile Include="Galil.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLayer.cpp" />
     <ClCompile Include="Hud.cpp" />
@@ -250,6 +251,7 @@
     <ClInclude Include="DyingPlayerState.h" />
     <ClInclude Include="EmptyWeaponState.h" />
     <ClInclude Include="FallingPlayerState.h" />
+    <ClInclude Include="Galil.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameLayer.h" />
     <ClInclude Include="Hud.h" />

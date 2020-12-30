@@ -49,7 +49,11 @@ bad position without any way to attack your enemies.
 
 Currently the game features the next weapons:
 
-* **Ak-47**, common, clip size: 10, extra ammo: 10. Automatic weapon with medium recoil and low reload time.
+* **Ak-47**, automatic rifle, uncommon. Two clips of ten bullets.
+* **Galil-AR**, automatic rifle, rare. Three clips of twelve bullets.
+* **M4**, automatic rifle, common. Two clips of ten bullets.
+* **Nova**, shotgun, common. Three clips of three shots with three pellets per shot.
+* **P90**, automatic submachine gun. Three clips of fifteen bullets.
 
 # Resources
 
@@ -57,4 +61,9 @@ Almost all the graphic and sound assets of the game are from third-party creativ
 
 * Characters: https://ipixl.itch.io/pixel-art-animated-characters-pack
 * Music: https://tallbeard.itch.io/music-loop-bundle
+* Physic engine: https://chipmunk-physics.net/
+* Scenarios tool: https://thorbjorn.itch.io/tiled
 * Tileset: https://ansimuz.itch.io/warped-city
+* UI: https://wenrexa.itch.io/ui-different02
+* Weapons: https://chiffaprodaction.itch.io/free-pack-weapons-for-your-project
+* XML processor: http://leethomason.github.io/tinyxml2/

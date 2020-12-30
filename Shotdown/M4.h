@@ -11,7 +11,7 @@ constexpr auto M4_WAIT_TIME = 0.27 * static_cast<double>(TARGET_FPS); // 0.27s
 /* Recoil */
 constexpr auto M4_RECOIL_PER_SHOT = 0.2;
 constexpr float M4_ANGLE_PER_SHOT = 1.1;
-constexpr auto M4_RECOIL_FORCE = 40 * TARGET_FPS;
+constexpr auto M4_RECOIL_FORCE = 50 * TARGET_FPS;
 /* Projectile */
 constexpr auto M4_PROJECTILE_LIFE = 0.6 * static_cast<double>(TARGET_FPS); // 0.6s
 constexpr auto M4_PROJECTILE_SPEED = 6.0;
