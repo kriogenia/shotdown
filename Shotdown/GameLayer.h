@@ -27,6 +27,7 @@ public:
 	void render() override;
 	/* Input control */
 	void keysToControl(SDL_Event event) override;
+	inline void mouseToControl(SDL_Event event) override {};
 	void padToControl(SDL_Event event) override {};
 
 private:

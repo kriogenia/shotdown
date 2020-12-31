@@ -14,6 +14,7 @@ void Layer::processControls()
 		if (event.type == SDL_QUIT) game->loopActive = false;
 		// Input
 		keysToControl(event);
+		mouseToControl(event);
 		padToControl(event);
 	}
 }

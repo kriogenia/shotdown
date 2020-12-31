@@ -1,5 +1,7 @@
 #include "Game.h"
+
 #include "GameLayer.h"
+#include "MenuLayer.h"
 
 Game::Game() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
@@ -25,8 +27,9 @@ Game::Game() {
 	TTF_SetFontOutline(fontOutlineSubtitle, CAPTION_OUTLINE_SIZE);
 
 	/* Layer initilization */
+	startLayer = new MenuLayer(this);
 	gameLayer = new GameLayer(this);
-	layer = gameLayer;
+	layer = startLayer;
 	layer->init();
 
 	loopActive = true; 

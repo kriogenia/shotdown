@@ -14,6 +14,7 @@ public:
 	virtual void render() = 0;
 	/* Input control */
 	virtual void keysToControl(SDL_Event event) = 0;
+	virtual void mouseToControl(SDL_Event event) = 0;
 	virtual void padToControl(SDL_Event event) = 0;
 
 	Game* game;

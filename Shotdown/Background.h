@@ -12,6 +12,5 @@ public:
 private:
 	Parallax* back;
 	Parallax* mid;
-	Parallax* front;
 };
 

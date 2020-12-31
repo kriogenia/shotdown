@@ -378,6 +378,9 @@
     <ClCompile Include="ReloadBar.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
+    <ClCompile Include="MenuLayer.cpp">
+      <Filter>Archivos de origen\Layers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -544,6 +547,9 @@
     </ClInclude>
     <ClInclude Include="ReloadBar.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuLayer.h">
+      <Filter>Archivos de encabezado\Layers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

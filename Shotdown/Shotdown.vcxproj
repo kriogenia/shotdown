@@ -157,6 +157,7 @@
     <ClCompile Include="AutomaticWeapon.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BackgroundAudio.cpp" />
+    <ClCompile Include="MenuLayer.cpp" />
     <ClCompile Include="ReloadBar.cpp" />
     <ClCompile Include="ScoreBar.cpp" />
     <ClCompile Include="Broadcaster.cpp" />
@@ -246,6 +247,7 @@
     <ClInclude Include="AutomaticWeapon.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="BackgroundAudio.h" />
+    <ClInclude Include="MenuLayer.h" />
     <ClInclude Include="ReloadBar.h" />
     <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Broadcaster.h" />
