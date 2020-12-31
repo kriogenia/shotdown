@@ -31,7 +31,9 @@ AudioPlayer::AudioPlayer()
 
 AudioPlayer::~AudioPlayer()
 {
-	delete currentTheme;
+	delete menuTheme;
+	delete endTheme;
+	themes.clear();
 	clips.clear();
 }
 

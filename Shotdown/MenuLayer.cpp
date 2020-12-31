@@ -1,5 +1,7 @@
 #include "MenuLayer.h"
 
+#include "AudioPlayer.h"
+
 MenuLayer::MenuLayer(Game* game) :
 	Layer(game)
 {
@@ -19,6 +21,7 @@ void MenuLayer::init()
 	buildings = new Parallax("res/backgrounds/near-buildings.png", WIDTH, HEIGHT, game);
 	generateVehicle();
 	newVehicle = VEHICLE_SPAWN_TIME;
+	AudioPlayer::getInstance()->start();
 }
 
 void MenuLayer::tick()
