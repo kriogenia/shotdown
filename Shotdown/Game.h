@@ -26,6 +26,11 @@ constexpr auto GRAVITY = 10 * TARGET_FPS;
 constexpr auto TITLE_OUTLINE_SIZE = 2;
 constexpr auto CAPTION_OUTLINE_SIZE = 1;
 
+enum class Layers {
+	START,
+	GAME
+};
+
 enum class ActorType {
 	BACKGROUND,
 	HUD,
@@ -47,6 +52,7 @@ public:
 	Game();
 
 	void loop();
+	void changeLayer(Layers layer);
 	void scale();
 
 	/* Rendering */
@@ -60,9 +66,7 @@ public:
 
 	/* Layers */
 	Layer* layer;
-	Layer* gameLayer;
-	Layer* startLayer;
-	Layer* finishLayer;
+	map<Layers, Layer*> layers;
 
 	/* Fonts */
 	TTF_Font* fontTitle;

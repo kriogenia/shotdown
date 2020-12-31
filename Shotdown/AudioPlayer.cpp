@@ -27,7 +27,7 @@ AudioPlayer::AudioPlayer()
 	clips.insert_or_assign(AudioClips::IMPACT, new SoundEffect("res/audio/clips/impact.wav"));
 	clips.insert_or_assign(AudioClips::NO_AMMO, new SoundEffect("res/audio/clips/no_ammo.wav"));
 	clips.insert_or_assign(AudioClips::RELOAD, new SoundEffect("res/audio/clips/reload.wav"));
-	clips.insert_or_assign(AudioClips::SELECT, new SoundEffect("res/audio/clips/select.wav"));
+	clips.insert_or_assign(AudioClips::SELECT, new SoundEffect("res/audio/clips/select.mp3"));
 }
 
 AudioPlayer::~AudioPlayer()

@@ -6,10 +6,17 @@
 #include "Parallax.h"
 
 /* Buttons */
+constexpr auto EXIT_BUTTON_HEIGHT = 0.1 * HEIGHT;
+constexpr auto EXIT_BUTTON_WIDTH = 0.9 * WIDTH;
 constexpr auto NEW_GAME_BUTTON_HEIGHT = 0.65 * HEIGHT;
 /* Vehicles */
 constexpr auto VEHICLE_SPAWN_TIME = 300;    // 5s
 constexpr auto VEHICLE_SPEED = 6;
+
+enum class Buttons {
+    EXIT,
+    NEW_GAME
+};
 
 class MenuLayer :
     public Layer
@@ -35,9 +42,11 @@ private:
     void generateVehicle();
     int newVehicle = VEHICLE_SPAWN_TIME;
     /* Buttons */
-    void selectButton(Button* button);
-    Button* selected = nullptr;
-    Button* newGameBtn = nullptr;
+    void selectButton(Buttons button);
+    void changeButton(int direction);
+    void pressButton();
+    Buttons focused = Buttons::NEW_GAME;
+    vector<Button*> buttons;
     /* Audio */
     AudioPlayer* audio = AudioPlayer::getInstance();
 

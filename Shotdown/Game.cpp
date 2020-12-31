@@ -27,9 +27,9 @@ Game::Game() {
 	TTF_SetFontOutline(fontOutlineSubtitle, CAPTION_OUTLINE_SIZE);
 
 	/* Layer initilization */
-	startLayer = new MenuLayer(this);
-	gameLayer = new GameLayer(this);
-	layer = startLayer;
+	layers.insert_or_assign(Layers::START, new MenuLayer(this));
+	layers.insert_or_assign(Layers::GAME, new GameLayer(this));
+	layer = layers[Layers::START];
 	layer->init();
 
 	loopActive = true; 
@@ -61,6 +61,12 @@ void Game::loop() {
 			cout << "Low performance" << endl;
 		}
 	}
+}
+
+void Game::changeLayer(Layers layer)
+{
+	this->layer = layers[layer];
+	this->layer->init();
 }
 
 void Game::scale() {
