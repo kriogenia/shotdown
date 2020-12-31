@@ -157,7 +157,8 @@
     <ClCompile Include="AutomaticWeapon.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BackgroundAudio.cpp" />
-    <ClCompile Include="Bar.cpp" />
+    <ClCompile Include="ReloadBar.cpp" />
+    <ClCompile Include="ScoreBar.cpp" />
     <ClCompile Include="Broadcaster.cpp" />
     <ClCompile Include="ChipmunkHelper.cpp" />
     <ClCompile Include="chipmunk\chipmunk.c" />
@@ -245,7 +246,8 @@
     <ClInclude Include="AutomaticWeapon.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="BackgroundAudio.h" />
-    <ClInclude Include="Bar.h" />
+    <ClInclude Include="ReloadBar.h" />
+    <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Broadcaster.h" />
     <ClInclude Include="ChipmunkHelper.h" />
     <ClInclude Include="chipmunk\prime.h" />

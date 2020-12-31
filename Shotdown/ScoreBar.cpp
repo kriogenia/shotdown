@@ -1,12 +1,12 @@
-#include "Bar.h"
+#include "ScoreBar.h"
 
-Bar::Bar(string filename, float x, float y, int startingWidth, int height, Game* game) :
+ScoreBar::ScoreBar(string filename, float x, float y, int startingWidth, int height, Game* game) :
 	Actor(ActorType::HUD, filename, x, y, startingWidth, height, game)
 {
 	this->currentWidth = startingWidth;
 }
 
-void Bar::render(float rotation) {
+void ScoreBar::render(float rotation) {
 	SDL_Rect source;
 	source.x = 0;
 	source.y = 0;

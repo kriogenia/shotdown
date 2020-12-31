@@ -9,6 +9,8 @@ HudInstance::HudInstance(Player* player1, Player* player2, Game* game) :
 	this->pointerPlayer2 = new Pointer(player2, game);
 	this->infoPlayer1 = new InfoDisplay(player1, game);
 	this->infoPlayer2 = new InfoDisplay(player2, game);
+	this->reloadPlayer1 = new ReloadBar(player1, game);
+	this->reloadPlayer2 = new ReloadBar(player2, game);
 }
 
 HudInstance::~HudInstance()
@@ -18,23 +20,36 @@ HudInstance::~HudInstance()
 	delete pointerPlayer2;
 	delete infoPlayer1;
 	delete infoPlayer2;
+	delete reloadPlayer1;
+	delete reloadPlayer2;
 }
 
 void HudInstance::tick()
 {
 	show--;
+	// Player info
 	infoPlayer1->tick();
 	infoPlayer2->tick();
+	// Pointers
 	if (show > 0 || loser != 0) {
 		pointerPlayer1->tick();
 		pointerPlayer2->tick();
+	}
+	// Reload bars
+	if (p1_reloading) {
+		reloadPlayer1->tick();
+	}
+	if (p2_reloading) {
+		reloadPlayer2->tick();
 	}
 }
 
 void HudInstance::render()
 {
+	// Always show player info
 	infoPlayer1->render();
 	infoPlayer2->render();
+	// Show pointers and title at start
 	if (show > 0) {
 		pointerPlayer1->render();
 		pointerPlayer2->render();
@@ -49,6 +64,13 @@ void HudInstance::render()
 			pointerPlayer1->render();
 		}
 	}
+	// Show reload bars when a player is reloading
+	if (p1_reloading) {
+		reloadPlayer1->render();
+	}
+	if (p2_reloading) {
+		reloadPlayer2->render();
+	}
 }
 
 void HudInstance::initShowdown()
@@ -60,6 +82,22 @@ void HudInstance::initShowdown()
 	infoPlayer2->updateWins();
 }
 
+void HudInstance::showWinner(void* loser)
+{
+	this->loser = static_cast<int>(((Player*)loser)->tag);
+}
+
+void HudInstance::switchReload(void* player, bool state)
+{
+	PlayerTag tag = ((Player*)player)->tag;
+	if (tag == PlayerTag::P1) {
+		p1_reloading = state;
+	}
+	else {
+		p2_reloading = state;
+	}
+}
+
 void HudInstance::updateWeapon(void* player)
 {
 	PlayerTag tag = ((Player*)player)->tag;
@@ -69,9 +107,4 @@ void HudInstance::updateWeapon(void* player)
 	else {
 		infoPlayer2->updateWeapon();
 	}
-}
-
-void HudInstance::showWinner(void* loser)
-{
-	this->loser = static_cast<int>(((Player*)loser)->tag);
 }

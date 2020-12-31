@@ -2,11 +2,11 @@
 
 #include "Actor.h"
 
-class Bar :
+class ScoreBar :
     public Actor
 {
 public:
-    Bar(string filename, float x, float y, int startingWidth, int height, Game * game);
+    ScoreBar(string filename, float x, float y, int startingWidth, int height, Game * game);
     /* Game cycle */
     void render(float rotation = 0.0) override;
     /* Counters */

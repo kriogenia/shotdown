@@ -333,9 +333,6 @@
     <ClCompile Include="HudInstance.cpp">
       <Filter>Archivos de origen\Hud</Filter>
     </ClCompile>
-    <ClCompile Include="Bar.cpp">
-      <Filter>Archivos de origen\Actors\UI</Filter>
-    </ClCompile>
     <ClCompile Include="Text.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
@@ -374,6 +371,12 @@
     </ClCompile>
     <ClCompile Include="Trabuco.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Shotguns</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreBar.cpp">
+      <Filter>Archivos de origen\Actors\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ReloadBar.cpp">
+      <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -497,9 +500,6 @@
     <ClInclude Include="HudInstance.h">
       <Filter>Archivos de encabezado\Hud</Filter>
     </ClInclude>
-    <ClInclude Include="Bar.h">
-      <Filter>Archivos de encabezado\Actors\UI</Filter>
-    </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
@@ -538,6 +538,12 @@
     </ClInclude>
     <ClInclude Include="Trabuco.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Shotguns</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreBar.h">
+      <Filter>Archivos de encabezado\Actors\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ReloadBar.h">
+      <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

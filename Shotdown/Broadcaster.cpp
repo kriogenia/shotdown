@@ -18,9 +18,9 @@ void Broadcaster::notify(Notifications notification, void* publisher)
 {
     switch (notification) {
 	case Notifications::SHOWDOWN_INIT:
-		hud->initShowdown();
 		audio->next();
 		audio->play(AudioClips::GO);
+		hud->initShowdown();
 		break;
 	case Notifications::DASH:
 		audio->play(AudioClips::DASH);
@@ -33,15 +33,18 @@ void Broadcaster::notify(Notifications notification, void* publisher)
 		break;
 	case Notifications::START_RELOAD:
         audio->play(AudioClips::RELOAD);
-		// hud - reload visible
+		hud->switchReload(publisher, true);
+		break;
+	case Notifications::END_RELOAD:
+		hud->switchReload(publisher, false);
 		break;
 	case Notifications::PLAYER_IMPACT:
 		audio->play(AudioClips::IMPACT);
 		// effect blood
 		break;
 	case Notifications::PLAYER_DEAD:
-		hud->showWinner(publisher);
 		audio->play(AudioClips::DEAD);
+		hud->showWinner(publisher);
 		break;
 	default:
 		return;

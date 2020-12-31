@@ -7,7 +7,7 @@ InfoDisplay::InfoDisplay(Player* player, Game* game) :
 	position.x = (player->tag == PlayerTag::P1) ? P1_DISPLAY_X : P2_DISPLAY_X;
 	ammo = new Text("-", position.x, AMMO_HEIGHT, game);
 	tag = new Text((player->tag == PlayerTag::P1) ? "P1" : "P2", position.x, TAG_HEIGHT, game);
-	score = new Bar("res/hud/stars.png", position.x, SCORE_HEIGHT, 0, 16, game);
+	score = new ScoreBar("res/hud/stars.png", position.x, SCORE_HEIGHT, 0, 16, game);
 }
 
 void InfoDisplay::tick()

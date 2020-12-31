@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Bar.h"
+#include "ScoreBar.h"
 #include "Player.h"
 #include "Text.h"
 
@@ -29,7 +29,7 @@ private:
 	/* Modules */
 	Text* ammo = nullptr;
 	Text* tag = nullptr;
-	Bar* score = nullptr;
+	ScoreBar* score = nullptr;
 	Actor* weaponImage = nullptr;
 	/* References */
 	Player* player = nullptr;
