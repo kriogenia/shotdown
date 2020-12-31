@@ -372,6 +372,9 @@
     <ClCompile Include="SawedOff.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Shotguns</Filter>
     </ClCompile>
+    <ClCompile Include="Trabuco.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Shotguns</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -531,6 +534,9 @@
       <Filter>Archivos de encabezado\Actors\Weapons\SMGs</Filter>
     </ClInclude>
     <ClInclude Include="SawedOff.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Shotguns</Filter>
+    </ClInclude>
+    <ClInclude Include="Trabuco.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Shotguns</Filter>
     </ClInclude>
   </ItemGroup>

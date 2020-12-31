@@ -5,7 +5,7 @@ Mac10::Mac10(Game* game) :
 {
 	/* Weapon */
 	// Type
-	rarity = static_cast<int>(WeaponRarity::RARE);
+	rarity = static_cast<int>(WeaponRarity::UNCOMMON);
 	// Ammo
 	clipSize = MAC10_CLIP_SIZE;
 	loadedAmmo = MAC10_CLIP_SIZE;

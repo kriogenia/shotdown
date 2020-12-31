@@ -5,7 +5,7 @@ SawedOff::SawedOff(Game* game) :
 {
 	/* Weapon */
 	// Type
-	rarity = static_cast<int>(WeaponRarity::COMMON);
+	rarity = static_cast<int>(WeaponRarity::UNCOMMON);
 	// Ammo
 	clipSize = SAWED_OFF_CLIP_SIZE;
 	loadedAmmo = SAWED_OFF_CLIP_SIZE;
