@@ -222,6 +222,7 @@
     <ClCompile Include="Pointer.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ReloadingWeaponState.cpp" />
+    <ClCompile Include="SawedOff.cpp" />
     <ClCompile Include="Scenario.cpp" />
     <ClCompile Include="SlidingPlayerState.cpp" />
     <ClCompile Include="SoundEffect.cpp" />
@@ -276,6 +277,7 @@
     <ClInclude Include="Pointer.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="ReloadingWeaponState.h" />
+    <ClInclude Include="SawedOff.h" />
     <ClInclude Include="Scenario.h" />
     <ClInclude Include="SlidingPlayerState.h" />
     <ClInclude Include="SoundEffect.h" />

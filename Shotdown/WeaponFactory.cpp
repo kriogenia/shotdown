@@ -6,6 +6,7 @@
 #include "Mac10.h"
 #include "Nova.h"
 #include "P90.h"
+#include "SawedOff.h"
 
 WeaponFactory* WeaponFactory::instance = 0;
 
@@ -25,6 +26,7 @@ WeaponFactory::WeaponFactory(Game* game)
     weapons.push_back(new Galil(game));     // rare
     // Shotguns
     weapons.push_back(new Nova(game));      // common
+    weapons.push_back(new SawedOff(game));  // uncommon
     // SMGs
     weapons.push_back(new Mac10(game));     // uncommon
     weapons.push_back(new P90(game));       // rare
