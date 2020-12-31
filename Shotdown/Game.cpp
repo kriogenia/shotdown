@@ -12,6 +12,9 @@ Game::Game() {
 	SDL_SetWindowTitle(window, "Shotdown");
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
+	/* Seed generation */
+	srand((unsigned)time(NULL) % 1000);
+
 	/* Fonts initilization */
 	TTF_Init();
 	fontTitle = TTF_OpenFont("res/Rubik-Black.ttf", 36);
