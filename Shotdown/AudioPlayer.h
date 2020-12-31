@@ -11,7 +11,8 @@ enum class AudioClips {
 	GO,
 	IMPACT,
 	NO_AMMO,
-	RELOAD
+	RELOAD,
+	SELECT
 };
 
 /* Singleton */

@@ -381,6 +381,9 @@
     <ClCompile Include="MenuLayer.cpp">
       <Filter>Archivos de origen\Layers</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Archivos de origen\Actors\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -550,6 +553,9 @@
     </ClInclude>
     <ClInclude Include="MenuLayer.h">
       <Filter>Archivos de encabezado\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

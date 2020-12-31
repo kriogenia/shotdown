@@ -18,4 +18,6 @@ public:
 	virtual void padToControl(SDL_Event event) = 0;
 
 	Game* game;
+
 };
+
