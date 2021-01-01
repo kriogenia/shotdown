@@ -232,6 +232,7 @@
     <ClCompile Include="SoundEffect.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateFactory.cpp" />
+    <ClCompile Include="Tec9.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
@@ -292,6 +293,7 @@
     <ClInclude Include="SoundEffect.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateFactory.h" />
+    <ClInclude Include="Tec9.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="tinyxml2.h" />

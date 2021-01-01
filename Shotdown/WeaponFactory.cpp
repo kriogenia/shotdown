@@ -7,6 +7,7 @@
 #include "Nova.h"
 #include "P90.h"
 #include "SawedOff.h"
+#include "Tec9.h"
 #include "Trabuco.h"
 
 WeaponFactory* WeaponFactory::instance = 0;
@@ -30,6 +31,7 @@ WeaponFactory::WeaponFactory(Game* game)
     weapons.push_back(new SawedOff(game));  // uncommon
     weapons.push_back(new Trabuco(game));   // rare
     // SMGs
+    weapons.push_back(new Tec9(game));      // common
     weapons.push_back(new Mac10(game));     // uncommon
     weapons.push_back(new P90(game));       // rare
     // Fill the pool
@@ -39,7 +41,7 @@ WeaponFactory::WeaponFactory(Game* game)
 /* Get a random weapon from the avaliable pool */
 Weapon* WeaponFactory::getWeapon()
 {
-    return weapons[5]->clone();     // Debug
+    return weapons[6]->clone();     // Debug
     int position = rand() % pool.size();
     Weapon* weapon = weapons[pool[position]]->clone();
     pool.erase(pool.begin() + position);

@@ -34,7 +34,7 @@ public:
     inline Weapon* clone() override { return new Trabuco(game); };
     Weapon* clone(Player* owner) override;
     /* Debug */
-    inline string toString() override { return "The Trabuco"; };
+    inline string toString() override { return "El Trabuco"; };
 
 };
 

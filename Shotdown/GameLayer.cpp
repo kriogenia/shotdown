@@ -176,7 +176,6 @@ void GameLayer::playNextScenario()
 	engine->addActor(player1);
 	player2->position = spawnPoints[1];
 	engine->addActor(player2);
-	/* Creates spawners on the specified locations */
 	auto spawnerLocations = currentScenario->wsSpawns;
 	for (auto const& location : spawnerLocations) {
 		spawners.push_back(new WeaponSpawner(location.x, location.y, game));

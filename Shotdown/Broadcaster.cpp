@@ -27,6 +27,7 @@ void Broadcaster::notify(Notifications notification, void* publisher)
 		break;
 	case Notifications::PICK_WEAPON:
 		hud->updateWeapon(publisher);
+		hud->switchReload(publisher, false);
 		break;
 	case Notifications::EMPTY_CLIP:
 		audio->play(AudioClips::NO_AMMO);

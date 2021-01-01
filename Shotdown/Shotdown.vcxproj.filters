@@ -387,6 +387,9 @@
     <ClCompile Include="ResultLayer.cpp">
       <Filter>Archivos de origen\Layers</Filter>
     </ClCompile>
+    <ClCompile Include="Tec9.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\SMGs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -562,6 +565,9 @@
     </ClInclude>
     <ClInclude Include="ResultLayer.h">
       <Filter>Archivos de encabezado\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="Tec9.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\SMGs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
