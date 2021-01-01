@@ -50,6 +50,8 @@ bad position without any way to attack your enemies.
 Currently the game features the next weapons:
 
 * **Ak-47**, automatic rifle, uncommon. Two clips of ten bullets. 36 damage per shot.
+* **AWP**, sniper rifle, uncommon. Two clips of three bullets. 115 damage per shot.
+* **G3SG1**, sniper rifle, uncommon. Three clips of six bullets. 80 damage per shot.
 * **Galil-AR**, automatic rifle, rare. Three clips of twelve bullets. 30 damage per shot.
 * **Mac-10**, automatic submachine gun. Two clips of ten bullets. 29 damage per shot.
 * **M4**, automatic rifle, common. Two clips of ten bullets. 33 damage per shot.

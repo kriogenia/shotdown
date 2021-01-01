@@ -399,6 +399,9 @@
     <ClCompile Include="AWP.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Snipers</Filter>
     </ClCompile>
+    <ClCompile Include="G3SG1.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Snipers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -579,6 +582,9 @@
       <Filter>Archivos de encabezado\Actors\Weapons\SMGs</Filter>
     </ClInclude>
     <ClInclude Include="AWP.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Snipers</Filter>
+    </ClInclude>
+    <ClInclude Include="G3SG1.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Snipers</Filter>
     </ClInclude>
   </ItemGroup>
