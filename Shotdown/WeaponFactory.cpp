@@ -1,6 +1,7 @@
 #include "WeaponFactory.h"
 
 #include "Ak47.h"
+#include "AWP.h"
 #include "Galil.h"
 #include "M4.h"
 #include "Mac10.h"
@@ -34,6 +35,8 @@ WeaponFactory::WeaponFactory(Game* game)
     weapons.push_back(new Tec9(game));      // common
     weapons.push_back(new Mac10(game));     // uncommon
     weapons.push_back(new P90(game));       // rare
+    // Snipers
+    weapons.push_back(new AWP(game));       // uncommon
     // Fill the pool
     fillPool();
 }
@@ -41,7 +44,7 @@ WeaponFactory::WeaponFactory(Game* game)
 /* Get a random weapon from the avaliable pool */
 Weapon* WeaponFactory::getWeapon()
 {
-    return weapons[6]->clone();     // Debug
+    return weapons[9]->clone();     // Debug
     int position = rand() % pool.size();
     Weapon* weapon = weapons[pool[position]]->clone();
     pool.erase(pool.begin() + position);

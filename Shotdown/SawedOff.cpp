@@ -49,5 +49,4 @@ void SawedOff::shoot()
 			cpv(orientation * projectileSpeed, dispersion),
 			cpv(shotPoint.x, shotPoint.y));
 	}
-	sound->play();
 }

@@ -60,6 +60,7 @@ void Weapon::shoot()
 	loadedAmmo--;
 	owner->recoil(recoil, cpv(shotPoint.x, shotPoint.y));
 	remainingShotCd = shotCooldown;
+	sound->play();
 }
 
 /* Populates the WeaponStates */

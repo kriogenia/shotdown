@@ -52,7 +52,6 @@ void AutomaticWeapon::shoot()
 		cpBodyApplyImpulseAtLocalPoint(projectile->body,
 			cpv(orientation * projectileSpeed, -weaponRecoil),
 			cpv(shotPoint.x, shotPoint.y));
-		sound->play();
 		// Lowers accuracy
 		consecutiveShots++;
 	}

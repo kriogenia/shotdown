@@ -115,6 +115,12 @@
     <Filter Include="Archivos de encabezado\Actors\Weapons\SMGs">
       <UniqueIdentifier>{e61f549f-a8ec-4c2c-af26-15b87a78c987}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Actors\Weapons\Snipers">
+      <UniqueIdentifier>{f6eb9306-dd7e-40f9-b87a-ed59f5fcf950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Actors\Weapons\Snipers">
+      <UniqueIdentifier>{e97f9dc0-7755-4cb4-92ce-bb1883d4e287}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -390,6 +396,9 @@
     <ClCompile Include="Tec9.cpp">
       <Filter>Archivos de origen\Actors\Weapons\SMGs</Filter>
     </ClCompile>
+    <ClCompile Include="AWP.cpp">
+      <Filter>Archivos de origen\Actors\Weapons\Snipers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -568,6 +577,9 @@
     </ClInclude>
     <ClInclude Include="Tec9.h">
       <Filter>Archivos de encabezado\Actors\Weapons\SMGs</Filter>
+    </ClInclude>
+    <ClInclude Include="AWP.h">
+      <Filter>Archivos de encabezado\Actors\Weapons\Snipers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
