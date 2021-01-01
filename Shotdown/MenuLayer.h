@@ -1,6 +1,5 @@
 #pragma once
 
-#include "AudioPlayer.h"
 #include "Button.h"
 #include "Layer.h"
 #include "Parallax.h"
@@ -47,8 +46,6 @@ private:
     void pressButton();
     Buttons focused = Buttons::NEW_GAME;
     vector<Button*> buttons;
-    /* Audio */
-    AudioPlayer* audio = AudioPlayer::getInstance();
 
 };
 

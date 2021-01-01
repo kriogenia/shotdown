@@ -12,7 +12,8 @@ constexpr auto VICTORY_HEIGHT = 0.3 * HEIGHT;
 constexpr auto TITLES_HEIGHT = 0.4 * HEIGHT;
 constexpr auto STARS_HEIGHT = 0.5 * HEIGHT;
 constexpr auto MAIN_GAME_BUTTON_HEIGHT = 0.75 * HEIGHT;
-constexpr auto SHOT_STEP = 30;  // 0.5fps
+constexpr auto SHOT_STEP = 30;  // s
+constexpr auto ANIMATION_START = 120;  // s
 
 class ResultLayer :
     public Layer
@@ -41,7 +42,7 @@ private:
     void pressButton();
     /* Score */
     void addVictory(int index);
-    int ticks = 1;
+    int ticks = 0;
     int winsP1 = 0;
     int winsP2 = 0;
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AudioPlayer.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>

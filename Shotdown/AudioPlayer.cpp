@@ -21,15 +21,16 @@ AudioPlayer::AudioPlayer()
 	themes.push_back(new BackgroundAudio("res/audio/themes/Ludum Dare 30 - Track 4.wav"));
 	currentTheme = menuTheme;
 	// Add audio clips
-	clips.insert_or_assign(AudioClips::CONFETTI, new SoundEffect("res/audio/clips/confetti.wav"));
 	clips.insert_or_assign(AudioClips::DASH, new SoundEffect("res/audio/clips/dash.wav"));
 	clips.insert_or_assign(AudioClips::DEAD, new SoundEffect("res/audio/clips/dead.wav"));
 	clips.insert_or_assign(AudioClips::GO, new SoundEffect("res/audio/clips/go.wav"));
 	clips.insert_or_assign(AudioClips::IMPACT, new SoundEffect("res/audio/clips/impact.wav"));
 	clips.insert_or_assign(AudioClips::NO_AMMO, new SoundEffect("res/audio/clips/no_ammo.wav"));
+	clips.insert_or_assign(AudioClips::PRESS, new SoundEffect("res/audio/clips/press.wav"));
 	clips.insert_or_assign(AudioClips::RELOAD, new SoundEffect("res/audio/clips/reload.wav"));
 	clips.insert_or_assign(AudioClips::SCORE, new SoundEffect("res/audio/clips/score.wav"));
 	clips.insert_or_assign(AudioClips::SELECT, new SoundEffect("res/audio/clips/select.mp3"));
+	clips.insert_or_assign(AudioClips::WINNER, new SoundEffect("res/audio/clips/winner.wav"));
 }
 
 AudioPlayer::~AudioPlayer()

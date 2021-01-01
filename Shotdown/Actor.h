@@ -19,7 +19,9 @@ public:
 	cpBody* body = nullptr;
 	cpShape* shape = nullptr;
 	virtual void configureChipmunkSpace(cpSpace* chipSpace) {};
+	/* Interaction */
 	bool isOverlap(Actor* actor);
+	bool containsPoint(Point point);
 	/* Properties */
 	ActorType type;
 	Point position = { 0, 0 };

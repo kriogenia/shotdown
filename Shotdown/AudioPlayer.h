@@ -6,15 +6,16 @@
 #include <vector>
 
 enum class AudioClips {
-	CONFETTI,
 	DASH,
 	DEAD,
 	GO,
 	IMPACT,
 	NO_AMMO,
+	PRESS,
 	RELOAD,
 	SCORE,
-	SELECT
+	SELECT,
+	WINNER
 };
 
 /* Singleton */

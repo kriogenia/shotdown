@@ -1,7 +1,5 @@
 #include "ResultLayer.h"
 
-#include "AudioPlayer.h"
-
 ResultLayer::ResultLayer(Game* game) :
 	Layer(game)
 {
@@ -21,17 +19,18 @@ void ResultLayer::init()
 	button = nullptr;
 	winner = nullptr;
 	score.clear();
+	audio->end();
 }
 
 void ResultLayer::tick()
 {
 	ticks++;
-	if (ticks % SHOT_STEP == 0) {
-		int index = ticks / SHOT_STEP - 1;
+	if (ticks >= ANIMATION_START && ticks % SHOT_STEP == 0) {
+		int index = (ticks - ANIMATION_START) / SHOT_STEP;
 		if (index < game->score.size()) {
 			addVictory(index);
 		}
-		else {
+		else if(index > game->score.size()) {
 			addButton();
 		}
 	}
@@ -69,7 +68,13 @@ void ResultLayer::keysToControl(SDL_Event event)
 
 void ResultLayer::mouseToControl(SDL_Event event)
 {
-
+	float motionX = event.motion.x / game->scaleLower;
+	float motionY = event.motion.y / game->scaleLower;
+	if (event.type == SDL_MOUSEBUTTONDOWN) {
+		if (button->containsPoint({ motionX, motionY })) {
+			pressButton();
+		}
+	}
 }
 
 void ResultLayer::padToControl(SDL_Event event)
@@ -87,7 +92,7 @@ void ResultLayer::addButton()
 		button = new Button("res/hud/btn-new-game.png", WIDTH / 2,
 			MAIN_GAME_BUTTON_HEIGHT, 300, 50, game);
 		button->focus();
-		AudioPlayer::getInstance()->play(AudioClips::CONFETTI);
+		audio->play(AudioClips::WINNER);
 	}
 }
 
@@ -95,6 +100,7 @@ void ResultLayer::pressButton()
 {
 	if (button != nullptr) {
 		game->changeLayer(Layers::START);
+		audio->play(AudioClips::PRESS);
 	}
 }
 
@@ -115,5 +121,5 @@ void ResultLayer::addVictory(int index)
 	x = x - STARS_OFFSET + extraX * STARS_DISTANCE;
 	score.push_back(new Actor(ActorType::HUD, "res/hud/star.png", x, STARS_HEIGHT,
 		32, 31, game));
-	AudioPlayer::getInstance()->play(AudioClips::SCORE);
+	audio->play(AudioClips::SCORE);
 }

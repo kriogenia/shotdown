@@ -62,3 +62,14 @@ bool Actor::isOverlap(Actor* actor)
 	}
 	return overlap;
 }
+
+/* Check if the actor contains the point */
+bool Actor::containsPoint(Point point) {
+	if (point.y >= position.y - height / 2 &&
+		point.y <= position.y + height / 2 &&
+		point.x <= position.x + width / 2 &&
+		point.x >= position.x - width / 2) {
+		return true;
+	}
+	return false;
+}

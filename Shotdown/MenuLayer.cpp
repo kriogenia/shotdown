@@ -77,7 +77,19 @@ void MenuLayer::keysToControl(SDL_Event event)
 
 void MenuLayer::mouseToControl(SDL_Event event)
 {
-
+	float motionX = event.motion.x / game->scaleLower;
+	float motionY = event.motion.y / game->scaleLower;
+	/* Hover */
+	for (int i = 0; i < buttons.size(); i++) {
+		Buttons tag = static_cast<Buttons>(i);
+		if (focused != tag && buttons[i]->containsPoint({ motionX, motionY })) {
+			selectButton(tag);
+		}
+	}
+	/* Press */
+	if (event.type == SDL_MOUSEBUTTONDOWN) {
+		pressButton();
+	}
 }
 
 void MenuLayer::padToControl(SDL_Event event)
@@ -121,6 +133,7 @@ void MenuLayer::pressButton()
 		break;
 	case Buttons::NEW_GAME:
 		game->changeLayer(Layers::GAME);
+		audio->play(AudioClips::PRESS);
 		break;
 	}
 }
