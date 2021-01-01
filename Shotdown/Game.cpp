@@ -2,6 +2,7 @@
 
 #include "GameLayer.h"
 #include "MenuLayer.h"
+#include "ResultLayer.h"
 
 Game::Game() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
@@ -29,6 +30,7 @@ Game::Game() {
 	/* Layer initilization */
 	layers.insert_or_assign(Layers::START, new MenuLayer(this));
 	layers.insert_or_assign(Layers::GAME, new GameLayer(this));
+	layers.insert_or_assign(Layers::RESULT, new ResultLayer(this));
 	layer = layers[Layers::START];
 	layer->init();
 
@@ -63,12 +65,6 @@ void Game::loop() {
 	}
 }
 
-void Game::changeLayer(Layers layer)
-{
-	this->layer = layers[layer];
-	this->layer->init();
-}
-
 void Game::scale() {
 	scaledToMax = !scaledToMax;
 
@@ -101,3 +97,10 @@ SDL_Texture* Game::getTexture(string filename) {
 	}
 	return mapTextures[filename];
 }
+
+void Game::changeLayer(Layers layer)
+{
+	this->layer = layers[layer];
+	this->layer->init();
+}
+

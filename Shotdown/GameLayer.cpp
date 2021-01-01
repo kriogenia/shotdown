@@ -23,6 +23,8 @@ GameLayer::~GameLayer()
 
 void GameLayer::init()
 {
+	// Clean the score
+	game->score.clear();
 	// Generates the Players
 	player1 = new Player(PlayerTag::P1, game);
 	player1->projectiles = &projectiles;
@@ -221,14 +223,19 @@ void GameLayer::victoryCheck()
 	if (player1->pendingDestruction || player2->pendingDestruction) {
 		if (player2->pendingDestruction) {
 			player1->victories++;
+			game->score.push_back(PlayerTag::P1);
 			printf("%s wins this showdown. Starting next one...\n", player2->toString().c_str());
 		}
 		else {
 			player2->victories++;
+			game->score.push_back(PlayerTag::P2);
 			printf("%s wins this showdown. Starting next one...\n", player2->toString().c_str());
 		}
 		if (scenarios.size() > 0) {
 			playNextScenario();
+		}
+		else {
+			game->changeLayer(Layers::RESULT);
 		}
 	}
 }

@@ -6,12 +6,14 @@
 #include <vector>
 
 enum class AudioClips {
+	CONFETTI,
 	DASH,
 	DEAD,
 	GO,
 	IMPACT,
 	NO_AMMO,
 	RELOAD,
+	SCORE,
 	SELECT
 };
 

@@ -9,10 +9,12 @@ ReloadBar::ReloadBar(Player* player, Game* game) :
 
 void ReloadBar::tick()
 {
-	this->position = { player->position.x, player->position.y - RELOAD_EXTRA_HEIGHT };
-	float offset = static_cast<float>(player->weapon->reloadTimeLeft) / player->weapon->reloadTime;
-	offset = (width - RELOAD_EXTREME_WIDTH) - (offset * (width - RELOAD_EXTREME_WIDTH)) - width / 2;
-	arrow->position = { player->position.x + offset, player->position.y - RELOAD_EXTRA_HEIGHT };
+	if (player->weapon != nullptr) {
+		this->position = { player->position.x, player->position.y - RELOAD_EXTRA_HEIGHT };
+		float offset = static_cast<float>(player->weapon->reloadTimeLeft) / player->weapon->reloadTime;
+		offset = (width - RELOAD_EXTREME_WIDTH) - (offset * (width - RELOAD_EXTREME_WIDTH)) - width / 2;
+		arrow->position = { player->position.x + offset, player->position.y - RELOAD_EXTRA_HEIGHT };
+	}
 }
 
 void ReloadBar::render(float rotation)

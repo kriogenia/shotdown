@@ -384,6 +384,9 @@
     <ClCompile Include="Button.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ResultLayer.cpp">
+      <Filter>Archivos de origen\Layers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -556,6 +559,9 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultLayer.h">
+      <Filter>Archivos de encabezado\Layers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

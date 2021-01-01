@@ -28,7 +28,8 @@ constexpr auto CAPTION_OUTLINE_SIZE = 1;
 
 enum class Layers {
 	START,
-	GAME
+	GAME,
+	RESULT
 };
 
 enum class ActorType {
@@ -52,14 +53,13 @@ public:
 	Game();
 
 	void loop();
-	void changeLayer(Layers layer);
-	void scale();
 
 	/* Rendering */
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 	bool loopActive;
 	float scaleLower = 1;
+	void scale();
 
 	/* Texture map */
 	SDL_Texture* getTexture(string filename);
@@ -67,6 +67,7 @@ public:
 	/* Layers */
 	Layer* layer;
 	map<Layers, Layer*> layers;
+	void changeLayer(Layers layer);
 
 	/* Fonts */
 	TTF_Font* fontTitle;
@@ -74,6 +75,8 @@ public:
 	TTF_Font* fontCaption;
 	TTF_Font* fontOutlineSubtitle;
 
+	/* Score */
+	vector<PlayerTag> score;
 
 private:
 	/* Texture map */
