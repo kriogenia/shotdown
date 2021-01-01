@@ -159,6 +159,7 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BackgroundAudio.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Checkbox.cpp" />
     <ClCompile Include="G3SG1.cpp" />
     <ClCompile Include="GameOptions.cpp" />
     <ClCompile Include="MenuLayer.cpp" />
@@ -256,6 +257,7 @@
     <ClInclude Include="Background.h" />
     <ClInclude Include="BackgroundAudio.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Checkbox.h" />
     <ClInclude Include="G3SG1.h" />
     <ClInclude Include="GameOptions.h" />
     <ClInclude Include="MenuLayer.h" />

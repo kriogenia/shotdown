@@ -37,17 +37,17 @@ private:
     /* Background */
     Actor* background = nullptr;
     Parallax* buildings = nullptr;
-    /* Vehicles */
-    Actor* vehicle = nullptr;
-    vector<string> vehicles;
-    void generateVehicle();
-    int newVehicle = VEHICLE_SPAWN_TIME;
     /* Buttons */
     void selectButton(Buttons button);
     void changeButton(int direction);
     void pressButton();
     Buttons focused = Buttons::NEW_GAME;
     vector<Button*> buttons;
+    /* Vehicles */
+    Actor* vehicle = nullptr;
+    vector<string> vehicles;
+    void generateVehicle();
+    int newVehicle = VEHICLE_SPAWN_TIME;
 
 };
 

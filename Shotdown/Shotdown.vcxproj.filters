@@ -408,6 +408,9 @@
     <ClCompile Include="OptionsLayer.cpp">
       <Filter>Archivos de origen\Layers</Filter>
     </ClCompile>
+    <ClCompile Include="Checkbox.cpp">
+      <Filter>Archivos de origen\Actors\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -598,6 +601,9 @@
     </ClInclude>
     <ClInclude Include="OptionsLayer.h">
       <Filter>Archivos de encabezado\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="Checkbox.h">
+      <Filter>Archivos de encabezado\Actors\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

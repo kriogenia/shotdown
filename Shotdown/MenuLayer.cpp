@@ -3,15 +3,16 @@
 MenuLayer::MenuLayer(Game* game) :
 	Layer(game)
 {
-	/* Add vehicle filenames */
-	vehicles.push_back("res/backgrounds/v-police.png");
-	vehicles.push_back("res/backgrounds/v-red.png");
-	vehicles.push_back("res/backgrounds/v-truck.png");
-	vehicles.push_back("res/backgrounds/v-yellow.png");
 	/* Background */
 	background = new Actor(ActorType::BACKGROUND, "res/backgrounds/menu.png",
 		WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT, game);
 	buildings = new Parallax("res/backgrounds/near-buildings.png", WIDTH, HEIGHT, game);
+	/* Add vehicle filenames */
+	vehicles.clear();
+	vehicles.push_back("res/backgrounds/v-police.png");
+	vehicles.push_back("res/backgrounds/v-red.png");
+	vehicles.push_back("res/backgrounds/v-truck.png");
+	vehicles.push_back("res/backgrounds/v-yellow.png");
 	/* Buttons */
 	buttons.push_back(new Button("res/hud/exit.png", EXIT_BUTTON_WIDTH,
 		EXIT_BUTTON_HEIGHT, 39, 42, game));
@@ -19,14 +20,16 @@ MenuLayer::MenuLayer(Game* game) :
 		NEW_GAME_BUTTON_HEIGHT, 300, 50, game));
 	buttons.push_back(new Button("res/hud/btn-new-game.png", WIDTH / 2,
 		CUSTOM_BUTTON_HEIGHT, 300, 50, game));
-	/* Init */
-	init();
 }
 
 void MenuLayer::init()
 {
+	/* Init */
 	generateVehicle();
 	audio->start();
+	for (auto const& button : buttons) {
+		button->unfocus();
+	}
 	buttons[static_cast<int>(Buttons::NEW_GAME)]->focus();
 	focused = Buttons::NEW_GAME;
 }
@@ -135,11 +138,10 @@ void MenuLayer::pressButton()
 		break;
 	case Buttons::NEW_GAME:
 		game->changeLayer(Layers::GAME);
-		audio->play(AudioClips::PRESS);
 		break;
 	case Buttons::CUSTOM:
 		game->changeLayer(Layers::OPTIONS);
-		audio->play(AudioClips::PRESS);
 		break;
 	}
+	audio->play(AudioClips::PRESS);
 }
