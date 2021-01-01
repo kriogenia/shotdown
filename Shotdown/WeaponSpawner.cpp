@@ -41,7 +41,7 @@ bool WeaponSpawner::pickWeapon(Player* player)
 /* Get a new weapon from the pool or goes ? */
 void WeaponSpawner::getWeapon()
 {
-	random = (rand() % RANDOM_SPAWNER_RARITY == 0);
+	random = (game->options->allRandom) ? true : (rand() % RANDOM_SPAWNER_RARITY == 0);
 	//random = true;				// Debug
 	WeaponFactory* factory = WeaponFactory::getInstance(game);
 	weapon = random ? factory->getRandomWeapon() : factory->getWeapon();

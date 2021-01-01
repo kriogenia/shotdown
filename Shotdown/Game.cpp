@@ -2,6 +2,7 @@
 
 #include "GameLayer.h"
 #include "MenuLayer.h"
+#include "OptionsLayer.h"
 #include "ResultLayer.h"
 
 Game::Game() {
@@ -29,6 +30,7 @@ Game::Game() {
 
 	/* Layer initilization */
 	layers.insert_or_assign(Layers::START, new MenuLayer(this));
+	layers.insert_or_assign(Layers::OPTIONS, new OptionsLayer(this));
 	layers.insert_or_assign(Layers::GAME, new GameLayer(this));
 	layers.insert_or_assign(Layers::RESULT, new ResultLayer(this));
 	layer = layers[Layers::START];

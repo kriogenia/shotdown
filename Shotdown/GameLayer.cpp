@@ -135,11 +135,12 @@ void GameLayer::generateScenarios()
 	vector<int> scenarioCodes;
 	for (int i = 0; i < NUMBER_OF_SCENARIOS; i++) {
 		scenarioCodes.push_back(i);
-		scenarios.push(new Scenario(i, game));
+		scenarios.push(new Scenario(i, game));			// Placeholder
 	}
 	/*
+	int numberOfShowdowns = (game->options->numberOfMatches);
 	for (int code = rand() % scenarioCodes.size();
-		scenarioCodes.size() != NUMBER_OF_SHOWDOWNS;
+		scenarioCodes.size() != numberOfShowdowns;
 		scenarioCodes.erase(scenarioCodes.begin() + code)) {
 		scenarios.push(new Scenario(code, game));
 	}

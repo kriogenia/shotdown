@@ -402,6 +402,12 @@
     <ClCompile Include="G3SG1.cpp">
       <Filter>Archivos de origen\Actors\Weapons\Snipers</Filter>
     </ClCompile>
+    <ClCompile Include="GameOptions.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionsLayer.cpp">
+      <Filter>Archivos de origen\Layers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -586,6 +592,12 @@
     </ClInclude>
     <ClInclude Include="G3SG1.h">
       <Filter>Archivos de encabezado\Actors\Weapons\Snipers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOptions.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsLayer.h">
+      <Filter>Archivos de encabezado\Layers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

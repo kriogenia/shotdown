@@ -12,7 +12,6 @@
 #include "WeaponSpawner.h"
 
 constexpr auto NUMBER_OF_SCENARIOS = 2;
-constexpr auto NUMBER_OF_SHOWDOWNS = 2;
 
 class GameLayer :
     public Layer

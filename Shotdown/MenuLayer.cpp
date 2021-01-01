@@ -17,6 +17,8 @@ MenuLayer::MenuLayer(Game* game) :
 		EXIT_BUTTON_HEIGHT, 39, 42, game));
 	buttons.push_back(new Button("res/hud/btn-new-game.png", WIDTH / 2,
 		NEW_GAME_BUTTON_HEIGHT, 300, 50, game));
+	buttons.push_back(new Button("res/hud/btn-new-game.png", WIDTH / 2,
+		CUSTOM_BUTTON_HEIGHT, 300, 50, game));
 	/* Init */
 	init();
 }
@@ -133,6 +135,10 @@ void MenuLayer::pressButton()
 		break;
 	case Buttons::NEW_GAME:
 		game->changeLayer(Layers::GAME);
+		audio->play(AudioClips::PRESS);
+		break;
+	case Buttons::CUSTOM:
+		game->changeLayer(Layers::OPTIONS);
 		audio->play(AudioClips::PRESS);
 		break;
 	}

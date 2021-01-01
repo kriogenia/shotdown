@@ -7,14 +7,16 @@
 /* Buttons */
 constexpr auto EXIT_BUTTON_HEIGHT = 0.1 * HEIGHT;
 constexpr auto EXIT_BUTTON_WIDTH = 0.9 * WIDTH;
-constexpr auto NEW_GAME_BUTTON_HEIGHT = 0.65 * HEIGHT;
+constexpr auto NEW_GAME_BUTTON_HEIGHT = 0.60 * HEIGHT;
+constexpr auto CUSTOM_BUTTON_HEIGHT = 0.75 * HEIGHT;
 /* Vehicles */
 constexpr auto VEHICLE_SPAWN_TIME = 300;    // 5s
 constexpr auto VEHICLE_SPEED = 6;
 
 enum class Buttons {
     EXIT,
-    NEW_GAME
+    NEW_GAME,
+    CUSTOM
 };
 
 class MenuLayer :

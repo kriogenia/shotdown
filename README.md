@@ -60,6 +60,14 @@ Currently the game features the next weapons:
 * **Sawed-off**, shotgun, uncommon. Four clips with two bullets of five pellets each. 29 damage per pellet. 
 * **The Trabuco**, blunderbuss, rare. Eight shots of eight pellets each. 44 damage per pellet.
 
+# Custom game
+
+Through the Custom screen you can enable or disable three options to play the showdowns:
+
+* **1-Hit**, players have 1HP, any impact kills them.
+* **All Random**, all the weapon spawners will be random.
+* **Matches**, allows you to choose the number of matches to play between 3, 5, or 7.
+
 # Resources
 
 Almost all the graphic and sound assets of the game are from third-party creative common sources. I modified some of it but the big work is not mine.

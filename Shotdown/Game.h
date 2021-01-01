@@ -1,6 +1,8 @@
 #pragma once
 
 #include "AudioPlayer.h"
+#include "GameOptions.h"
+
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -29,6 +31,7 @@ constexpr auto CAPTION_OUTLINE_SIZE = 1;
 
 enum class Layers {
 	START,
+	OPTIONS,
 	GAME,
 	RESULT
 };
@@ -69,6 +72,9 @@ public:
 	Layer* layer;
 	map<Layers, Layer*> layers;
 	void changeLayer(Layers layer);
+
+	/* Options */
+	GameOptions* options = GameOptions::getInstance();
 
 	/* Fonts */
 	TTF_Font* fontTitle;

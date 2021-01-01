@@ -51,7 +51,7 @@ void Player::render(float rotation)
 void Player::init()
 {
 	// Restore player
-	hp = PLAYER_HP;
+	hp = (game->options->oneHit) ? 1 : PLAYER_HP;
 	pendingDestruction = false;
 	// Set the states
 	initStates();
