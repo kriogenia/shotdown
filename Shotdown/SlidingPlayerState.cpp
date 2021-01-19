@@ -4,8 +4,7 @@ SlidingPlayerState::SlidingPlayerState(Player* player) :
 	PlayerStateBase(player)
 {
 	tag = ePlayerStates::SLIDING;
-	string animFilename = player->tag == PlayerTag::P1 ? "res/players/p1.png" : "res/players/p2.png";
-	animation = new Animation(animFilename, 120, 240, 5, 8, 4, static_cast<int>(tag), true, player->game);
+	setAnimation(true);
 }
 
 void SlidingPlayerState::enter()

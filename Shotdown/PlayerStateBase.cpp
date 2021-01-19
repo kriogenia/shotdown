@@ -93,3 +93,9 @@ void PlayerStateBase::setOrientation(int direction)
 		player->orientation = Orientation::RIGHT;
 	}
 }
+
+void PlayerStateBase::setAnimation(bool loop)
+{
+	string animFilename = player->tag == PlayerTag::P1 ? "res/players/p1.png" : "res/players/p2.png";
+	animation = new Animation(animFilename, PLAYER_ANIM_FILE_WIDTH, PLAYER_ANIM_FILE_HEIGHT, 5, 8, 4, static_cast<int>(tag), loop, player->game);
+}

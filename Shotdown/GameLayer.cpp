@@ -30,6 +30,11 @@ void GameLayer::init()
 	player1->projectiles = &projectiles;
 	player2 = new Player(PlayerTag::P2, game);
 	player2->projectiles = &projectiles;
+	// Restarts their controls
+	controlMoveRight_P1 = 0;
+	controlMoveLeft_P1 = 0;
+	controlMoveRight_P2 = 0;
+	controlMoveLeft_P2 = 0;
 	// Generates the HUD
 	hud = new HudInstance(player1, player2, game);
 	messager->hud = hud;

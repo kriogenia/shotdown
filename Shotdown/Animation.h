@@ -12,10 +12,14 @@ public:
 	void render(Point position, bool flip = false, float rotation = 0);
 	/* Control */
 	void reset();
-	/* Counters */
-	int currentFrame;
-	int totalFrames;
-	int row;
+	/* Frames */
+	int currentFrame = 0;
+	int totalFrames = 0;
+	/* Position */
+	int row = 0;
+	/* Update */
+	int updateTime = 0;
+	int updateFrequence = 0;
 
 private:
 	Game* game;
@@ -29,7 +33,5 @@ private:
 	SDL_Rect source;							// Rectangle view
 	/* Attributes */
 	bool loop = false;
-	int updateFrequence = 0;
-	int updateTime = 0;
 
 };

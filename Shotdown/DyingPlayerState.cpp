@@ -1,16 +1,20 @@
 #include "DyingPlayerState.h"
 
+#include <time.h>
+
 DyingPlayerState::DyingPlayerState(Player* player) :
 	PlayerStateBase(player)
 {
 	this->tag = ePlayerStates::DYING;
-	string animFilename = player->tag == PlayerTag::P1 ? "res/players/p1.png" : "res/players/p2.png";
-	animation = new Animation(animFilename, 120, 240, 5, 8, 8, static_cast<int>(tag), false, player->game);
+	setAnimation(false);
+	this->animation->updateFrequence = 12;
 }
 
 void DyingPlayerState::enter()
 {
 	printf("%s is dead\n", player->toString().c_str());
+	// Starts timer
+	stamp = SDL_GetTicks();
 	// Release current weapon
 	delete this->player->weapon;
 	this->player->weapon = nullptr;
@@ -21,8 +25,8 @@ void DyingPlayerState::enter()
 
 void DyingPlayerState::tick()
 {
-	PlayerStateBase::tick();
-	if (animation->currentFrame == animation->totalFrames) {
-		this->player->pendingDestruction = true;
+	/* Kills player if the animation finished and time has passed */
+	if (animation->tick() && SDL_GetTicks() - stamp > 3000) {
+		player->pendingDestruction = true;
 	}
 }

@@ -30,9 +30,13 @@ bool Animation::tick()
 	if (updateTime > updateFrequence) {
 		updateTime = 0;
 		currentFrame++;
-		if (loop) {
-			if (currentFrame >= totalFrames) {
+		if (currentFrame >= totalFrames) {
+			if (loop) {
 				currentFrame = 0;
+			}
+			else {
+				currentFrame--;
+				return true;
 			}
 		}
 	}

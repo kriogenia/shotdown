@@ -20,6 +20,9 @@ void ResultLayer::init()
 	winner = nullptr;
 	score.clear();
 	audio->end();
+	ticks = 0;
+	winsP1 = 0;
+	winsP2 = 0;
 }
 
 void ResultLayer::tick()

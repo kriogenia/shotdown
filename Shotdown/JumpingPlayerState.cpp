@@ -4,8 +4,7 @@ JumpingPlayerState::JumpingPlayerState(Player* actor) :
 	PlayerStateBase(actor)
 {
 	tag = ePlayerStates::JUMPING;
-	string animFilename = player->tag == PlayerTag::P1 ? "res/players/p1.png" : "res/players/p2.png";
-	animation = new Animation(animFilename, 120, 240, 5, 8, 4, static_cast<int>(tag), false, player->game);
+	setAnimation(false);
 }
 
 void JumpingPlayerState::enter()

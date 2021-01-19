@@ -58,7 +58,6 @@ void Player::init()
 	prevState = states[ePlayerStates::IDLE];
 	state = states[ePlayerStates::IDLE];
 	// Set the weapon
-	delete weapon;
 	weapon = nullptr;
 }
 

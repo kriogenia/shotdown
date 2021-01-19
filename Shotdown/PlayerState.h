@@ -10,8 +10,8 @@ enum class ePlayerStates {
 	JUMPING,
 	DOUBLE_JUMPING,
 	FALLING,
-	SLIDING,
 	DASHING,
+	SLIDING,
 	DYING
 };
 

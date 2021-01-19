@@ -55,7 +55,7 @@ void AudioPlayer::next()
 	currentTheme->stop();
 	currentTheme = themes[index];
 	index++;
-	if (index > themes.size()) {
+	if (index >= themes.size()) {
 		index = 0;
 	}
 	currentTheme->play();

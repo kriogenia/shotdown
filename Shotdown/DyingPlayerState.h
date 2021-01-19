@@ -20,5 +20,9 @@ public:
 	// Events
 	inline void impacted(PlayerTag shooter, int damage, cpVect velocity) override {};
 	inline void recoil(int force, cpVect point) override {};
+
+private:
+	int stamp = 0;
+
 };
 

@@ -5,6 +5,9 @@
 #include "Player.h"
 #include "PlayerState.h"
 
+constexpr auto PLAYER_ANIM_FILE_WIDTH = 120;
+constexpr auto PLAYER_ANIM_FILE_HEIGHT = 256;
+
 class PlayerStateBase :
     public PlayerState
 {
@@ -31,6 +34,7 @@ protected:
     /* Orientation */
     void setOrientation(int direction);
     /* Animation */
+    void setAnimation(bool loop);
     Animation* animation = nullptr;
 
 };
