@@ -4,7 +4,7 @@
 #include "Pointer.h"
 #include "ReloadBar.h"
 
-constexpr auto SHOW_DURATION = 5 * TARGET_FPS;	// 5s
+constexpr auto SHOW_DURATION = 3 * TARGET_FPS;	// 3s
 
 class HudInstance :
 	public Hud

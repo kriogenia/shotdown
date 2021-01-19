@@ -18,6 +18,7 @@ void ResultLayer::init()
 {
 	button = nullptr;
 	winner = nullptr;
+	focus = nullptr;
 	score.clear();
 	audio->end();
 	ticks = 0;
@@ -42,6 +43,9 @@ void ResultLayer::tick()
 void ResultLayer::render()
 {
 	background->render();
+	if (focus != nullptr) {
+		focus->render();
+	}
 	textP1->render();
 	textP2->render();
 	for (auto const& star : score) {
@@ -90,6 +94,8 @@ void ResultLayer::addButton()
 	if (button == nullptr) {
 		// Placeholder
 		float winnerX = (winsP1 > winsP2) ? P1_TEXT : P2_TEXT;
+		focus = new Actor(ActorType::HUD, "res/hud/focus-b.png", 
+			winnerX, HEIGHT / 2, WIDTH / 2, HEIGHT, game);
 		winner = (new Text("WINNER", winnerX, VICTORY_HEIGHT, game))
 			->setSize(TextSize::TITLE);
 		button = new Button("res/hud/btn-new-game.png", WIDTH / 2,

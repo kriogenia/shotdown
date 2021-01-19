@@ -36,6 +36,7 @@ private:
     Text* textP2 = nullptr;
     vector<Actor*> score;
     Text* winner = nullptr;
+    Actor* focus = nullptr;
     Button* button = nullptr;
     /* Button */
     void addButton();
