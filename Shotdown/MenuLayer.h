@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Animation.h"
 #include "Button.h"
 #include "Layer.h"
 #include "Parallax.h"
@@ -9,6 +10,8 @@ constexpr auto EXIT_BUTTON_HEIGHT = 0.1 * HEIGHT;
 constexpr auto EXIT_BUTTON_WIDTH = 0.9 * WIDTH;
 constexpr auto NEW_GAME_BUTTON_HEIGHT = 0.60 * HEIGHT;
 constexpr auto CUSTOM_BUTTON_HEIGHT = 0.75 * HEIGHT;
+/* Logo */
+constexpr Point LOGO_POSITION = { 0.5 * WIDTH, 0.4 * HEIGHT};
 /* Vehicles */
 constexpr auto VEHICLE_SPAWN_TIME = 300;    // 5s
 constexpr auto VEHICLE_SPEED = 6;
@@ -37,6 +40,8 @@ private:
     /* Background */
     Actor* background = nullptr;
     Parallax* buildings = nullptr;
+    /* Logo */
+    Animation* logo = nullptr;
     /* Buttons */
     void selectButton(Buttons button);
     void changeButton(int direction);

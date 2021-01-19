@@ -7,6 +7,8 @@ MenuLayer::MenuLayer(Game* game) :
 	background = new Actor(ActorType::BACKGROUND, "res/backgrounds/menu.png",
 		WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT, game);
 	buildings = new Parallax("res/backgrounds/near-buildings.png", WIDTH, HEIGHT, game);
+	/* Logo */
+	logo = new Animation("res/hud/logo-anim.png", 1200, 150, 4, 1, 12, 0, true, game);
 	/* Add vehicle filenames */
 	vehicles.clear();
 	vehicles.push_back("res/backgrounds/v-police.png");
@@ -36,6 +38,7 @@ void MenuLayer::init()
 
 void MenuLayer::tick()
 {
+	logo->tick();
 	vehicle->position.x -= VEHICLE_SPEED;
 	newVehicle--;
 	if (newVehicle <= 0) {
@@ -49,6 +52,7 @@ void MenuLayer::render()
 	background->render();
 	vehicle->render();
 	buildings->render();
+	logo->render(LOGO_POSITION);
 	for (auto const& button : buttons) {
 		button->render();
 	}
