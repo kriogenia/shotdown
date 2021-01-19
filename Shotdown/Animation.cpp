@@ -17,11 +17,7 @@ Animation::Animation(string filename, float fileWidth, float fileHeight, int tot
 	// Load texture
 	SDL_Surface* surface = IMG_Load(filename.c_str());
 	texture = SDL_CreateTextureFromSurface(game->renderer, surface);
-	// Rectangle to show
-	source.x = 0;
-	source.y = row * frameHeight;
-	source.w = frameWidth;
-	source.h = frameHeight;
+	updateFrame();
 }
 
 bool Animation::tick() 
@@ -39,9 +35,8 @@ bool Animation::tick()
 				return true;
 			}
 		}
+		updateFrame();
 	}
-	// Update frame rectangle
-	source.x = currentFrame * frameWidth;
 	return false;
 }
 
@@ -62,4 +57,13 @@ void Animation::reset()
 {
 	this->currentFrame = 0;
 	this->updateTime = 0;
+}
+
+void Animation::updateFrame()
+{
+	// Rectangle to show
+	source.x = currentFrame * frameWidth;
+	source.y = row * frameHeight;
+	source.w = frameWidth;
+	source.h = frameHeight;
 }

@@ -12,6 +12,7 @@ public:
 	void render(Point position, bool flip = false, float rotation = 0);
 	/* Control */
 	void reset();
+	void updateFrame();
 	/* Frames */
 	int currentFrame = 0;
 	int totalFrames = 0;

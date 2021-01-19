@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Animation.h"
 #include "Player.h"
 #include "WeaponFactory.h"
 
@@ -18,6 +19,8 @@ public:
     bool pickWeapon(Player* player);
 
 private:
+    /* Animation */
+    Animation* animation = nullptr;
     /* State */
     int cooldown = SPAWNER_CD;
     /* Weapon */
