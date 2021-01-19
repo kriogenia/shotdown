@@ -4,6 +4,8 @@ FallingPlayerState::FallingPlayerState(Player* actor) :
 	PlayerStateBase(actor)
 {
 	tag = ePlayerStates::FALLING;
+	string animFilename = player->tag == PlayerTag::P1 ? "res/players/p1.png" : "res/players/p2.png";
+	animation = new Animation(animFilename, 120, 240, 5, 8, 4, static_cast<int>(tag), true, player->game);
 }
 
 void FallingPlayerState::enter()
@@ -15,6 +17,7 @@ void FallingPlayerState::enter()
 
 void FallingPlayerState::tick()
 {
+	PlayerStateBase::tick();
 	// Fall end check
 	if (cpBodyGetVelocity(player->body).y < 0.01) {
 		ticksGrounded++;

@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Ak47.cpp" />
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AudioPlayer.cpp" />
     <ClCompile Include="AutomaticWeapon.cpp" />
     <ClCompile Include="AWP.cpp" />
@@ -251,6 +252,7 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Ak47.h" />
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="AudioPlayer.h" />
     <ClInclude Include="AutomaticWeapon.h" />
     <ClInclude Include="AWP.h" />

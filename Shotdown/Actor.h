@@ -26,10 +26,10 @@ public:
 	ActorType type;
 	Point position = { 0, 0 };
 	bool pendingDestruction = false;
-	
-protected:
 	/* Game instance */
 	Game* game;
+	
+protected:
 	/* Texture */
 	SDL_Texture* texture;
 	/* Size */

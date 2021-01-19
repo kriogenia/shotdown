@@ -4,6 +4,8 @@ DashingPlayerState::DashingPlayerState(Player* player) :
 	PlayerStateBase(player)
 {
 	tag = ePlayerStates::DASHING;
+	string animFilename = player->tag == PlayerTag::P1 ? "res/players/p1.png" : "res/players/p2.png";
+	animation = new Animation(animFilename, 120, 240, 5, 8, 4, static_cast<int>(tag), false, player->game);
 }
 
 void DashingPlayerState::enter()
@@ -16,6 +18,7 @@ void DashingPlayerState::enter()
 
 void DashingPlayerState::tick()
 {
+	PlayerStateBase::tick();
 	// Dash out
 	remainingDuration--;
 	if (remainingDuration <= 0) {
@@ -31,6 +34,7 @@ void DashingPlayerState::tick()
 void DashingPlayerState::exit()
 {
 	player->dashCd = DASH_CD;
+	animation->reset();
 }
 
 void DashingPlayerState::impacted(PlayerTag shooter, int damage, cpVect velocity)

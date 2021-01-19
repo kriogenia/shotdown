@@ -6,6 +6,17 @@ PlayerStateBase::PlayerStateBase(Player* actor) :
 	this->player = actor;
 }
 
+void PlayerStateBase::tick()
+{
+	animation->tick();
+}
+
+void PlayerStateBase::render(float rotation)
+{
+	bool flip = player->orientation == Orientation::LEFT;
+	animation->render(player->position, flip, rotation);
+}
+
 void PlayerStateBase::move(int direction)
 {
 	setOrientation(direction);

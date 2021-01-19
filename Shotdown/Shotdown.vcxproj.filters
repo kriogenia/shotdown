@@ -411,6 +411,9 @@
     <ClCompile Include="Checkbox.cpp">
       <Filter>Archivos de origen\Actors\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -604,6 +607,9 @@
     </ClInclude>
     <ClInclude Include="Checkbox.h">
       <Filter>Archivos de encabezado\Actors\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

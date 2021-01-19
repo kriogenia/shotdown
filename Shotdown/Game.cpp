@@ -4,6 +4,7 @@
 #include "MenuLayer.h"
 #include "OptionsLayer.h"
 #include "ResultLayer.h"
+#include <time.h>
 
 Game::Game() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {

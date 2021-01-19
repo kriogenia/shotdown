@@ -6,7 +6,6 @@
 class Weapon;
 
 /* Attributes */
-constexpr auto PLAYER_SIZE = 24;
 constexpr auto PLAYER_HP = 100;
 constexpr auto PLAYER_SPEED = 3 * TARGET_FPS;
 constexpr auto PLAYER_JUMP = 5 * TARGET_FPS;
@@ -17,8 +16,13 @@ constexpr auto PLAYER_WALL_JUMP_X = 3 * TARGET_FPS;
 constexpr auto PLAYER_WALL_JUMP_Y = 5 * TARGET_FPS;
 /* Cooldowns */
 constexpr auto DASH_CD = 5 * TARGET_FPS; // 5s
+/* Graphics */
+constexpr auto FRAME_HEIGHT = 28;
+constexpr auto FRAME_WIDTH = 24;
 /* Physics */
 constexpr auto PLAYER_BODY_WEIGHT = 75;
+constexpr auto PLAYER_BODY_WIDTH = 8;
+constexpr auto PLAYER_BODY_HEIGHT = 20;
 constexpr auto PLAYER_SHAPE_FRICTION = 2;
 constexpr auto PLAYER_MAX_FALL_SPEED = 10 * TARGET_FPS;
 constexpr auto PLAYER_PUSH_DURATION = 10;

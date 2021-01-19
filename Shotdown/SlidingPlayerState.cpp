@@ -4,6 +4,8 @@ SlidingPlayerState::SlidingPlayerState(Player* player) :
 	PlayerStateBase(player)
 {
 	tag = ePlayerStates::SLIDING;
+	string animFilename = player->tag == PlayerTag::P1 ? "res/players/p1.png" : "res/players/p2.png";
+	animation = new Animation(animFilename, 120, 240, 5, 8, 4, static_cast<int>(tag), true, player->game);
 }
 
 void SlidingPlayerState::enter()
@@ -18,6 +20,7 @@ void SlidingPlayerState::enter()
 
 void SlidingPlayerState::tick()
 {
+	PlayerStateBase::tick();
 	// Limit player velocity
 	cpBodySetVelocity(player->body, cpv(cpBodyGetVelocity(player->body).x, SLIDING_SPEED));
 	// Swap to falling when not wall appended

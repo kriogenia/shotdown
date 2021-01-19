@@ -6,11 +6,11 @@
 constexpr auto AK47_CLIP_SIZE = 10;
 constexpr auto AK47_EXTRA_AMMO = 10;
 /* Reload */
-constexpr auto AK47_RELOAD_TIME = 2.43 * TARGET_FPS; // 2.43s
-constexpr auto AK47_WAIT_TIME = 0.3 * static_cast<double>(TARGET_FPS); // 0.3s
+constexpr auto AK47_RELOAD_TIME = 2.43f * static_cast<float>(TARGET_FPS); // 2.43s
+constexpr auto AK47_WAIT_TIME = 0.3f * static_cast<float>(TARGET_FPS); // 0.3s
 /* Recoil */
-constexpr auto AK47_RECOIL_PER_SHOT = 0.25;
-constexpr float AK47_ANGLE_PER_SHOT = 1.4;
+constexpr auto AK47_RECOIL_PER_SHOT = 0.25f;
+constexpr float AK47_ANGLE_PER_SHOT = 1.4f;
 constexpr auto AK47_RECOIL_FORCE = 60 * TARGET_FPS;
 /* Projectile */
 constexpr auto AK47_DAMAGE = 36;

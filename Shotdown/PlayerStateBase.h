@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Animation.h"
 #include "Broadcaster.h"
 #include "Player.h"
 #include "PlayerState.h"
@@ -10,6 +11,9 @@ class PlayerStateBase :
 public:
     PlayerStateBase(Player* actor);
     /* PlayerState */
+    // Game cycle
+    void tick() override;
+    void render(float rotation = 0.0) override;
     // Control
     void move(int direction) override;
     void jump() override;
@@ -23,9 +27,11 @@ public:
 protected:
     /* References */
     Broadcaster* messager = Broadcaster::getInstance();
-    Player* player;
+    Player* player = nullptr;
     /* Orientation */
     void setOrientation(int direction);
+    /* Animation */
+    Animation* animation = nullptr;
 
 };
 

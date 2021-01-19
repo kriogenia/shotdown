@@ -3,7 +3,7 @@
 #include "StateFactory.h"
 
 Player::Player(PlayerTag tag, Game* game)
-	:Actor(ActorType::PLAYER, "res/players/p1.png", 0, 0, PLAYER_SIZE, PLAYER_SIZE, game)
+	:Actor(ActorType::PLAYER, "res/players/p1.png", 0, 0, FRAME_WIDTH, FRAME_HEIGHT, game)
 {
 	this->tag = tag;
 	this->orientation = (tag == PlayerTag::P1) ?
@@ -41,7 +41,7 @@ void Player::tick()
 
 void Player::render(float rotation)
 {
-	Actor::render(rotation);
+	state->render(rotation);
 	if (weapon != nullptr) {
 		weapon->render();
 	}
@@ -81,7 +81,7 @@ void Player::configureChipmunkSpace(cpSpace* chipSpace)
 	cpBodySetVelocityUpdateFunc(body, limitFallingSpeed);		
 	cpSpaceAddBody(chipSpace, body);
 	/* Create the shape */
-	shape = cpBoxShapeNew(body, 8, height, 0.0);
+	shape = cpBoxShapeNew(body, PLAYER_BODY_WIDTH, PLAYER_BODY_HEIGHT, 0.0);
 	// Collision type
 	cpShapeSetCollisionType(shape, static_cast<int>(type));		
 	cpShapeSetElasticity(shape, 0);

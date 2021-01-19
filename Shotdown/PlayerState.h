@@ -21,6 +21,7 @@ class PlayerState :
 public:
 	/* Game cycle */
 	virtual void tick() {};
+	virtual void render(float rotation = 0.0) {};
 	/* Player control */
 	virtual void move(int direction) = 0;
 	virtual void jump() = 0;
