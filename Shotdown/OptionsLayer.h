@@ -30,7 +30,7 @@ public:
     OptionsLayer(Game* game);
     /* Game cycle */
     void init() override;
-    inline void tick() override {};
+    inline void tick() override { sleepJoystick--; };
     void render() override;
     /* Input control */
     void keysToControl(SDL_Event event) override;

@@ -86,7 +86,21 @@ void ResultLayer::mouseToControl(SDL_Event event)
 
 void ResultLayer::padToControl(SDL_Event event)
 {
-
+	/* Buttons */
+	if (event.type == SDL_CONTROLLERBUTTONDOWN) {
+		int code = event.cbutton.button;
+		switch (code) {
+		case SDL_CONTROLLER_BUTTON_BACK:
+			game->loopActive = false;
+			break;
+		case SDL_CONTROLLER_BUTTON_Y:			// Y
+			game->scale();
+			break;
+		case SDL_CONTROLLER_BUTTON_A:			// A
+			pressButton();
+			break;
+		}
+	}
 }
 
 void ResultLayer::addButton()
