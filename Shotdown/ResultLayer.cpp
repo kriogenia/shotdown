@@ -98,7 +98,7 @@ void ResultLayer::addButton()
 			winnerX, HEIGHT / 2, WIDTH / 2, HEIGHT, game);
 		winner = (new Text("WINNER", winnerX, VICTORY_HEIGHT, game))
 			->setSize(TextSize::TITLE);
-		button = new Button("res/hud/btn-new-game.png", WIDTH / 2,
+		button = new Button("res/hud/btn-main-menu.png", WIDTH / 2,
 			MAIN_GAME_BUTTON_HEIGHT, 300, 50, game);
 		button->focus();
 		audio->play(AudioClips::WINNER);

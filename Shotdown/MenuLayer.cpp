@@ -20,7 +20,7 @@ MenuLayer::MenuLayer(Game* game) :
 		EXIT_BUTTON_HEIGHT, 39, 42, game));
 	buttons.push_back(new Button("res/hud/btn-new-game.png", WIDTH / 2,
 		NEW_GAME_BUTTON_HEIGHT, 300, 50, game));
-	buttons.push_back(new Button("res/hud/btn-new-game.png", WIDTH / 2,
+	buttons.push_back(new Button("res/hud/btn-custom.png", WIDTH / 2,
 		CUSTOM_BUTTON_HEIGHT, 300, 50, game));
 }
 
