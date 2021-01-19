@@ -18,7 +18,8 @@ public:
 private:
 	/* References */
 	Player* player = nullptr;
-	/* Text */
+	/* Components */
+	Actor* focus = nullptr;
 	Text* text = nullptr;
 };
 
