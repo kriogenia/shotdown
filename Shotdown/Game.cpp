@@ -22,11 +22,11 @@ Game::Game() {
 
 	/* Fonts initilization */
 	TTF_Init();
-	fontTitle = TTF_OpenFont("res/Rubik-Black.ttf", 36);
-	fontOutlineTitle = TTF_OpenFont("res/Rubik-Black.ttf", 36);
+	fontTitle = TTF_OpenFont("res/CubicCoreMono.ttf", 48);
+	fontOutlineTitle = TTF_OpenFont("res/CubicCoreMono.ttf", 48);
 	TTF_SetFontOutline(fontOutlineTitle, TITLE_OUTLINE_SIZE);
-	fontCaption = TTF_OpenFont("res/Rubik-Black.ttf", 18);
-	fontOutlineSubtitle = TTF_OpenFont("res/Rubik-Black.ttf", 18);
+	fontCaption = TTF_OpenFont("res/CubicCoreMono.ttf", 24);
+	fontOutlineSubtitle = TTF_OpenFont("res/CubicCoreMono.ttf", 24);
 	TTF_SetFontOutline(fontOutlineSubtitle, CAPTION_OUTLINE_SIZE);
 
 	/* Layer initilization */

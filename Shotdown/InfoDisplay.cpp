@@ -38,7 +38,7 @@ void InfoDisplay::updateWeapon()
 	if (player->weapon != nullptr) {
 		float x = (player->tag == PlayerTag::P1) ? P1_DISPLAY_X : P2_DISPLAY_X;
 		weaponImage = new Actor(ActorType::HUD, player->weapon->filename,
-			x, DISPLAY_HEIGHT, 30, 8, game);
+			x, DISPLAY_HEIGHT, WEAPON_WIDTH, WEAPON_HEIGHT, game);
 	}
 	else {
 		weaponImage = nullptr;
