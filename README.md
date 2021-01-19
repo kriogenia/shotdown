@@ -3,15 +3,14 @@ Assingment for the Videogames and Entertainment Software 20/21 subject of the Un
 
 This little project intends to be a very light local multiplayer game based on Duck Game.
 
-TBI - Game logo
+![Game logo](./Shotdown/res/logo.png)
 
-The game will feature an array of different scenarios where both
-players will fight to kill the other one and get a showdown point.
+The game will feature an array of different scenarios where both players will fight to kill the other one and get a showdown point.
 At the end, the player with more wins will be the winner. Each scenario offers walls and platforms to jump and weapon spawners to pick different weapons.
 
-The game is developed in C++ only using the SDL2 library for handling audio and grahpics, tinyxml2 to handle XML readings and Chipmunk2D as the physics engine, that's all. Everything else will be pure manfactured C++. Scenarios were created using Tiled.
+The game is developed in C++ only using the SDL2 library for handling audio and graphics, tinyxml2 to handle XML readings and Chipmunk2D as the physics engine, that's all. Everything else will be pure manfactured C++. Scenarios were created using Tiled.
 
-TBI - Screenshot
+![First scenario](./Shotdown/res/screenshot1.jpg)
 
 # Controls
 
@@ -19,31 +18,35 @@ TBI - Screenshot
 
 The first player will control its character with the keyboard.
 
-* WASD for movement
-* Space to jump
+* AD for movement
+* W to jump
 * E to pick a weapon
+* Shift to dash
+* Space to shoot
 
 ## Player 2
 
-TBI
+(based on XBOX mapping)
+* Left Joystick for movement
+* Button A to jump
+* Button X to pick a weapon
+* Left Trigger to dash
+* Right Trigger to shoot
 
 ## Other
 
 Other controls to know of are:
 
-* Escape to exit the game
-* Key 1 to make the game fullscreen
-* Key 2 to replace the characters (bug safety measure) - TBI
+* Escape Key and Button Back to exit the game
+* Key 1 and Button Y on gamepad to make the game "fullscreen"
+* Button B to go back on menus
 
 # Mechanics
 
-Each game will consist on 5 different scenarios aka showdowns.
+Each standard game will consist on 5 different scenarios aka showdowns.
 Both players will be placed in the scenario and they will fight to death. The players will be able to move throughout the scenarios, jump, double jump, sliding in and jumping from walls and, why not, also dash. Oh, and of course, pick and use weapons.
 
-There are a pletora of different unique weapons with their own rarity
-and mechanics. Those weapons will have a very limited ammo so there
-will be a need to change weapons quickly to not find yourself on a
-bad position without any way to attack your enemies.
+There are a pletora of different unique weapons with their own rarity and mechanics. Those weapons will have a very limited ammo so there will be a need to change weapons quickly to not find yourself on a bad position without any way to attack your enemies.
 
 # Weapons
 
