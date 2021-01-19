@@ -16,9 +16,12 @@ public:
 	virtual void keysToControl(SDL_Event event) = 0;
 	virtual void mouseToControl(SDL_Event event) = 0;
 	virtual void padToControl(SDL_Event event) = 0;
+	int sleepJoystick = 0;
+	SDL_GameController* gamepad = SDL_GameControllerOpen(0);
 	/* References */
 	AudioPlayer* audio = AudioPlayer::getInstance();
 	Game* game;
+
 
 };
 

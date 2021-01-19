@@ -38,6 +38,7 @@ void MenuLayer::init()
 
 void MenuLayer::tick()
 {
+	sleepJoystick--;
 	logo->tick();
 	vehicle->position.x -= VEHICLE_SPEED;
 	newVehicle--;
@@ -103,7 +104,40 @@ void MenuLayer::mouseToControl(SDL_Event event)
 
 void MenuLayer::padToControl(SDL_Event event)
 {
-
+	/* Buttons */
+	if (event.type == SDL_CONTROLLERBUTTONDOWN) {
+		int code = event.cbutton.button;
+		switch (code) {
+		case SDL_CONTROLLER_BUTTON_BACK:
+			game->loopActive = false;
+			break;
+		case SDL_CONTROLLER_BUTTON_Y:			// Y
+			game->scale();
+			break;
+		case SDL_CONTROLLER_BUTTON_DPAD_UP:		// Up
+			changeButton(-1);
+			break;
+		case SDL_CONTROLLER_BUTTON_DPAD_DOWN:	// Down
+			changeButton(1);
+			break;
+		case SDL_CONTROLLER_BUTTON_A:			// A
+			pressButton();
+			break;
+		}
+	}
+	/* Joystick */
+	if (event.type == SDL_CONTROLLERAXISMOTION && sleepJoystick <= 0) {
+		if (event.caxis.axis == SDL_CONTROLLER_AXIS_LEFTY) {
+			if (event.caxis.value > 30000) {
+				changeButton(1);
+				sleepJoystick = 30;
+			}
+			else if (event.caxis.value < -30000) {
+				changeButton(-1);
+				sleepJoystick = 30;
+			}
+		}
+	}
 }
 
 void MenuLayer::generateVehicle()
