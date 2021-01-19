@@ -12,6 +12,7 @@
 #include "WeaponSpawner.h"
 
 constexpr auto NUMBER_OF_SCENARIOS = 2;
+constexpr auto JOYSTICK_SENSIBILITY = 10000;
 
 class GameLayer :
     public Layer
@@ -27,7 +28,7 @@ public:
 	/* Input control */
 	void keysToControl(SDL_Event event) override;
 	inline void mouseToControl(SDL_Event event) override {};
-	void padToControl(SDL_Event event) override {};
+	void padToControl(SDL_Event event) override;
 
 private:
 	/* References */

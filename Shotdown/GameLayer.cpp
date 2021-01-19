@@ -103,7 +103,6 @@ void GameLayer::keysToControl(SDL_Event event) {
 			controlMoveLeft_P1 = -1;
 			break;
 		case SDLK_w:		// Jump
-			//cout << "JUMP" << endl;
 			player1->jump();
 			break;
 		case SDLK_LSHIFT:	// Dash
@@ -130,6 +129,64 @@ void GameLayer::keysToControl(SDL_Event event) {
 		case SDLK_SPACE:	// Stop Shooting
 			player1->releaseTrigger();
 			break;
+		}
+	}
+}
+
+void GameLayer::padToControl(SDL_Event event)
+{
+	/* Buttons */
+	if (event.type == SDL_CONTROLLERBUTTONDOWN) {
+		int code = event.cbutton.button;
+		switch (code) {
+		case SDL_CONTROLLER_BUTTON_BACK:
+			game->loopActive = false;
+			break;
+		case SDL_CONTROLLER_BUTTON_Y:			// Y
+			game->scale();
+			break;
+		case SDL_CONTROLLER_BUTTON_DPAD_RIGHT:	// Right
+			controlMoveRight_P2 = 1;
+			break;
+		case SDL_CONTROLLER_BUTTON_DPAD_LEFT:	// Left
+			controlMoveLeft_P2 = -1;
+			break;
+		case SDL_CONTROLLER_BUTTON_A:			// A
+			player2->jump();
+			break;
+		case SDL_CONTROLLER_BUTTON_X:			// X
+			pickWeapon(player2);
+			break;
+		}
+	}
+	if (event.type == SDL_CONTROLLERAXISMOTION) {
+		/* Joystick */
+		if (event.caxis.axis == SDL_CONTROLLER_AXIS_LEFTX) {
+			if (event.caxis.value > JOYSTICK_SENSIBILITY) {
+				controlMoveRight_P2 = 1;
+			}
+			else if (event.caxis.value < -JOYSTICK_SENSIBILITY) {
+				controlMoveLeft_P2 = -1;
+			}
+			else {
+				controlMoveRight_P2 = 0;
+				controlMoveLeft_P2 = 0;
+			}
+		}
+		/* Left trigger */
+		else if (event.caxis.axis == SDL_CONTROLLER_AXIS_TRIGGERLEFT) {
+			if (event.caxis.value > SDL_CONTROLLER_AXIS_MAX / 2) {
+				player2->dash();
+			}
+		}
+		/* Right trigger */
+		else if (event.caxis.axis == SDL_CONTROLLER_AXIS_TRIGGERRIGHT) {
+			if (event.caxis.value > SDL_CONTROLLER_AXIS_MAX / 2) {
+				player2->pressTrigger();
+			}
+			else {
+				player2->releaseTrigger();
+			}
 		}
 	}
 }
