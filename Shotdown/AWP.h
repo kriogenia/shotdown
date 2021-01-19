@@ -15,11 +15,11 @@ constexpr auto AWP_DAMAGE = 115;
 constexpr auto AWP_PROJECTILE_LIFE = 0.8 * static_cast<double>(TARGET_FPS);
 constexpr auto AWP_PROJECTILE_SPEED = 8.5;
 /* Shot point */
-constexpr auto AWP_SHOT_POINT_X = 12.0;
-constexpr auto AWP_SHOT_POINT_Y = -4.0;
+constexpr auto AWP_SHOT_POINT_X = 38.0f;
+constexpr auto AWP_SHOT_POINT_Y = 1.0f;
 /* Audio */
 constexpr auto AWP_SOUND = "res/audio/weapons/awp.wav";
-constexpr auto AWP_SPRITE = "res/weapons/m4.png";             // Placeholder
+constexpr auto AWP_SPRITE = "res/weapons/awp.png";             // Placeholder
 
 class AWP :
     public ManualWeapon

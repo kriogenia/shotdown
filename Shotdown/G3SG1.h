@@ -15,11 +15,11 @@ constexpr auto G3SG1_DAMAGE = 80;
 constexpr auto G3SG1_PROJECTILE_LIFE = 0.8 * static_cast<double>(TARGET_FPS);
 constexpr auto G3SG1_PROJECTILE_SPEED = 8.5;
 /* Shot point */
-constexpr auto G3SG1_SHOT_POINT_X = 12.0;
-constexpr auto G3SG1_SHOT_POINT_Y = -4.0;
+constexpr auto G3SG1_SHOT_POINT_X = 32.0f;
+constexpr auto G3SG1_SHOT_POINT_Y = 2.0f;
 /* Audio */
 constexpr auto G3SG1_SOUND = "res/audio/weapons/g3sg1.wav";
-constexpr auto G3SG1_SPRITE = "res/weapons/m4.png";             // Placeholder
+constexpr auto G3SG1_SPRITE = "res/weapons/g3sg1.png";             
 
 class G3SG1 :
     public ManualWeapon

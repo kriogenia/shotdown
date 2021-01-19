@@ -17,8 +17,8 @@ constexpr auto AK47_DAMAGE = 36;
 constexpr auto AK47_PROJECTILE_LIFE = 0.6 * static_cast<double>(TARGET_FPS); // 0.6s
 constexpr auto AK47_PROJECTILE_SPEED = 6.0;
 /* Shot point */
-constexpr auto AK47_SHOT_POINT_X = 12.0;
-constexpr auto AK47_SHOT_POINT_Y = -4.0;
+constexpr auto AK47_SHOT_POINT_X = 24.0f;
+constexpr auto AK47_SHOT_POINT_Y = 2.0f;
 /* Audio */
 constexpr auto AK47_SOUND = "res/audio/weapons/ak47.wav";
 constexpr auto AK47_SPRITE = "res/weapons/ak47.png";

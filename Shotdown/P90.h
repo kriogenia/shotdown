@@ -17,8 +17,8 @@ constexpr auto P90_DAMAGE = 26;
 constexpr auto P90_PROJECTILE_LIFE = 0.4 * static_cast<double>(TARGET_FPS);
 constexpr auto P90_PROJECTILE_SPEED = 6.0;
 /* Shot point */
-constexpr auto P90_SHOT_POINT_X = 12.0;
-constexpr auto P90_SHOT_POINT_Y = -2.0;
+constexpr auto P90_SHOT_POINT_X = 12.0f;
+constexpr auto P90_SHOT_POINT_Y = 2.0f;
 /* Audio */
 constexpr auto P90_SOUND = "res/audio/weapons/p90.wav";
 constexpr auto P90_SPRITE = "res/weapons/p90.png";

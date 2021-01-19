@@ -17,8 +17,8 @@ constexpr auto M4_DAMAGE = 33;
 constexpr auto M4_PROJECTILE_LIFE = 0.6 * static_cast<double>(TARGET_FPS); // 0.6s
 constexpr auto M4_PROJECTILE_SPEED = 6.0;
 /* Shot point */
-constexpr auto M4_SHOT_POINT_X = 12.0;
-constexpr auto M4_SHOT_POINT_Y = -3.0;
+constexpr auto M4_SHOT_POINT_X = 26.0f;
+constexpr auto M4_SHOT_POINT_Y = 3.0f;
 /* Audio */
 constexpr auto M4_SOUND = "res/audio/weapons/m4.wav";
 constexpr auto M4_SPRITE = "res/weapons/m4.png";

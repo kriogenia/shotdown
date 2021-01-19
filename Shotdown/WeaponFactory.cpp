@@ -46,7 +46,7 @@ WeaponFactory::WeaponFactory(Game* game)
 /* Get a random weapon from the avaliable pool */
 Weapon* WeaponFactory::getWeapon()
 {
-    // return weapons[10]->clone();     // Debug
+    //return weapons[8]->clone();     // Debug
     int position = rand() % pool.size();
     Weapon* weapon = weapons[pool[position]]->clone();
     pool.erase(pool.begin() + position);

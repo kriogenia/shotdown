@@ -20,11 +20,11 @@ constexpr auto TEC9_DAMAGE = 26;
 constexpr auto TEC9_PROJECTILE_LIFE = 0.4 * static_cast<double>(TARGET_FPS);
 constexpr auto TEC9_PROJECTILE_SPEED = 6.0;
 /* Shot point */
-constexpr auto TEC9_SHOT_POINT_X = 12.0;
-constexpr auto TEC9_SHOT_POINT_Y = -2.0;
+constexpr auto TEC9_SHOT_POINT_X = 5.0f;
+constexpr auto TEC9_SHOT_POINT_Y = 1.0f;
 /* Audio */
 constexpr auto TEC9_SOUND = "res/audio/weapons/p90.wav";
-constexpr auto TEC9_SPRITE = "res/weapons/p90.png";         // Placeholder
+constexpr auto TEC9_SPRITE = "res/weapons/tec9.png";         
 
 class Tec9 :
     public AutomaticWeapon

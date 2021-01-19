@@ -18,7 +18,7 @@ void Weapon::tick()
 {
 	// Relocation
 	if (owner != nullptr) {
-		position = { owner->position.x, owner->position.y + 8 };
+		position = owner->position;
 		int orientation = static_cast<int>(owner->orientation);
 		shotPoint = {
 			position.x + orientation * shotPointOffset.x, 

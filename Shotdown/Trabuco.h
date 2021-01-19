@@ -17,11 +17,11 @@ constexpr auto TRABUCO_DISPERSION = 0.8;
 constexpr auto TRABUCO_PROJECTILE_LIFE = 0.8 * static_cast<double>(TARGET_FPS);
 constexpr auto TRABUCO_PROJECTILE_SPEED = 2.0;
 /* Shot point */
-constexpr auto TRABUCO_SHOT_POINT_X = 12.0;
-constexpr auto TRABUCO_SHOT_POINT_Y = -4.0;
+constexpr auto TRABUCO_SHOT_POINT_X = 16.0f;
+constexpr auto TRABUCO_SHOT_POINT_Y = 3.0f;
 /* Audio */
 constexpr auto TRABUCO_SOUND = "res/audio/weapons/trabuco.wav";
-constexpr auto TRABUCO_SPRITE = "res/weapons/nova.png";         // Placeholder
+constexpr auto TRABUCO_SPRITE = "res/weapons/trabuco.png";         // Placeholder
 
 class Trabuco :
     public ManualWeapon

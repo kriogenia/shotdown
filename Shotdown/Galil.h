@@ -17,11 +17,11 @@ constexpr auto GALIL_DAMAGE = 30;
 constexpr auto GALIL_PROJECTILE_LIFE = 0.7 * static_cast<double>(TARGET_FPS); // 0.7s
 constexpr auto GALIL_PROJECTILE_SPEED = 6.2;
 /* Shot point */
-constexpr auto GALIL_SHOT_POINT_X = 12.0;
-constexpr auto GALIL_SHOT_POINT_Y = -4.0;
+constexpr auto GALIL_SHOT_POINT_X = 21.0f;
+constexpr auto GALIL_SHOT_POINT_Y = 2.0f;
 /* Audio */
 constexpr auto GALIL_SOUND = "res/audio/weapons/ak47.wav";
-constexpr auto GALIL_SPRITE = "res/weapons/ak47.png";       // Placeholder
+constexpr auto GALIL_SPRITE = "res/weapons/galil.png";       
 
 class Galil :
     public AutomaticWeapon

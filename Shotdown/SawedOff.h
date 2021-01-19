@@ -17,11 +17,11 @@ constexpr auto SAWED_OFF_DISPERSION = 0.5;
 constexpr auto SAWED_OFF_PROJECTILE_LIFE = 0.35 * static_cast<double>(TARGET_FPS); 
 constexpr auto SAWED_OFF_PROJECTILE_SPEED = 5.5;
 /* Shot point */
-constexpr auto SAWED_OFF_SHOT_POINT_X = 12.0;
-constexpr auto SAWED_OFF_SHOT_POINT_Y = -4.0;
+constexpr auto SAWED_OFF_SHOT_POINT_X = 15.0f;
+constexpr auto SAWED_OFF_SHOT_POINT_Y = 3.0f;
 /* Audio */
 constexpr auto SAWED_OFF_SOUND = "res/audio/weapons/sawed-off.wav";  // 
-constexpr auto SAWED_OFF_SPRITE = "res/weapons/nova.png";       // Placeholder
+constexpr auto SAWED_OFF_SPRITE = "res/weapons/sawed-off.png";       // Placeholder
 
 class SawedOff :
     public ManualWeapon

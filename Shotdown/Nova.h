@@ -17,8 +17,8 @@ constexpr auto NOVA_DISPERSION = 1.25;
 constexpr auto NOVA_PROJECTILE_LIFE = 0.3 * static_cast<double>(TARGET_FPS); // 0.3s
 constexpr auto NOVA_PROJECTILE_SPEED = 5.0;
 /* Shot point */
-constexpr auto NOVA_SHOT_POINT_X = 12.0;
-constexpr auto NOVA_SHOT_POINT_Y = -4.0;
+constexpr auto NOVA_SHOT_POINT_X = 16.0f;
+constexpr auto NOVA_SHOT_POINT_Y = 3.0f;
 /* Audio */
 constexpr auto NOVA_SOUND = "res/audio/weapons/nova.wav";
 constexpr auto NOVA_SPRITE = "res/weapons/nova.png";
