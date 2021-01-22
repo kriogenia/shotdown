@@ -265,6 +265,7 @@
     <ClInclude Include="MenuLayer.h" />
     <ClInclude Include="OptionsLayer.h" />
     <ClInclude Include="ReloadBar.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ResultLayer.h" />
     <ClInclude Include="ScoreBar.h" />
     <ClInclude Include="Broadcaster.h" />
@@ -315,6 +316,14 @@
     <ClInclude Include="WeaponSpawner.h" />
     <ClInclude Include="WeaponState.h" />
     <ClInclude Include="WeaponStateBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Shotdown.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\Descargas\ico.ico" />
+    <Image Include="icon1.ico" />
+    <Image Include="icon2.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
