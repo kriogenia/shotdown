@@ -11,7 +11,7 @@
 #include "Scenario.h"
 #include "WeaponSpawner.h"
 
-constexpr auto NUMBER_OF_SCENARIOS = 2;
+constexpr auto NUMBER_OF_SCENARIOS = 7;
 constexpr auto JOYSTICK_SENSIBILITY = 10000;
 
 class GameLayer :

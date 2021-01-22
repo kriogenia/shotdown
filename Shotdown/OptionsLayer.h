@@ -66,6 +66,7 @@ private:
     
     private:
         vector<Button*> buttons;
+        vector<Text*> texts;
         Actor* check = nullptr;
         int index = 1;
 

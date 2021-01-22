@@ -110,7 +110,7 @@ void ResultLayer::addButton()
 		float winnerX = (winsP1 > winsP2) ? P1_TEXT : P2_TEXT;
 		focus = new Actor(ActorType::HUD, "res/hud/focus-b.png", 
 			winnerX, HEIGHT / 2, WIDTH / 2, HEIGHT, game);
-		winner = (new Text("WINNER", winnerX, VICTORY_HEIGHT, game))
+		winner = (new Text("Winner", winnerX, VICTORY_HEIGHT, game))
 			->setSize(TextSize::TITLE);
 		button = new Button("res/hud/btn-main-menu.png", WIDTH / 2,
 			MAIN_GAME_BUTTON_HEIGHT, 300, 50, game);

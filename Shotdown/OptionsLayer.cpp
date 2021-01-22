@@ -193,6 +193,9 @@ OptionsLayer::ButtonGroup::ButtonGroup(float x, float y, Game* game)
 	buttons.push_back(new Button("res/hud/checkbox.png", x - 39, y, 39, 42, game));
 	buttons.push_back(new Button("res/hud/checkbox.png", x, y, 39, 42, game));
 	buttons.push_back(new Button("res/hud/checkbox.png", x + 39, y, 39, 42, game));
+	texts.push_back((new Text("3", x - 39, y, game))->setSize(TextSize::CAPTION));
+	texts.push_back((new Text("5", x, y, game))->setSize(TextSize::CAPTION));
+	texts.push_back((new Text("7", x + 39, y, game))->setSize(TextSize::CAPTION));
 	check = new Actor(ActorType::HUD, "res/hud/check.png", x, y, 39, 42, game);
 }
 
@@ -202,6 +205,9 @@ void OptionsLayer::ButtonGroup::render(float rotation)
 		button->render();
 	}
 	check->render();
+	for (auto const text : texts) {
+		text->render();
+	}
 	Button::render();
 }
 
