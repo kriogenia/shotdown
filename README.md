@@ -3,6 +3,8 @@ Assingment for the Videogames and Entertainment Software 20/21 subject of the Un
 
 This little project intends to be a very light local multiplayer game based on Duck Game.
 
+[![itch.io widget](https://i.imgur.com/2jQdnqK.jpg)](https://kriogenia.itch.io/shotdown)
+
 ![Game logo](./Shotdown/res/logo.png)
 
 The game will feature an array of different scenarios where both players will fight to kill the other one and get a showdown point.
